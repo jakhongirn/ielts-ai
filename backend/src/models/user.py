@@ -15,6 +15,8 @@ class User(Base):
     created_at = Column(DateTime, default=datetime.utcnow)
     user_type = Column(String(15), default=False)
 
+    profile = relationship("UserProfile", uselist=False)
+
 
 class UserProfile(Base):
     __tablename__ = "user_profiles"
