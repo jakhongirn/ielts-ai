@@ -24,7 +24,7 @@ class UserProfile(Base):
     id = Column(Integer, primary_key=True)
     first_name = Column(String(50), nullable=True)
     last_name = Column(String(50), nullable=True)
-    phone_number = Column(Integer(13), nullable=True)
+    phone_number = Column(Integer, nullable=True)
     date_birth = Column(DateTime, nullable=True)
     updated_at = Column(DateTime, default=datetime.utcnow)
 

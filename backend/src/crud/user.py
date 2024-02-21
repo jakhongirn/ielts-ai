@@ -16,7 +16,7 @@ def get_users_list(db: Session, skip: int = 0, limit: int = 100):
     return db.query(models.User).offset(skip).limit(limit).all()
 
 
-def create_user(db: Session, user: schemas.UserCreate):
+def create_user(db: Session, user: schemas.user.UserCreate):
     fake_hashed_pass = user.password + "notreallyhashedpass"
     db_user = models.User(email=user.email, hashed_pass=fake_hashed_pass)
     db.add(db_user)
@@ -35,7 +35,7 @@ def get_user_profile(db: Session, user_profile_id: int):
 
 
 def create_user_profile(
-    db: Session, user_profile: schemas.UserProfileCreate, user_id: int
+    db: Session, user_profile: schemas.user.UserProfileCreate, user_id: int
 ):
     db_user_profile = models.UserProfile(**user_profile.dict(), user_id=user_id)
     db.add(db_user_profile)
