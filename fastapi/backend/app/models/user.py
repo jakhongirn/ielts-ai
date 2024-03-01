@@ -28,5 +28,5 @@ class UserProfile(Base):
     date_birth = Column(DateTime, nullable=True)
     updated_at = Column(DateTime, default=datetime.utcnow)
 
-    user_id = Column(Integer, ForeignKey("users.id"))
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=True)
     user = relationship("User", back_populates="user_profiles")

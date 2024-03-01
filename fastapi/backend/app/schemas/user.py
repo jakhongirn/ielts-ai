@@ -1,8 +1,8 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr
 from typing import Optional
 from datetime import datetime
 
-
+# UserProfile pydantic models
 class UserProfileBase(BaseModel):
     first_name: Optional[str] = None
     last_name: Optional[str] = None
@@ -22,9 +22,11 @@ class UserProfile(UserProfileBase):
     class Config:
         orm_mode = True
         
+        
+#User pydantic model
 class UserBase(BaseModel):
     username: str
-    email: str
+    email: EmailStr
     
 class UserCreate(UserBase):
     hashed_pass: str
@@ -40,3 +42,4 @@ class User(UserBase):
     
     class Config:
         orm_mode = True
+        

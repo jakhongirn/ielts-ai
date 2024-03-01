@@ -1,19 +1,18 @@
 from fastapi import FastAPI, Depends, HTTPException
 from app.schemas.user import User, UserCreate
-from app import crud, schemas, models
-from app.db.base import Base
+from app import crud, schemas
+from app.db.database import Base
 from sqlalchemy.orm import Session
 from app.deps import get_db
 from app.db.database import engine
 
-Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
 
 @app.post("/users/", response_model=User)
 def create_user(user: schemas.user.UserCreate, db: Session = Depends(get_db)):
-    db_user = user.get_user_by_email(db, email=user.email)
+    db_user = crud.user.get_user_by_email(db, email=user.email)
 
     if db_user:
         raise HTTPException(
