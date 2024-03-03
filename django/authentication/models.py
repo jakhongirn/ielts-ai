@@ -5,9 +5,6 @@ from django.contrib.auth.models import (
     PermissionsMixin,
 )
 from django.utils import timezone
-from django.db.models.signals import post_save
-from django.dispatch import receiver
-
 
 class UserManager(BaseUserManager):
     def create_user(self, username, email, password=None, **extra_fields):
@@ -62,13 +59,5 @@ class UserProfile(models.Model):
     updated_at = models.DateTimeField(default=timezone.now, null=True, blank=True)
     
     def __str__(self) -> str:
-        return f'{self.user.email} Profile'
+        return f'{self.user.email}'
     
-@receiver(post_save, sender=User)
-def create_user_profile(sender, instance, created, **kwargs):
-    if created:
-        UserProfile.objects.create(user=instance)
-        
-@receiver(post_save, sender=User)
-def save_user_profile(sender, instance, **kwargs):
-    instance.profile.save()
