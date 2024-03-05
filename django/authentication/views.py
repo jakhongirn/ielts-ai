@@ -4,6 +4,8 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from .serializers import UserSerializer
 from rest_framework import status
+from rest_framework_simplejwt.views import TokenObtainPairView
+from .serializers import CustomTokenObtainPairSerializer
 
 
 class DemoView(APIView):
@@ -28,6 +30,6 @@ class SignUpView(APIView):
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-class LoginView(APIView):
-    def post(self, request):
-        
+
+class CustomTokenView(TokenObtainPairView):
+    serializer_class = CustomTokenObtainPairSerializer
