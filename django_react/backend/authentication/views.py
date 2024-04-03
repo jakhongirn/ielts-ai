@@ -9,11 +9,10 @@ from .serializers import CustomTokenObtainPairSerializer
 
 
 class DemoView(APIView):
-
+    permission_classes = (IsAuthenticated,)
     def get(self, request):
         content = {"message": "Hello world!"}
         return Response(content)
-
 
 class SignUpView(APIView):
     def post(self, request):

@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # Adjust the port if your frontend runs on a different one
 ]
+CORS_ALLOW_ALL_ORIGINS = True # NOT RECOMMENDED FOR PRODUCTION!
 
 # Application definition
 
@@ -62,10 +63,9 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    
-    #Third party middlewares
-    'corsheaders.middleware.CorsMiddleware',  # Add this
-    'django.middleware.common.CommonMiddleware',  # Ensure this is below CorsMiddleware
+    # Third party middlewares
+    "corsheaders.middleware.CorsMiddleware",  # Add this
+    "django.middleware.common.CommonMiddleware",  # Ensure this is below CorsMiddleware
 ]
 
 ROOT_URLCONF = "core.urls"
