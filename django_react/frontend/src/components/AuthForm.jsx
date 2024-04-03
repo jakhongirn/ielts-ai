@@ -10,7 +10,7 @@ const AuthForm = ({ isLogin, onSubmit }) => {
     e.preventDefault();
     onSubmit({ email, password, ...(isLogin ? {} : { confirmPassword }) });
   };
-
+      
   return (
     <form onSubmit={handleSubmit} className="max-w-lg mx-auto my-8">
       <div className="mb-6">
