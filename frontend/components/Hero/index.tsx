@@ -9,19 +9,16 @@ const Hero = () => {
           <div className="flex lg:items-center lg:gap-8 xl:gap-32.5">
             <div className=" md:w-1/2">
               <h4 className="mb-4.5 text-lg font-medium text-black dark:text-white">
-                🔥 Solid - A Complete SaaS Starter Template for SaaS
+                🔥 Ace Your IELTS with Confidence
               </h4>
               <h1 className="mb-5 pr-16 text-3xl font-bold text-black dark:text-white xl:text-hero ">
-                Robust SaaS Boilerplate and Starter for
+                Prepare IELTS with saving your time, energy and 
                 <span className="relative ml-2.5 inline-block before:absolute before:bottom-2.5 before:left-0 before:-z-1 before:h-3 before:w-full before:bg-titlebg dark:before:bg-titlebgdark ">
-                  Next.js
+                  money
                 </span>
               </h1>
               <p>
-                Packed with all the key integrations you need for swift SaaS
-                startup launch, including - Authentication, Database, Sanity
-                Blog, Essential UI Components, Business Pages and More.
-                Built-winth - Next.js, React 18 and TypeScript.
+              Embark on your journey to achieving your desired IELTS score with our AI-driven Mock Test Simulator. Experience the closest thing to the actual IELTS test environment with personalized feedback, detailed progress tracking, and real-time scoring.
               </p>
 
               <div className="mt-10">
