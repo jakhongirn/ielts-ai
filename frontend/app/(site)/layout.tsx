@@ -12,12 +12,29 @@ import NextTopLoader from "nextjs-toploader";
 import AuthProvider from "../context/AuthContext";
 import ToasterContext from "../context/ToastContext";
 
+import { NextPage } from "next";
+import { AppProps } from "next/app";
+
+
+type PageWithLayout = NextPage & {
+  disableLayout?: boolean;
+};
+
+type AppPropsWithLayout = AppProps & {
+  Component: PageWithLayout;
+  children: React.ReactNode;
+}
+
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode;
-}) {
+  Component,
+  pageProps
+}: AppPropsWithLayout) {
+
+  const disableLayout = Component.disableLayout || false;
+
   return (
+    
     <html lang="en" suppressHydrationWarning>
       <body className={`dark:bg-black ${inter.className}`}>
         <NextTopLoader
@@ -32,10 +49,10 @@ export default function RootLayout({
           defaultTheme="light"
         >
           <AuthProvider>
-            <Header />
+            {!disableLayout && <Header />}
             <ToasterContext />
-            {children}
-            <Footer />
+            <Component {...pageProps}>{children}</Component>
+            {!disableLayout && <Footer />}
             <ScrollToTop />
           </AuthProvider>
         </ThemeProvider>
