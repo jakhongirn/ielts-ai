@@ -2,11 +2,10 @@
 
 import React from 'react'
 import Mock from '@/components/MockTest';
-import { NextPage } from 'next';
 
 const MockPage = () => {
   return (
-    <div>
+    <div className='mock-reading'>
         <Mock />
     </div>
   )

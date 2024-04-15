@@ -1,7 +1,5 @@
 "use client";
 
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
 import { ThemeProvider } from "next-themes";
 import { Inter } from "next/font/google";
@@ -12,10 +10,11 @@ import NextTopLoader from "nextjs-toploader";
 import AuthProvider from "../context/AuthContext";
 import ToasterContext from "../context/ToastContext";
 
+
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -32,14 +31,14 @@ export default function RootLayout({
           defaultTheme="light"
         >
           <AuthProvider>
-            <Header />
+            
             <ToasterContext />
             {children}
-            <Footer />
+            
             <ScrollToTop />
           </AuthProvider>
         </ThemeProvider>
       </body>
     </html>
-  );
+  )
 }
