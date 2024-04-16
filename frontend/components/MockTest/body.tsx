@@ -87,50 +87,56 @@ const MockBody = () => {
         );
     };
 
-    return (
-        <div className="flex w-full">
-            <div id="leftColumn h-screen overflow-auto"
-                style={{ width: leftWidth }}
-                className="p-4 border-r-2 border-gray-400"
-            >
-                <div id="reading-left-header">
-                    <div>
-                        
-                    <div className="tabs">
-                            {/* Tabs to switch between parts */}
-                            {mockReadingData.reading.parts.map((part) => (
-                                <button
-                                    key={part.part_number}
-                                    onClick={() =>
-                                        setActivePart(part.part_number)
-                                    }
-                                >
-                                    Part {part.part_number}
-                                </button>
-                            ))}
-                    </div>
-                        <div className="reading-part-content">
-                            {/* Render the active part based on the current state */}
-                            {renderReadingPart(activePart)}
-                        </div>
-
-                        
-                    </div>
+    const MockFooter = () => {
+        return (
+            <div className="fixed z-10 w-full py-2 text-center bottom-0 bg-white text-3xl shadow-2xl">
+                {/* Tabs to switch between parts */}
+                <div className="tabs flex justify-between mx-4">
+                    {mockReadingData.reading.parts.map((part) => (
+                        <button
+                            key={part.part_number}
+                            onClick={() => setActivePart(part.part_number)}
+                        >
+                            Part {part.part_number}
+                        </button>
+                    ))}
                 </div>
             </div>
+        );
+    };
 
-            <div
-                onMouseDown={startResizing}
-                className="cursor-col-resize  w-1.5 select-none"
-            />
-            <div
-                id="rightColumn"
-                style={{ width: `calc(100% - ${leftWidth})` }}
-                className="border-l-2 border-gray-400 p-4"
-            >
-                Right Column
+    return (
+        <>
+            <div className="pt-16 flex w-full h-screen">
+                <div
+                    id="leftColumn "
+                    style={{ width: leftWidth }}
+                    className="p-4  border-gray-400 h-full overflow-auto"
+                >
+                    <div id="reading-left-header">
+                        <div>
+                            <div className="reading-part-content">
+                                {/* Render the active part based on the current state */}
+                                {renderReadingPart(activePart)}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    onMouseDown={startResizing}
+                    className="cursor-col-resize bg-gray-400 h-full w-1.5 select-none"
+                />
+                <div
+                    id="rightColumn"
+                    style={{ width: `calc(100% - ${leftWidth})` }}
+                    className=" border-gray-400 p-4 h-full overflow-auto"
+                >
+                    Right Column
+                </div>
             </div>
-        </div>
+            <MockFooter />
+        </>
     );
 };
 
