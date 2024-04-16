@@ -1,0 +1,105 @@
+{
+    "reading": {
+        "introduction": "Introduction to IELTS Reading Section",
+        "parts": [
+            {
+                "part_number": 1,
+                "title": "Father of modern management",
+                "instruction": "You should spend about 20 minutes on Questions 1-14 which are based on Reading Passage 1",
+                "imageURL": "mock1-reading-p1.jpg",
+                "type": "multi-heading",
+                "paragraphs": [
+                    {
+                        "title": "A",
+                        "content": "Peter Drucker was one of the most important management thinkers of the past hundred years. He wrote about 40 book and thousands of articles and he never rested in his mission to persuade the world that management matters. “Management is an organ of institutions … the organ that converts a mob into an organisation, and human efforts into performance.” Did he succeed? The range of his influence was extraordinary. Wherever people grapple with tricky management problems, from big organizations to small ones, from the public sector to the private, and increasingly in the voluntary sector, you can find Drucker’s fingerprints."
+                    },
+                    {
+                        "title": "B",
+                        "content": "His first two books – The End of Economic Man (1939) and The Future of Industrial Man (1942) – had their admirers, including Winston Churchill, but they annoyed academic critics by ranging so widely over so many different subjects. Still, the second of these books attracted attention with its passionate insistence that companies had a social dimension as well as an economic purpose. His third book, The Concept of the Corporation, became an instant bestseller and has remained in print ever since."
+                    },
+                    {
+                        "title": "C",
+                        "content": "The two most interesting arguments in The Concept of the Corporation actually had little to do with the decentralization fad. They were to dominate his work. The first had to do with “empowering” workers. Drucker believed in treating workers as resources rather than just as costs. He was a harsh critic of the assembly-line system of production that then dominated the manufacturing sector – partly because assembly lines moved at the speed of the slowest and partly because they failed to engage the creativity of individual workers. The second argument had to do with the rise of knowledge workers. Drucker argued that the world is moving from an “economy of goods” to an economy of “knowledge” – and from a society dominated by an industrial proletariat to one dominated by brain workers. He insisted that this had profound implications for both managers and politicians. Managers had to stop treating workers like cogs in a huge inhuman machine and start treating them as brain workers. In turn, politicians had to realise that knowledge, and hence education, was the single most important resource for any advanced society. Yet Drucker also thought that this economy had implications for knowledge workers themselves. They had to come to terms with the fact that they were neither “bosses” nor “workers”, but something in between: entrepreneurs who had responsibility for developing their most important resource, brainpower, and who also needed to take more control of their own careers, including their pension plans."
+                    },
+                    {
+                        "title": "D",
+                        "content": "However, there was also a hard side to his work. Drucker was responsible for inventing one of the rational school of management’s most successful products – “management by objectives”. In one of his most substantial works, The Practice of Management (1954), he emphasised the importance of managers and corporations setting clear long-term objectives and then translating those long-term objectives into more immediate goals. He argued that firms should have an elite corps of general managers, who set these long-term objectives, and then a group of more specialised managers. For his critics, this was a retreat from his earlier emphasis on the soft side of management. For Drucker it was all perfectly consistent: if you rely too much on empowerment you risk anarchy, whereas if you rely too much on command-and-control you sacrifice creativity. The trick is for managers to set long-term goals, but then allow their employees to work out ways of achieving those goals. If Drucker helped make management a global industry, he also helped push it beyond its business base. He was emphatically a management thinker, not just a business one. He believed that management is “the defining organ of all modern institutions”, not just corporations."
+                    },
+                    {
+                        "title": "E",
+                        "content": "There are three persistent criticisms of Drucker’s work. The first is that he focused on big organisations rather than small ones. The Concept of the Corporation was in many ways a fanfare to big organisations. As Drucker said, “We know today that in modern industrial production, particularly in modern mass production, the small unit is not only inefficient, it cannot produce at all.” The book helped to launch the “big organisation boom” that dominated business thinking for the next 20 years. The second criticism is that Drucker’s enthusiasm for management by objectives helped to lead the business down a dead end. They prefer to allow ideas, including ideas for long-term strategies, to bubble up from the bottom and middle of the organisations rather than being imposed from on high. Thirdly, Drucker is criticised for being a maverick who has increasingly been left behind by the increasing rigour of his chosen field. There is no single area of academic management theory that he made his own."
+                    },
+                    {
+                        "title": "F",
+                        "content": "There are three persistent criticisms of Drucker’s work. The first is that he focused on big organisations rather than small ones. The Concept of the Corporation was in many ways a fanfare to big organisations. As Drucker said, “We know today that in modern industrial production, particularly in modern mass production, the small unit is not only inefficient, it cannot produce at all.” The book helped to launch the “big organisation boom” that dominated business thinking for the next 20 years. The second criticism is that Drucker’s enthusiasm for management by objectives helped to lead the business down a dead end. They prefer to allow ideas, including ideas for long-term strategies, to bubble up from the bottom and middle of the organisations rather than being imposed from on high. Thirdly, Drucker is criticised for being a maverick who has increasingly been left behind by the increasing rigour of his chosen field. There is no single area of academic management theory that he made his own."
+                    }
+                ],
+                "questions": [
+                    {
+                        "question_id": 1,
+                        "question_text": "What is the main idea of the first paragraph?",
+                        "choices": [
+                            "Choice A",
+                            "Choice B",
+                            "Choice C",
+                            "Choice D"
+                        ],
+                        "correct_answer": "Choice A"
+                    }
+                ]
+            },
+            {
+                "part_number": 2,
+                "title": "Single-Heading Passage Example",
+                "type": "single-heading",
+                "paragraphs": [
+                    {
+                        "content": "First paragraph of the passage under a single heading."
+                    },
+                    {
+                        "content": "Second paragraph continues with content, separated visually from the first."
+                    }
+                ],
+                "questions": [
+                    {
+                        "question_id": 2,
+                        "question_text": "What conclusion can be drawn from the entire passage?",
+                        "choices": [
+                            "Choice A",
+                            "Choice B",
+                            "Choice C",
+                            "Choice D"
+                        ],
+                        "correct_answer": "Choice B"
+                    }
+                ]
+            },
+            {
+                "part_number": 3,
+                "title": "Single-Heading Passage Example",
+                "type": "single-heading",
+                "paragraphs": [
+                    {
+                        "content": "First paragraph of the passage under a single heading."
+                    },
+                    {
+                        "content": "Second paragraph continues with content, separated visually from the first."
+                    }
+                ],
+                "questions": [
+                    {
+                        "question_id": 2,
+                        "question_text": "What conclusion can be drawn from the entire passage?",
+                        "choices": [
+                            "Choice A",
+                            "Choice B",
+                            "Choice C",
+                            "Choice D"
+                        ],
+                        "correct_answer": "Choice B"
+                    }
+                ]
+            }
+        ]
+    }
+}
