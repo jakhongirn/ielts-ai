@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import MultiReadingPassage from "./multi-reading-passage";
 import mockReadingData from "./mocktests.json";
+import QuestionsColumn from "./rightColumn";
 
 const MockBody = () => {
     const [leftWidth, setLeftWidth] = useState("50%"); // Initial width as a string
@@ -89,7 +90,7 @@ const MockBody = () => {
 
     const MockFooter = () => {
         return (
-            <div className="fixed z-10 w-full py-2 text-center bottom-0 bg-white text-3xl shadow-2xl">
+            <div className="fixed z-10 w-full py-2 text-center bottom-0 bg-gray-100 text-xl font-semibold shadow-2xl">
                 {/* Tabs to switch between parts */}
                 <div className="tabs flex justify-between mx-4">
                     {mockReadingData.reading.parts.map((part) => (
@@ -111,7 +112,7 @@ const MockBody = () => {
                 <div
                     id="leftColumn "
                     style={{ width: leftWidth }}
-                    className="p-4  border-gray-400 h-full overflow-auto"
+                    className="p-4 border-gray-400 h-full overflow-auto"
                 >
                     <div id="reading-left-header">
                         <div>
@@ -132,7 +133,7 @@ const MockBody = () => {
                     style={{ width: `calc(100% - ${leftWidth})` }}
                     className=" border-gray-400 p-4 h-full overflow-auto"
                 >
-                    Right Column
+                    <QuestionsColumn /> 
                 </div>
             </div>
             <MockFooter />

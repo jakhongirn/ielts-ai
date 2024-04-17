@@ -93,5 +93,5 @@ class Passage(models.Model):
     image = models.ImageField(null=True, blank=True)
     type = models.CharField(choices=PASSAGE_TYPES, max_length=50)
     part = models.ForeignKey("Part", verbose_name=("Part"), on_delete=models.CASCADE, related_name="Passage")
-    
-    
+
+
