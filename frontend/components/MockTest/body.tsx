@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import MultiReadingPassage from "./multi-reading-passage";
 import mockReadingData from "./mocktests.json";
-import QuestionsColumn from "./rightColumn";
+import QuestionColumn from "./questionColumn";
 
 const MockBody = () => {
     const [leftWidth, setLeftWidth] = useState("50%"); // Initial width as a string
@@ -88,6 +88,20 @@ const MockBody = () => {
         );
     };
 
+    const renderQuestionPart = (partNumber: number) => {
+        const partData = mockReadingData.reading.parts.find(
+            (part) => part.part_number === partNumber
+        );
+
+        if (!partData) {
+            return <p>Part not found.</p>;
+        }
+
+        return (
+            <QuestionColumn questionData={partData} />
+        )
+    }
+
     const MockFooter = () => {
         return (
             <div className="fixed z-10 w-full py-2 text-center bottom-0 bg-gray-100 text-xl font-semibold shadow-2xl">
@@ -108,7 +122,7 @@ const MockBody = () => {
 
     return (
         <>
-            <div className="pt-16 flex w-full h-screen">
+            <div className="pt-16 pb-12 flex w-full h-screen">
                 <div
                     id="leftColumn "
                     style={{ width: leftWidth }}
@@ -133,7 +147,7 @@ const MockBody = () => {
                     style={{ width: `calc(100% - ${leftWidth})` }}
                     className=" border-gray-400 p-4 h-full overflow-auto"
                 >
-                    <QuestionsColumn /> 
+                    {renderQuestionPart(activePart)}
                 </div>
             </div>
             <MockFooter />
