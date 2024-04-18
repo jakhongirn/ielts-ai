@@ -46,10 +46,10 @@
                                 "text": "Choose the correct heading for each paragraph from the list below."
                             },
                             {
-                                "text":"Write the correct number, i-ix, in boxes 1-6 on your answer sheet."
+                                "text": "Write the correct number, i-ix, in boxes 1-6 on your answer sheet."
                             }
                         ],
-                        "type":"matching-heading",
+                        "type": "matching-heading",
                         "titleHeading": "List of Headings",
                         "headings": [
                             {
@@ -71,27 +71,27 @@
                         ],
                         "q_answers": [
                             {
-                                "q_number":1,
+                                "q_number": 1,
                                 "q_text": "Paragraph A"
                             },
                             {
-                                "q_number":2,
+                                "q_number": 2,
                                 "q_text": "Paragraph B"
                             },
                             {
-                                "q_number":3,
+                                "q_number": 3,
                                 "q_text": "Paragraph C"
                             },
                             {
-                                "q_number":4,
+                                "q_number": 4,
                                 "q_text": "Paragraph D"
                             }
                         ]
-                        
                     },
+
                     {
                         "q_id": 2,
-                        "type":"identify-information",
+                        "type": "identify-information",
                         "q_numbers": "7-10",
                         "q_instructions": [
                             {
@@ -100,46 +100,104 @@
                             {
                                 "text": "In boxes 7-10 on your answer sheet, write:"
                             }
-                            
                         ],
-                        "":"",
-                        "headings": [
+                        "isAnswerTypeTrueFalse": false,
+                        "question_texts": [
                             {
-                                "h_id": "i",
-                                "h_text": "The popularity and impact of Drucker's work"
+                                "q_number": 7,
+                                "q_text": "Drucker's first two books were not well received by academic critics."
                             },
                             {
-                                "h_id": "ii",
-                                "h_text": "Heading 2"
+                                "q_number": 8,
+                                "q_text": "Drucker's third book was a bestseller."
                             },
                             {
-                                "h_id": "iii",
-                                "h_text": "Heading 3"
+                                "q_number": 9,
+                                "q_text": "Drucker believed that workers should be treated as resources."
                             },
                             {
-                                "h_id": "iv",
-                                "h_text": "Heading 4"
-                            }
-                        ],
-                        "q_answers": [
-                            {
-                                "q_number":1,
-                                "q_text": "Paragraph A"
-                            },
-                            {
-                                "q_number":2,
-                                "q_text": "Paragraph B"
-                            },
-                            {
-                                "q_number":3,
-                                "q_text": "Paragraph C"
-                            },
-                            {
-                                "q_number":4,
-                                "q_text": "Paragraph D"
+                                "q_number": 10,
+                                "q_text": "Drucker believed that knowledge workers should take more control of their careers."
                             }
                         ]
-                        
+                    },
+                    {
+                        "q_id": 3,
+                        "type": "multiple-choice-more",
+                        "q_numbers": "11-12",
+                        "q_instructions": [
+                            {
+                                "text": "Choose TWO letters from A-E."
+                            },
+                            {
+                                "text": "Write your answers in boxes 12 and 13 on your answer sheet."
+                            },
+                            {
+                                "text": "Which TWO of the following are true of Drucker’s views?"
+                            }
+                        ],
+
+                        "question_texts": [
+                            {
+                                "q_id": "A",
+                                "q_text": "High-rank executives and workers should be put in balanced positions in management practice"
+                            },
+                            {
+                                "q_id": "B",
+                                "q_text": "Young executives should be given chances to start from low-level jobs"
+                            },
+                            {
+                                "q_id": "C",
+                                "q_text": "More emphasis should be laid on fostering the development of the union."
+                            },
+                            {
+                                "q_id": "D",
+                                "q_text": "Management should facilitate workers with tools of self-appraisal instead of controlling them from the outside force"
+                            },
+                            {
+                                "q_id": "E",
+                                "q_text": "Leaders should go beyond the scope of management details and strategically establish goals"
+                            }
+                        ]
+                    },
+                    {
+                        "q_id": 4,
+                        "type": "multiple-choice-more",
+                        "q_numbers": "13-14",
+                        "q_instructions": [
+                            {
+                                "text": "Choose TWO letters from A-E."
+                            },
+                            {
+                                "text": "Write your answers in boxes 12 and 13 on your answer sheet."
+                            },
+                            {
+                                "text": "Which TWO of the following are mentioned in the passage as criticisms to Drucker and his views?"
+                            }
+                        ],
+
+                        "question_texts": [
+                            {
+                                "q_id": "A",
+                                "q_text": "High-rank executives and workers should be put in balanced positions in management practice"
+                            },
+                            {
+                                "q_id": "B",
+                                "q_text": "Young executives should be given chances to start from low-level jobs"
+                            },
+                            {
+                                "q_id": "C",
+                                "q_text": "More emphasis should be laid on fostering the development of the union."
+                            },
+                            {
+                                "q_id": "D",
+                                "q_text": "Management should facilitate workers with tools of self-appraisal instead of controlling them from the outside force"
+                            },
+                            {
+                                "q_id": "E",
+                                "q_text": "Leaders should go beyond the scope of management details and strategically establish goals"
+                            }
+                        ]
                     }
                 ]
             },
@@ -178,7 +236,7 @@
                 "questions": [
                     {
                         "question_id": 1,
-                        "question_numbers":"1-6",
+                        "question_numbers": "1-6",
                         "question_instructions": [
                             {
                                 "text": "Reading Passage has six paragraphs, A-F"
@@ -187,10 +245,10 @@
                                 "text": "Choose the correct heading for each paragraph from the list below."
                             },
                             {
-                                "text":"Write the correct number, i-ix, in boxes 1-6 on your answer sheet."
+                                "text": "Write the correct number, i-ix, in boxes 1-6 on your answer sheet."
                             }
                         ],
-                        "type":"Matching Headings",
+                        "type": "Matching Headings",
                         "titleHeading": "List of Headings",
                         "headings": [
                             {
@@ -211,7 +269,6 @@
                             }
                         ]
                     }
-                    
                 ]
             },
             {
@@ -249,7 +306,7 @@
                 "questions": [
                     {
                         "question_id": 1,
-                        "question_numbers":"1-6",
+                        "question_numbers": "1-6",
                         "question_instructions": [
                             {
                                 "text": "Reading Passage has six paragraphs, A-F"
@@ -258,10 +315,10 @@
                                 "text": "Choose the correct heading for each paragraph from the list below."
                             },
                             {
-                                "text":"Write the correct number, i-ix, in boxes 1-6 on your answer sheet."
+                                "text": "Write the correct number, i-ix, in boxes 1-6 on your answer sheet."
                             }
                         ],
-                        "type":"Matching Headings",
+                        "type": "Matching Headings",
                         "question_text": "What is the main idea of the first paragraph?",
                         "choices": [
                             "Choice A",
