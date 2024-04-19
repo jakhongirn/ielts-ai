@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import MultiReadingPassage from "./multi-reading-passage";
-import mockReadingData from "./mocktests.json";
-import QuestionColumn from "./questionColumn";
+import mockReadingData from "../data/mocktests.json";
+import QuestionColumn from "../questionColumn";
 
 const MockBody = () => {
     const [leftWidth, setLeftWidth] = useState("50%"); // Initial width as a string
@@ -97,10 +97,8 @@ const MockBody = () => {
             return <p>Part not found.</p>;
         }
 
-        return (
-            <QuestionColumn questionData={partData} />
-        )
-    }
+        return <QuestionColumn questionData={partData} />;
+    };
 
     const MockFooter = () => {
         return (
