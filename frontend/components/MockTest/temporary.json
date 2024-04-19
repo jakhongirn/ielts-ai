@@ -1,0 +1,34 @@
+[
+    {
+      "text": "Word 'Viking' is ",
+      "input": true,
+      "inputId": "1"
+    },
+    {
+      "text": "Vikings came from Scandinavia."
+    },
+    {
+      "text": "In Britain: AD ",
+      "input": true,
+      "inputId": "2"
+    },
+    {
+      "text": "-1066"
+    },
+    {
+      "text": "Possibly raided as far away as ",
+      "input": true,
+      "inputId": "3"
+    },
+    {
+      "text": "Vikings had assimilated into ",
+      "input": true,
+      "inputId": "4"
+    },
+    {
+      "text": " system.",
+      "input": true,
+      "inputId": "5"
+    }
+  ]
+  

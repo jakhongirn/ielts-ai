@@ -1,7 +1,10 @@
 import React from 'react'
 import MatchingHeading from './matchingHeading'
 import IdentifyInformation from './identifyInformation'
-import MultiChoiceMore from './multiChoiceMore'
+import MoreMultipleChoice from './moreMultipleChoice'
+import OneMultipleChoice from './oneMultipleChoice'
+import SentenceCompletion from './sentenceCompletion'
+import TableCompletion from './tableCompletion'
 
 const QuestionComponent = ({questionData}: any) => {
   switch(questionData.type) {
@@ -10,7 +13,15 @@ const QuestionComponent = ({questionData}: any) => {
     case 'identify-information':
         return <IdentifyInformation question={questionData} />
     case 'multiple-choice-more':
-        return <MultiChoiceMore question={questionData} />
+        return <MoreMultipleChoice question={questionData} />
+    case 'multiple-choice-one':
+        return <OneMultipleChoice question={questionData} />
+    case 'sentence-completion':
+        return <SentenceCompletion question={questionData} />
+    case 'table-completion':
+        return <TableCompletion question={questionData} />
+    default:
+        return <div>Input field</div>
   }
 }
 

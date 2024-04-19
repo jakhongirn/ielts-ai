@@ -14,7 +14,7 @@ const MatchingHeading = ({question} :any) => {
                         
                         {question.headings.map((heading, idx) => (
                             <div className="flex gap-x-2" key={idx}>
-                                <p className="font-bold w-5">{heading.h_id}</p>
+                                <p className="font-bold w-5">{heading.h_id}.</p>
                                 <p>
                                     {heading.h_text}
                                 </p>
@@ -25,8 +25,9 @@ const MatchingHeading = ({question} :any) => {
                         {question.q_answers.map((answer, q_number) => (
                           <div key={q_number} className="flex gap-x-2 my-2">
                             <p>{answer.q_number}.</p>
+                            <input  type="text" className="w-14 h-8 rounded-lg px-1 bg-gray-100"/>
                             <p>{answer.q_text}</p>
-                            <input  type="text" className="w-14 rounded-lg px-1 bg-gray-100"/>
+                            
                           </div>
 
                         ))}

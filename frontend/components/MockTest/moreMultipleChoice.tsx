@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const MultiChoiceMore = ({ question }: any) => {
+const MoreMultipleChoice = ({ question }: any) => {
     // State to hold the values of the checkboxes
     const [isChecked, setIsChecked] = useState({
         option1: false,
@@ -41,4 +41,4 @@ const MultiChoiceMore = ({ question }: any) => {
     );
 };
 
-export default MultiChoiceMore;
+export default MoreMultipleChoice;
