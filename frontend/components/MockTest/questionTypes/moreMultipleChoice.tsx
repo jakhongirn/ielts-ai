@@ -19,7 +19,7 @@ const MoreMultipleChoice = ({ question }: any) => {
     return (
         <div>
             <div className="flex flex-col space-y-2 ">
-                {question.question_texts.map((answer: any, idx: number) => (
+                {question.answers?.map((answer: any, idx: number) => (
                     <div key={idx} className="flex justify-start  items-center gap-x-2">
                         <p className="font-bold w-5">{answer.q_id}.</p>
                         <div className="w-full flex items-center">
@@ -33,7 +33,6 @@ const MoreMultipleChoice = ({ question }: any) => {
                             <label htmlFor="option1" className="ml-2 w-full">{answer.q_text}</label>
                             
                         </div>
-                        
                     </div>
                 ))}
             </div>

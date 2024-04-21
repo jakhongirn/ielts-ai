@@ -136,8 +136,7 @@
                                 "text": "Which TWO of the following are true of Drucker’s views?"
                             }
                         ],
-
-                        "question_texts": [
+                        "answers": [
                             {
                                 "q_id": "A",
                                 "q_text": "High-rank executives and workers should be put in balanced positions in management practice"
