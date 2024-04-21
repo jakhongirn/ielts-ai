@@ -1,6 +1,9 @@
 import React from 'react'
+import { useFormContext } from 'react-hook-form'
 
 const MatchingHeading = ({question} :any) => {
+  const {register} = useFormContext();
+  
   return (
     <div id="matchingHeading">
 
@@ -22,11 +25,11 @@ const MatchingHeading = ({question} :any) => {
                         ))}
                     </div>
                     <div id="questionAnswers">
-                        {question.q_answers.map((answer, q_number) => (
-                          <div key={q_number} className="flex gap-x-2 my-2">
+                        {question.q_answers.map((answer, index) => (
+                          <div key={index} className="flex gap-x-2 my-2">
                             <p>{answer.q_number}.</p>
-                            <input  type="text" className="w-14 h-8 rounded-lg px-1 bg-gray-100"/>
-                            <p>{answer.q_text}</p>
+                            <input {...register(`user_answers.${answer.q_number}`)} type="text" className="w-14 h-8 rounded-lg px-1 bg-gray-100"/>
+                            <p className='w-full'>{answer.q_text}</p>
                             
                           </div>
 

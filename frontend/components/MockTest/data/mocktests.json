@@ -71,19 +71,19 @@
                         ],
                         "q_answers": [
                             {
-                                "q_number": 1,
+                                "q_number": "1",
                                 "q_text": "Paragraph A"
                             },
                             {
-                                "q_number": 2,
+                                "q_number": "2",
                                 "q_text": "Paragraph B"
                             },
                             {
-                                "q_number": 3,
+                                "q_number": "3",
                                 "q_text": "Paragraph C"
                             },
                             {
-                                "q_number": 4,
+                                "q_number": "4",
                                 "q_text": "Paragraph D"
                             }
                         ]

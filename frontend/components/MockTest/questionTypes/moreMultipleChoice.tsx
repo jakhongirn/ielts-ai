@@ -30,7 +30,7 @@ const MoreMultipleChoice = ({ question }: any) => {
                                 onChange={handleChange}
                                 className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
                             />
-                            <label htmlFor="option1" className="ml-2">{answer.q_text}</label>
+                            <label htmlFor="option1" className="ml-2 w-full">{answer.q_text}</label>
                             
                         </div>
                         

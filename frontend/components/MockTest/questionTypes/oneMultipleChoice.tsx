@@ -25,7 +25,7 @@ const OneMultipleChoice = ({ question }) => {
                                 onChange={handleOptionChange}
                                 className="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500"
                             />
-                            <span className="ml-2">{choice.choice_text}</span>
+                            <span className="ml-2 w-full">{choice.choice_text}</span>
                         </label>
                     ))}
                 </div>

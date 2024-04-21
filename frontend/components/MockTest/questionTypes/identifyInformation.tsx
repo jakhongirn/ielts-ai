@@ -42,11 +42,10 @@ const IdentifyInformation = ({ question }: any) => {
                 <div key={idx} className="flex gap-x-2 my-2">
                     <p className="font-bold w-5">{question_text.q_number}.</p>
                     <div className="w-20">
-                       
                         <select
                             value={value}
                             onChange={handleChange}
-                            className="block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                            className="block w-full px-3 py-1 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
                         >
                             <option value=""></option>
                             {answerTypes.map((answer, idx) => (
@@ -56,7 +55,7 @@ const IdentifyInformation = ({ question }: any) => {
                             ))}
                         </select>
                     </div>
-                    <p>{question_text.q_text}</p>
+                    <p className="w-full">{question_text.q_text}</p>
                     
                 </div>
             ))}
