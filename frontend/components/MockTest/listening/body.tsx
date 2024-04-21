@@ -9,12 +9,12 @@ const MockBody = () => {
         return (
             <div className="fixed z-10 w-full py-2 text-center bottom-0 bg-gray-100 text-xl font-semibold shadow-2xl">
                 {/* Tabs to switch between parts */}
-                <div className="tabs flex justify-between mx-4">
+                <div className="tabs flex gap-x-2 justify-between mx-4">
                     {mockReadingData.listening.parts.map((part) => (
                         <button
                             key={part.part_number}
                             onClick={() => setActivePart(part.part_number)}
-                            className={fontColor}
+                            className={`${fontColor} w-full text-center border-2 py-1 rounded-xl border-gray-300`}
                         >
                             Part {part.part_number}
                         </button>

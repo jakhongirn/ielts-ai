@@ -7,7 +7,7 @@ import Link from "next/link";
 const MockPage = () => {
     return (
         <div className="mock-test h-screen">
-            <h1 className="text-2xl text-center my-5 font-bold">Mock Test Sections</h1>
+            <h1 className="text-2xl text-center my-5 font-bold">IELTS Mock Test Sections</h1>
             <div className="flex justify-around h-screen items-center">
 
                 <div className="border-2 border-red-500 bg-red-500 px-8 py-6 text-2xl rounded-xl hover:bg-transparent text-white hover:text-black duration-300">
