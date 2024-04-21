@@ -14,7 +14,7 @@ type UserAnswerData = {
     [questionId: string]: string; 
 }
 
-const QuestionColumn = ({ questionData }) => {
+const QuestionColumn = ({ questionData, fontColor }) => {
 
     const QuestionComponent = ({questionData}: any) => {
         switch(questionData.type) {
@@ -57,7 +57,7 @@ const QuestionColumn = ({ questionData }) => {
             <form onSubmit={handleSubmit(onSubmit)}>
             {questionData.questions?.map((question, index) => (
                 <div key={index} className="mt-6">
-                    <h1 id="questionNumber" className="font-semibold text-lg ">
+                    <h1 id="questionNumber" className={`font-semibold text-lg ${fontColor}`}>
                         Questions {question.q_numbers}
                     </h1>
                     <div id="questionInstructionsm" className="my-2">

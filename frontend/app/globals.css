@@ -25,7 +25,7 @@
   body {
     @apply relative z-1 font-inter text-regular font-normal text-waterloo dark:text-manatee;
   }
-  .mock-reading {
+  .mock-test {
     @apply text-black dark:text-white;
   }
 }

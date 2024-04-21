@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState  } from "react";
 import Image from "next/image";
 import MultiReadingPassage from "./multi-reading-passage";
 import mockReadingData from "../data/mocktests.json";
@@ -97,10 +97,11 @@ const MockBody = () => {
             return <p>Part not found.</p>;
         }
 
-        return <QuestionColumn questionData={partData} />;
+        return <QuestionColumn questionData={partData} fontColor="text-red-500"/>;
     };
 
-    const MockFooter = () => {
+   
+    const MockFooter = ({fontColor}) => {
         return (
             <div className="fixed z-10 w-full py-2 text-center bottom-0 bg-gray-100 text-xl font-semibold shadow-2xl">
                 {/* Tabs to switch between parts */}
@@ -109,6 +110,7 @@ const MockBody = () => {
                         <button
                             key={part.part_number}
                             onClick={() => setActivePart(part.part_number)}
+                            className={fontColor}
                         >
                             Part {part.part_number}
                         </button>
@@ -148,7 +150,7 @@ const MockBody = () => {
                     {renderQuestionPart(activePart)}
                 </div>
             </div>
-            <MockFooter />
+            <MockFooter fontColor="text-red-500"/>
         </>
     );
 };

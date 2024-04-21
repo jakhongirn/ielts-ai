@@ -3,9 +3,10 @@ import React, { useState, useEffect } from 'react';
 interface TimerProps {
   duration: number; // duration in minutes
   onTimeUp: () => void; // Callback when time is up
+  fontColor: string;
 }
 
-const Timer: React.FC<TimerProps> = ({ duration, onTimeUp }) => {
+const Timer: React.FC<TimerProps> = ({ duration, onTimeUp, fontColor }) => {
   // State to keep track of time left in seconds
   const [timeLeft, setTimeLeft] = useState(duration * 60);
 
@@ -31,7 +32,7 @@ const Timer: React.FC<TimerProps> = ({ duration, onTimeUp }) => {
 
   return (
     <div>
-      <span className='font-bold'>{`${minutes}:${seconds < 10 ? `0${seconds}` : seconds}`} </span> <span>remaining</span>
+      <span className={`${fontColor} font-bold`}>{`${minutes}:${seconds < 10 ? `0${seconds}` : seconds}`} </span> <span>remaining</span>
     </div>
   );
 };
