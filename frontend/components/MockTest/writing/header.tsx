@@ -12,7 +12,7 @@ const MockHeader = () => {
                 <div>
                     <Timer
                         duration={60}
-                        fontColor="text-red-500"
+                        fontColor="text-blue-500"
                         onTimeUp={() => {
                             console.log("Time is up!");
                         }}
@@ -20,7 +20,7 @@ const MockHeader = () => {
                 </div>
 
                 <div>
-                    <button className="bg-red-500 px-3 py-1 text-white rounded-xl">
+                    <button className="bg-blue-500 px-3 py-1 text-white rounded-xl">
                         Submit
                     </button>
                 </div>

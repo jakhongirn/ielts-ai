@@ -13,7 +13,7 @@ const TableCompletion = ({ question }: any) => {
             />
             {[...Array(question.answers)].map((_, index) => (
                 
-                <div className="flex items-center gap-x-2 my-2">
+                <div className="flex items-center gap-x-2 my-2" key={index}>
                     <p className="font-bold w-4">
                         {index + Number(question.q_start)}.
                     </p>

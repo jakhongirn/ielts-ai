@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const OneMultipleChoice = ({ question }) => {
+const OneMultipleChoice = ({ question } : any) => {
     // State to hold the selected answer
     const [selectedAnswer, setSelectedAnswer] = useState("");
 
@@ -13,7 +13,7 @@ const OneMultipleChoice = ({ question }) => {
     return (
         <div>
             {question.question_choices.map((q, idx) => (
-                <div className="flex flex-col my-2">
+                <div className="flex flex-col my-2" key={idx}>
                     <p className="mb-1 font-semibold">{q.q_number}. {q.q_title}</p>
                     {q.choices.map((choice, index) => (
                         <label key={index} className="flex items-center mb-1">
