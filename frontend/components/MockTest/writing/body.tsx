@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import mockReadingData from "../data/mocktests.json";
-import QuestionColumn from "../questionColumn";
-import WritingTask1 from "../writing/taskPart";
+import mockWritingData from "../data/mocktests.json";
 import { useForm } from "react-hook-form";
 
+type MockWritingBodyProps = {
+    activePart: number;
+};
 
-const WritingSection = () => {
+const MockWritingBody = ({activePart}: MockWritingBodyProps) => {
     const [leftWidth, setLeftWidth] = useState("50%"); // Initial width as a string
     const [isDragging, setIsDragging] = useState(false);
 
@@ -31,36 +32,48 @@ const WritingSection = () => {
         document.addEventListener("mouseup", stopResize);
     };
 
-    const [activePart, setActivePart] = useState<number>(1);
-
-    const renderReadingPart = (partNumber: number) => {
-        const partData = mockReadingData.writing.parts?.find(
+    const renderLeftColumn = (partNumber: number) => {
+        const task = mockWritingData.writing.parts?.find(
             (part) => part.part_number === partNumber
         );
 
-        if (!partData) {
+        if (!task) {
             return <p>Part not found.</p>;
         }
 
         return (
             <div>
-                <div>
-                    <h1
-                        id="readingPassage"
-                        className="text-3xl font-bold uppercase my-2"
-                    >
-                        Writing Task {partData.part_number}
-                    </h1>
+                <h1
+                    id="readingPassage"
+                    className="text-3xl font-bold uppercase my-2"
+                >
+                    Writing Task {task.part_number}
+                </h1>
 
-                    <div id="reading-passage">
-                        <WritingTask1 questionData={partData} />
-                    </div>
+                <div id="taskPart">
+                    {task.q_instructions.map((instruction, index) => (
+                        <div key={index}>
+                            <p className="my-2 text-sm">{instruction.text}</p>
+                        </div>
+                    ))}
+
+                    {task.type === "task-1" ? (
+                        <div>
+                            <Image
+                                src={`/mock_images/${task.q_imageURL}`}
+                                alt="task 1"
+                                layout="responsive"
+                                width={1000}
+                                height={500}
+                            />
+                        </div>
+                    ) : null}
                 </div>
             </div>
         );
     };
 
-    const UserWritingPart: React.FC = () => {
+    const RenderRightColumn: React.FC = () => {
         const {
             register,
             watch,
@@ -98,25 +111,6 @@ const WritingSection = () => {
         );
     };
 
-    const MockFooter = ({ fontColor }) => {
-        return (
-            <div className="fixed z-10 w-full py-2 text-center bottom-0 bg-gray-100 text-xl font-semibold shadow-2xl">
-                {/* Tabs to switch between parts */}
-                <div className="tabs flex gap-x-2 justify-around mx-4">
-                    {mockReadingData.writing.parts.map((part, index) => (
-                        <button
-                            key={index}
-                            onClick={() => setActivePart(part.part_number)}
-                            className={`${fontColor} w-full text-center border-2 py-1 rounded-xl border-gray-300`}
-                        >
-                            Task {part.part_number}
-                        </button>
-                    ))}
-                </div>
-            </div>
-        );
-    };
-
     return (
         <>
             <div className="pt-16 pb-12 flex w-full h-screen">
@@ -129,7 +123,7 @@ const WritingSection = () => {
                         <div>
                             <div className="reading-part-content">
                                 {/* Render the active part based on the current state */}
-                                {renderReadingPart(activePart)}
+                                {renderLeftColumn(activePart)}
                             </div>
                         </div>
                     </div>
@@ -144,12 +138,11 @@ const WritingSection = () => {
                     style={{ width: `calc(100% - ${leftWidth})` }}
                     className=" border-gray-400 p-4 h-full overflow-auto"
                 >
-                    <UserWritingPart />
+                    <RenderRightColumn />
                 </div>
             </div>
-            <MockFooter fontColor="text-blue-500" />
         </>
     );
 };
 
-export default WritingSection;
+export default MockWritingBody;

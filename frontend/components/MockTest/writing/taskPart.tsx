@@ -8,13 +8,13 @@ const WritingTask1 = ({questionData}) => {
         <div id="taskPart">
             {questionData.q_instructions.map((instruction, index) => (
                 <div key={index}>
-                    <p className="my-2">
+                    <p className="my-2 text-sm">
                 {instruction.text}
             </p>
                 </div>
             ))}
 
-            <div>
+            {questionData.type ==="task-1" ? (<div>
                 <Image
                     src={`/mock_images/${questionData.q_imageURL}`}
                     alt="task 1"
@@ -22,7 +22,7 @@ const WritingTask1 = ({questionData}) => {
                     width={1000}
                     height={500}
                     />
-            </div>
+            </div>) : null}
         </div>
     );
 }

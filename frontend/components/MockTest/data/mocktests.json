@@ -1,6 +1,6 @@
 {
     "reading": {
-        "introduction": "Introduction to IELTS Reading Section",
+        "partName": "Part",
         "parts": [
             {
                 "part_number": 1,
@@ -646,9 +646,11 @@
     },
     "listening": {
         "introduction": "Introduction to IELTS Listening Section",
+        "partName": "Part",
         "parts": [
             {
                 "part_number": 1,
+                
                 "questions": [
                     {
                         "q_id": 1,
@@ -1515,7 +1517,7 @@
         ]
     },
     "writing": {
-        "introduction": "Introduction to IELTS Writing Section",
+        "partName": "Task",
         "parts": [
             {
                 "part_number": 1,

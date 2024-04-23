@@ -3,26 +3,16 @@ import Image from "next/image";
 import mockReadingData from "../data/mocktests.json";
 import QuestionColumn from "../questionColumn";
 
-const MockBody = () => {
-    const [activePart, setActivePart] = useState<number>(1);
-    const MockFooter = ({ fontColor }) => {
-        return (
-            <div className="fixed z-10 w-full py-2 text-center bottom-0 bg-gray-100 text-xl font-semibold shadow-2xl">
-                {/* Tabs to switch between parts */}
-                <div className="tabs flex gap-x-2 justify-between mx-4">
-                    {mockReadingData.listening.parts.map((part) => (
-                        <button
-                            key={part.part_number}
-                            onClick={() => setActivePart(part.part_number)}
-                            className={`${fontColor} w-full text-center border-2 py-1 rounded-xl border-gray-300`}
-                        >
-                            Part {part.part_number}
-                        </button>
-                    ))}
-                </div>
-            </div>
-        );
-    };
+type MockListeningBodyProps = {
+    activePart: number;
+};
+
+interface ListeningTestAudioProps {
+  src: string;  // Source URL of the audio file
+  autoPlay: boolean;  // Automatically play the audio when component mounts
+}
+
+const MockListeningBody = ({activePart}: MockListeningBodyProps) => {
 
     const renderQuestionPart = (partNumber: number) => {
         const partData = mockReadingData.listening.parts.find(
@@ -41,13 +31,6 @@ const MockBody = () => {
         );
     };
 
-
-
-    interface ListeningTestAudioProps {
-      src: string;  // Source URL of the audio file
-      autoPlay: boolean;  // Automatically play the audio when component mounts
-    }
-    
     const ListeningTestAudio: React.FC<ListeningTestAudioProps> = ({ src, autoPlay }) => {
       const audioRef = useRef<HTMLAudioElement>(null);
     
@@ -83,8 +66,8 @@ const MockBody = () => {
             <div className=" border-gray-400 p-4 h-full w-full overflow-auto">
                 {renderQuestionPart(activePart)}
             </div>
-            <MockFooter fontColor="text-green-500" />
+            
         </div>
     );
 };
-export default MockBody;
+export default MockListeningBody;

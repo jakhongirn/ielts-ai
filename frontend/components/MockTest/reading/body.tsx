@@ -1,10 +1,13 @@
-import React, { useState  } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import MultiReadingPassage from "./multi-reading-passage";
 import mockReadingData from "../data/mocktests.json";
 import QuestionColumn from "../questionColumn";
 
-const MockBody = () => {
+type MockReadingBodyProps = {
+    activePart: number;
+};
+
+const MockReadingBody = ({ activePart }: MockReadingBodyProps) => {
     const [leftWidth, setLeftWidth] = useState("50%"); // Initial width as a string
     const [isDragging, setIsDragging] = useState(false);
 
@@ -29,9 +32,7 @@ const MockBody = () => {
         document.addEventListener("mouseup", stopResize);
     };
 
-    const [activePart, setActivePart] = useState<number>(1);
-
-    const renderReadingPart = (partNumber: number) => {
+    const renderLeftColumn = (partNumber: number) => {
         const partData = mockReadingData.reading.parts.find(
             (part) => part.part_number === partNumber
         );
@@ -76,11 +77,17 @@ const MockBody = () => {
                             {partData.title}
                         </h1>
                         {partData.paragraphs.map((paragraph, idx) => (
-                            <MultiReadingPassage
-                                key={idx}
-                                title={paragraph.title}
-                                content={paragraph.content}
-                            />
+                            <div id="multi-reading-passage" key={idx}>
+                                <h1
+                                    id="reading-par-title"
+                                    className="text-lg font-semibold mt-2 mb-1"
+                                >
+                                    {paragraph.title}
+                                </h1>
+                                <p className="text-sm mb-4">
+                                    {paragraph.content}
+                                </p>
+                            </div>
                         ))}
                     </div>
                 </div>
@@ -88,7 +95,7 @@ const MockBody = () => {
         );
     };
 
-    const renderQuestionPart = (partNumber: number) => {
+    const renderRightColumn = (partNumber: number) => {
         const partData = mockReadingData.reading.parts.find(
             (part) => part.part_number === partNumber
         );
@@ -97,28 +104,8 @@ const MockBody = () => {
             return <p>Part not found.</p>;
         }
 
-        return <QuestionColumn questionData={partData} fontColor="text-red-500"/>;
-    };
-
-   
-    const MockFooter = ({fontColor}) => {
         return (
-            <div className="fixed z-10 w-full py-2 text-center bottom-0 bg-gray-100 text-xl font-semibold shadow-2xl">
-                {/* Tabs to switch between parts */}
-                <div className="tabs flex gap-x-2 justify-between mx-4">
-                    {mockReadingData.reading.parts.map((part, index) => (
-                        
-                            <button
-                            key={index}
-                            onClick={() => setActivePart(part.part_number)}
-                            className={`${fontColor} w-full text-center border-2 py-1 rounded-xl border-gray-300`}
-                        >
-                            Part {part.part_number}
-                        </button>
-                        
-                    ))}
-                </div>
-            </div>
+            <QuestionColumn questionData={partData} fontColor="text-red-500" />
         );
     };
 
@@ -134,7 +121,7 @@ const MockBody = () => {
                         <div>
                             <div className="reading-part-content">
                                 {/* Render the active part based on the current state */}
-                                {renderReadingPart(activePart)}
+                                {renderLeftColumn(activePart)}
                             </div>
                         </div>
                     </div>
@@ -149,12 +136,11 @@ const MockBody = () => {
                     style={{ width: `calc(100% - ${leftWidth})` }}
                     className=" border-gray-400 p-4 h-full overflow-auto"
                 >
-                    {renderQuestionPart(activePart)}
+                    {renderRightColumn(activePart)}
                 </div>
             </div>
-            <MockFooter fontColor="text-red-500"/>
         </>
     );
 };
 
-export default MockBody;
+export default MockReadingBody;

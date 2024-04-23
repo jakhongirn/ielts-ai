@@ -1,8 +1,12 @@
 import React from "react";
-import Timer from "../timer";
+import Timer from "./timer";
 
+type HeaderPropsType = {
+    duration: number;
+    fontColor: string;
+}
 
-const MockHeader = () => {
+const MockHeader = ({duration, fontColor}:HeaderPropsType) => {
     return (
         <div>
             <div className="w-full px-8 py-4 bg-white shadow-md flex justify-between fixed z-10">
@@ -11,8 +15,8 @@ const MockHeader = () => {
                 </div>
                 <div>
                     <Timer
-                        duration={60}
-                        fontColor="text-blue-500"
+                        duration={duration}
+                        fontColor={fontColor}
                         onTimeUp={() => {
                             console.log("Time is up!");
                         }}
@@ -20,7 +24,7 @@ const MockHeader = () => {
                 </div>
 
                 <div>
-                    <button className="bg-blue-500 px-3 py-1 text-white rounded-xl">
+                    <button className={`${fontColor}px-3 py-1 text-white rounded-xl`}>
                         Submit
                     </button>
                 </div>
