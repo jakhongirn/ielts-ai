@@ -650,7 +650,6 @@
         "parts": [
             {
                 "part_number": 1,
-                
                 "questions": [
                     {
                         "q_id": 1,
@@ -719,7 +718,8 @@
                                 "text": "Which TWO of the following are true of Drucker’s views?"
                             }
                         ],
-                        "answers": [
+                        "max-selection": 2,
+                        "options": [
                             {
                                 "q_id": "A",
                                 "q_text": "High-rank executives and workers should be put in balanced positions in management practice"
@@ -1523,7 +1523,6 @@
                 "part_number": 1,
                 "type":"task-1",
                 "q_id": 1,
-                "q_numbers": "1-5",
                 "q_instructions": [
                     {
                         "text": "You should spend about 20 minutes on this task."
@@ -1548,7 +1547,6 @@
 
                 "q_id": 1,
                 "type": "task-2",
-                "q_numbers": "1-5",
                 "q_instructions": [
                     {
                         "text": "You should spend about 40 minutes on this task."

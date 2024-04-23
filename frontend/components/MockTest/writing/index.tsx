@@ -3,7 +3,7 @@
 import React from 'react'
 import MockHeader from '../header';
 import MockBody from './body';
-import { useState, useCallback } from 'react';
+import { useState } from 'react';
 import MockFooter from '../footer';
 
 const WritingSection = () => {

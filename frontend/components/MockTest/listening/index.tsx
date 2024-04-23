@@ -1,5 +1,4 @@
 'use client';
-
 import React from 'react'
 import MockBody from './body';
 import { useState, useCallback } from 'react';
