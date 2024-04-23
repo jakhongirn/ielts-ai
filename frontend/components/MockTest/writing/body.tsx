@@ -111,6 +111,7 @@ const MockWritingBody = ({activePart}: MockWritingBodyProps) => {
         );
     };
 
+
     return (
         <>
             <div className="pt-16 pb-12 flex w-full h-screen">
@@ -141,6 +142,7 @@ const MockWritingBody = ({activePart}: MockWritingBodyProps) => {
                     <RenderRightColumn />
                 </div>
             </div>
+            <MockFooter fontColor="text-red-500" />
         </>
     );
 };
