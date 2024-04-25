@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useFormContext } from 'react-hook-form';
 
 interface SentencePart {
-  inputId?: string;
+  inputId: string;
   correctAnswer?: string;
 }
 
-const SentenceCompletion = ({question}: any) => {
-  const [answers, setAnswers] = useState<{ [key: string]: string }>({});
-
-  const handleInputChange = (inputId: string, value: string) => {
-    setAnswers((prevAnswers) => ({
-      ...prevAnswers,
-      [inputId]: value
-    }));
+interface SentenceCompletionProps {
+  question: {
+    sentences: Array<{
+      parts: Array<string | SentencePart>;
+    }>;
   };
+}
 
-  
+const SentenceCompletion: React.FC<SentenceCompletionProps> = ({ question }) => {
+  const { register } = useFormContext();
 
   return (
     <div className="py-2">
@@ -30,14 +30,14 @@ const SentenceCompletion = ({question}: any) => {
                 </span>
               );
             } else {
+              const inputId = `user_answers.${part.inputId}`;
               return (
                 <input
                   key={key}
                   type="text"
+                  {...register(inputId)} // Register input with react-hook-form
                   placeholder={part.inputId}
-                  value={answers[part.inputId || ''] || ''}
-                  onChange={(e) => handleInputChange(part.inputId || '', e.target.value)}
-                  className="inline border-2 mx-1 rounded-lg border-gray-300 focus:border-blue-500 outline-none placeholder-center"
+                  className="inline border-2 mx-1 rounded-lg border-gray-300 focus:border-blue-500 outline-none text-center"
                   style={{ width: '120px' }}
                 />
               );

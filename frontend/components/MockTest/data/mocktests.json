@@ -603,43 +603,8 @@
                         "answers": 6,
                         "q_start": 40,
                         "q_end": 45
-                    },
-                    {
-                        "q_id": 4,
-                        "type": "sentence-completion",
-                        "q_numbers": "39-40",
-                        "q_instructions": [
-                            {
-                                "text": "Complete the sentences below."
-                            },
-                            {
-                                "text": "Use NO MORE THAN THREE WORDS from the passage for each blank space."
-                            },
-                            {
-                                "text": "Write your answers in boxes 39-40 on your answer sheet."
-                            }
-                        ],
-                        "sentences": [
-                            {
-                                "parts": [
-                                    "What did Sereno and Garcea produce in the initial weeks before digging work?",
-                                    {
-                                        "inputId": "46",
-                                        "correctAnswer": "some_answer"
-                                    }
-                                ]
-                            },
-                            {
-                                "parts": [
-                                    "Big businesses would have us believe that we are making too much fuss about global warming, because they have",
-                                    {
-                                        "inputId": "40",
-                                        "correctAnswer": "some_answer"
-                                    }
-                                ]
-                            }
-                        ]
                     }
+                    
                 ]
             }
         ]

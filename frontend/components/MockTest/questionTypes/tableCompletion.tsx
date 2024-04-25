@@ -1,7 +1,9 @@
 import React from "react";
 import Image from "next/image";
+import { useFormContext } from 'react-hook-form';
 
 const TableCompletion = ({ question }: any) => {
+    const { register } = useFormContext();
     return (
         <div>
             <Image
@@ -18,6 +20,7 @@ const TableCompletion = ({ question }: any) => {
                         {index + Number(question.q_start)}.
                     </p>
                     <input
+                    {...register(`user_answers.${index + Number(question.q_start)}`)}
                     key={index}
                     type="text"
                     
