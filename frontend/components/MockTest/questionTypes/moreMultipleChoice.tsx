@@ -1,24 +1,25 @@
 import React from 'react';
 import { useFormContext } from 'react-hook-form';  // Import useFormContext to access form methods
 
-const MoreMultipleChoice = ({ question }: any) => {
+const MoreMultipleChoice = ({ question }) => {
     const { register } = useFormContext();  // Use useFormContext to access `register`
 
     return (
         <div>
             <div className="flex flex-col space-y-2">
-                {question.question_texts?.map((answer: any, idx: number) => (
+                {question.choices?.map((choice, idx) => (
                     <div key={idx} className="flex justify-start items-center gap-x-2">
-                        <p className="font-bold w-5">{answer.q_id}.</p>
+                        <p className="font-bold w-5">{choice.q_id}.</p>
                         <div className="w-full flex items-center">
                             <input
                                 type="checkbox"
-                                {...register(`options.${answer.q_id}`)}  // Use register to integrate input with form
-                                id={`option-${answer.q_id}`}
+                                {...register(`user_answers.${question.q_numbers}`)}
+                                value={choice.q_id}  // Set the value attribute to the choice ID
+                                id={`option-${choice.q_id}`}
                                 className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
                             />
-                            <label htmlFor={`option-${answer.q_id}`} className="ml-2 w-full">{answer.q_text}</label>
                         </div>
+                            <label htmlFor={choice.q_id} className="ml-2 w-full">{choice.q_text}</label>
                     </div>
                 ))}
             </div>

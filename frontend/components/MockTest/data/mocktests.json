@@ -122,7 +122,7 @@
                         ]
                     },
                     {
-                        "q_id": 3,
+                        "q_id": 4,
                         "type": "multiple-choice-more",
                         "q_numbers": "11-12",
                         "q_instructions": [
@@ -130,13 +130,13 @@
                                 "text": "Choose TWO letters from A-E."
                             },
                             {
-                                "text": "Write your answers in boxes 12 and 13 on your answer sheet."
+                                "text": "Write your answers in boxes 11 and 12 on your answer sheet."
                             },
                             {
                                 "text": "Which TWO of the following are true of Drucker’s views?"
                             }
                         ],
-                        "question_texts": [
+                        "choices": [
                             {
                                 "q_id": "A",
                                 "q_text": "High-rank executives and workers should be put in balanced positions in management practice"
@@ -160,7 +160,7 @@
                         ]
                     },
                     {
-                        "q_id": 4,
+                        "q_id": 3,
                         "type": "multiple-choice-more",
                         "q_numbers": "13-14",
                         "q_instructions": [
@@ -168,14 +168,13 @@
                                 "text": "Choose TWO letters from A-E."
                             },
                             {
-                                "text": "Write your answers in boxes 12 and 13 on your answer sheet."
+                                "text": "Write your answers in boxes 13 and 14 on your answer sheet."
                             },
                             {
-                                "text": "Which TWO of the following are mentioned in the passage as criticisms to Drucker and his views?"
+                                "text": "Which TWO of the following are true of Drucker’s views?"
                             }
                         ],
-
-                        "question_texts": [
+                        "choices": [
                             {
                                 "q_id": "A",
                                 "q_text": "High-rank executives and workers should be put in balanced positions in management practice"
