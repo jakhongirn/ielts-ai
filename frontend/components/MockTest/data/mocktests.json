@@ -136,7 +136,7 @@
                                 "text": "Which TWO of the following are true of Drucker’s views?"
                             }
                         ],
-                        "answers": [
+                        "question_texts": [
                             {
                                 "q_id": "A",
                                 "q_text": "High-rank executives and workers should be put in balanced positions in management practice"
@@ -384,7 +384,6 @@
                 "questions": [
                     {
                         "q_id": 99,
-                        "q_numbers": "28-32",
                         "q_instructions": [
                             {
                                 "text": "Choose the appropriate letters A-D"
@@ -393,6 +392,7 @@
                                 "text": "Write a theme in Boxes 28-32 on your answer sheet."
                             }
                         ],
+                        "q_numbers": "28-32",
                         "type": "multiple-choice-one",
                         "question_choices": [
                             {
