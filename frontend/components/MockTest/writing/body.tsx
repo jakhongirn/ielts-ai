@@ -142,7 +142,7 @@ const MockWritingBody = ({activePart}: MockWritingBodyProps) => {
                     <RenderRightColumn />
                 </div>
             </div>
-            <MockFooter fontColor="text-red-500" />
+            
         </>
     );
 };
