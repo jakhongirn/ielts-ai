@@ -18,8 +18,9 @@ const MoreMultipleChoice = ({ question }) => {
                                 id={`option-${choice.q_id}`}
                                 className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
                             />
-                        </div>
                             <label htmlFor={choice.q_id} className="ml-2 w-full">{choice.q_text}</label>
+                        </div>
+                            
                     </div>
                 ))}
             </div>
