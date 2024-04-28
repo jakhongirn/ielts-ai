@@ -7,6 +7,9 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework import status
 from rest_framework_simplejwt.views import TokenObtainPairView
 from .serializers import CustomTokenObtainPairSerializer
+from rest_framework_simplejwt.exceptions import TokenError
+from rest_framework.exceptions import ValidationError
+
 
 
 class DemoView(APIView):
@@ -49,3 +52,14 @@ class LogoutView(APIView):
 
 class CustomTokenView(TokenObtainPairView):
     serializer_class = CustomTokenObtainPairSerializer
+
+class MyTokenObtainPairView(TokenObtainPairView):
+    def post(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        
+        try:
+            serializer.is_valid(raise_exception=True)
+        except TokenError as e:
+            raise ValidationError('Token is invalid or expired')
+        
+        return Response(serializer.validated_data, status=status.HTTP_200_OK)
