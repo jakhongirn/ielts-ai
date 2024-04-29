@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     "authentication.apps.AuthenticationConfig",
     #Mock test app 
     "mocktest",
+    "ai_integration",
     # Third-party apps
     "rest_framework",
     "rest_framework_simplejwt",

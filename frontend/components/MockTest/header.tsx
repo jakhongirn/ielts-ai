@@ -25,9 +25,9 @@ const MockHeader = ({duration, fontColor, bgColor}:HeaderPropsType) => {
                 </div>
 
                 <div>
-                    <button className={`${bgColor} px-3 py-1 text-white rounded-xl`}>
-                        Submit
-                    </button>
+                    <input type="submit"  className={`${bgColor} px-3 py-1 text-white rounded-xl`} />
+                    
+                    
                 </div>
             </div>
         </div>

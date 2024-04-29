@@ -6,6 +6,7 @@ import MockBody from "./body";
 import { useState } from "react";
 import MockFooter from "../footer";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
+import axios from "axios";
 
 type UserAnswerData = {
     task1: string;
@@ -26,8 +27,16 @@ const WritingSection = () => {
     const methods = useForm<UserAnswerData>();
 
     const onSubmit: SubmitHandler<UserAnswerData> = async (data, e) => {
-        e?.preventDefault();
         console.log(data);
+        try {
+            const response = await axios.post(
+                `${process.env.NEXT_PUBLIC_API_URL}/prompt/`,
+                data
+            );
+            console.log("API Response:", response.data);
+        } catch (error) {
+            console.error("Error submitting data to API:", error);
+        }
     };
     const [activePart, setActivePart] = useState<number>(1);
     return (
@@ -40,13 +49,13 @@ const WritingSection = () => {
                         fontColor="text-blue-500"
                     />
                     <MockBody activePart={activePart} />
-                    <MockFooter
-                        section="writing"
-                        fontColor="text-blue-500"
-                        setActivePart={setActivePart}
-                    />
                 </form>
             </FormProvider>
+            <MockFooter
+                section="writing"
+                fontColor="text-blue-500"
+                setActivePart={setActivePart}
+            />
         </div>
     );
 };
