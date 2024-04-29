@@ -4,10 +4,7 @@ import Image from "next/image";
 import React from "react";
 
 const Contact = () => {
-  /**
-   * Source: https://www.joshwcomeau.com/react/the-perils-of-rehydration/
-   * Reason: To fix rehydration error
-   */
+
   const [hasMounted, setHasMounted] = React.useState(false);
   React.useEffect(() => {
     setHasMounted(true);
@@ -182,7 +179,7 @@ const Contact = () => {
                 <h4 className="mb-4 text-metatitle3 font-medium text-black dark:text-white">
                   Our Loaction
                 </h4>
-                <p>290 Maryam Springs 260, Courbevoie, Paris, France</p>
+                <p>Tashkent, Uzbekistan</p>
               </div>
               <div className="5 mb-7">
                 <h4 className="mb-4 text-metatitle3 font-medium text-black dark:text-white">
@@ -197,7 +194,7 @@ const Contact = () => {
                   Phone Number
                 </h4>
                 <p>
-                  <a href="#">+009 42334 6343 843</a>
+                  <a href="#">+998 90 123 45 67</a>
                 </p>
               </div>
             </motion.div>

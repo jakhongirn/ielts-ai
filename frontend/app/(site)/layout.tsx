@@ -26,11 +26,7 @@ export default function RootLayout({
           showSpinner={false}
           shadow="none"
         />
-        <ThemeProvider
-          enableSystem={false}
-          attribute="class"
-          defaultTheme="light"
-        >
+        
           <AuthProvider>
             <Header />
             <ToasterContext />
@@ -38,7 +34,7 @@ export default function RootLayout({
             <Footer />
             <ScrollToTop />
           </AuthProvider>
-        </ThemeProvider>
+        
       </body>
     </html>
   );

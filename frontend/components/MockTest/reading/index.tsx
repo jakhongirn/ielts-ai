@@ -10,7 +10,7 @@ const ReadingSection = () => {
 
     return (
         <div className="mock-test">
-            <MockHeader fontColor="text-red-500" duration={60} />
+            <MockHeader fontColor="text-red-500" bgColor="bg-red-500" duration={60} />
             <MockBody activePart={activePart} />
             <MockFooter
                 fontColor="text-red-500"

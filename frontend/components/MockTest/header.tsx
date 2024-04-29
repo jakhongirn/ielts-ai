@@ -4,9 +4,10 @@ import Timer from "./timer";
 type HeaderPropsType = {
     duration: number;
     fontColor: string;
+    bgColor: string;
 }
 
-const MockHeader = ({duration, fontColor}:HeaderPropsType) => {
+const MockHeader = ({duration, fontColor, bgColor}:HeaderPropsType) => {
     return (
         <div>
             <div className="w-full px-8 py-4 bg-white shadow-md flex justify-between fixed z-10">
@@ -24,7 +25,7 @@ const MockHeader = ({duration, fontColor}:HeaderPropsType) => {
                 </div>
 
                 <div>
-                    <button className={`${fontColor}px-3 py-1 text-white rounded-xl`}>
+                    <button className={`${bgColor} px-3 py-1 text-white rounded-xl`}>
                         Submit
                     </button>
                 </div>

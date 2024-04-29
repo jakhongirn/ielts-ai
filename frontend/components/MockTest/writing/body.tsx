@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import mockWritingData from "../data/mocktests.json";
-import { useForm } from "react-hook-form";
+import { useForm, useFormContext } from "react-hook-form";
 
 type MockWritingBodyProps = {
     activePart: number;
 };
 
-const MockWritingBody = ({activePart}: MockWritingBodyProps) => {
+const MockWritingBody = ({ activePart }: MockWritingBodyProps) => {
     const [leftWidth, setLeftWidth] = useState("50%"); // Initial width as a string
     const [isDragging, setIsDragging] = useState(false);
 
@@ -31,6 +31,7 @@ const MockWritingBody = ({activePart}: MockWritingBodyProps) => {
         document.addEventListener("mousemove", doResize);
         document.addEventListener("mouseup", stopResize);
     };
+    
 
     const renderLeftColumn = (partNumber: number) => {
         const task = mockWritingData.writing.parts?.find(
@@ -74,29 +75,48 @@ const MockWritingBody = ({activePart}: MockWritingBodyProps) => {
     };
 
     const RenderRightColumn: React.FC = () => {
-        const {
-            register,
-            watch,
-            formState: { errors },
-        } = useForm<{ essay: string }>({
-            defaultValues: {
-                essay: "",
-            },
-        });
-
+        const {register, formState: {errors}} = useFormContext();
+        
+        // const {
+        //     register,
+        //     watch,
+        //     formState: { errors },
+        // } = useForm<{ essay: string }>({
+        //     defaultValues: {
+        //         essay: "",
+        //     },
+        // });
         // Watch the essay field and calculate word count
-        const essayText = watch("essay");
-        const wordCount = essayText.split(/\s+/).filter((word) => word).length;
+        // const essayText = watch("essay");
+        // const wordCount = essayText?.split(/\s+/).filter((word) => word).length;
 
+        const [essayText, setEssayText] = useState<string>("");
+        const [wordCount, setWordCount] = useState<number>(0);
+
+        const handleEssayChange = (e) => {
+            setEssayText(e.target.value);
+            
+        }
+
+        useEffect(() => {
+            const countWords = (text: string) => {
+                return text.split(/\s+/).filter((word) => word).length;
+            };
+            setWordCount(countWords(essayText));
+        }, [essayText]);
+
+        const taskEssay = `task-${activePart}`
         return (
-            <form className="flex flex-col items-end p-4">
+            <div className="flex flex-col items-end p-4">
                 <textarea
-                    {...register("essay", { required: true })}
+                    {...register(taskEssay, { required: true })}
                     className={`w-full h-[440px] p-2 text-sm  border-2 ${
                         errors.essay ? "border-red-500" : "border-gray-300"
                     } shadow-inner mb-4 resize-none focus:outline-none focus:shadow-outline`}
                     placeholder="Type your essay here..."
                     aria-label="Essay text area"
+                    value={essayText}
+                    onChange={handleEssayChange}
                 />
                 {errors.essay && (
                     <p className="text-red-500 text-xs mb-4">
@@ -107,10 +127,9 @@ const MockWritingBody = ({activePart}: MockWritingBodyProps) => {
                     Words Count: {wordCount}
                 </div>
                 {/* Additional elements like navigation buttons can be added here */}
-            </form>
+            </div>
         );
     };
-
 
     return (
         <>
@@ -142,7 +161,6 @@ const MockWritingBody = ({activePart}: MockWritingBodyProps) => {
                     <RenderRightColumn />
                 </div>
             </div>
-            
         </>
     );
 };

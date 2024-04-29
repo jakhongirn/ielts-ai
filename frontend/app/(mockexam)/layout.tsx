@@ -18,18 +18,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`dark:bg-black ${inter.className}`}>
+      <body className={inter.className}>
         <NextTopLoader
           color="#006BFF"
           crawlSpeed={300}
           showSpinner={false}
           shadow="none"
         />
-        <ThemeProvider
-          enableSystem={false}
-          attribute="class"
-          defaultTheme="light"
-        >
+        
           <AuthProvider>
             
             <ToasterContext />
@@ -37,7 +33,7 @@ export default function RootLayout({
             
             <ScrollToTop />
           </AuthProvider>
-        </ThemeProvider>
+        
       </body>
     </html>
   )
