@@ -13,8 +13,8 @@ import Contact from "@/components/Contact";
 import Testimonial from "@/components/Testimonial";
 
 export const metadata: Metadata = {
-  title: "Next.js Starter Template for SaaS Startups - Solid SaaS Boilerplate",
-  description: "This is Home for Solid Pro",
+  title: "Examiner.uz",
+  description: "AI powered exam preparation platform",
   // other metadata
 };
 
@@ -25,7 +25,7 @@ export default function Home() {
       <Brands />
       <Feature />
       <About />
-      <FeaturesTab />
+      
       <FunFact />
       <Integration />
       <CTA />

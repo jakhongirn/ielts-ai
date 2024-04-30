@@ -51,7 +51,7 @@ export const PricingItem = ({ price }) => {
           currency: "USD",
         })}
         <span className="text-regular text-waterloo dark:text-manatee">
-          /month
+          
         </span>
 
         {/* {price.id} */}
@@ -65,48 +65,48 @@ export const PricingItem = ({ price }) => {
         {price.nickname === "Small" && (
           <ul>
             <li className="mb-4 text-black last:mb-0 dark:text-manatee">
-              300 GB Storage
+              2 Full Mock exams
             </li>
             <li className="mb-4 text-black last:mb-0 dark:text-manatee">
-              Unlimited Photos and Videos
+              Full 2 AI feedback
             </li>
             <li className="mb-4 text-black opacity-40 last:mb-0 dark:text-manatee">
-              Exclusive Support
+              Progress Tracking
             </li>
             <li className="mb-4 text-black opacity-40 last:mb-0 dark:text-manatee">
-              Custom Branding Strategy
+              
             </li>
           </ul>
         )}
         {price.nickname === "Medium" && (
           <ul>
             <li className="mb-4 text-black last:mb-0 dark:text-manatee">
-              300 GB Storage
+            7 Full Mock exams
             </li>
             <li className="mb-4 text-black last:mb-0 dark:text-manatee">
-              Unlimited Photos and Videos
+              7 Full AI feedback
             </li>
             <li className="mb-4 text-black last:mb-0 dark:text-manatee">
-              Exclusive Support
+              Writing Corrections
             </li>
             <li className="mb-4 text-black opacity-40 last:mb-0 dark:text-manatee">
-              Custom Branding Strategy
+              Progress Tracking
             </li>
           </ul>
         )}
         {price.nickname === "Large" && (
           <ul>
             <li className="mb-4 text-black last:mb-0 dark:text-manatee">
-              300 GB Storage
+              30 Full Mock Exams 
             </li>
             <li className="mb-4 text-black last:mb-0 dark:text-manatee">
-              Unlimited Photos and Videos
+              35 Full AI deep feedback 
             </li>
             <li className="mb-4 text-black last:mb-0 dark:text-manatee ">
-              Exclusive Support
+              Deep writing corrections
             </li>
             <li className="mb-4 text-black last:mb-0 dark:text-manatee ">
-              Custom Branding Strategy
+              Personalized Learning
             </li>
           </ul>
         )}
