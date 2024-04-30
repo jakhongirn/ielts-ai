@@ -12,12 +12,23 @@ from rest_framework.exceptions import ValidationError
 
 
 
-class DemoView(APIView):
+class UserDetailView(APIView):
     permission_classes = (IsAuthenticated,)
-
     def get(self, request):
-        content = {"message": "Hello world!"}
-        return Response(content)
+        # The request.user will be set to the authenticated user
+        # by the JWTAuthentication middleware if the token is valid
+        user = request.user
+        if not user.is_anonymous:
+            user_data = {
+                "username": user.username,
+                "email": user.email,
+                "first_name": user.first_name,
+                "last_name": user.last_name,
+                # You can add more fields as needed
+            }
+            return Response(user_data, status=status.HTTP_200_OK)
+        return Response({"error": "Not authenticated"}, status=status.HTTP_400_BAD_REQUEST)
+
 
 
 class SignUpView(APIView):
