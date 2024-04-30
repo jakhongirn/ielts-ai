@@ -1,5 +1,4 @@
-"use client";
-
+'use client';
 import React from "react";
 import MockHeader from "../header";
 import MockBody from "./body";
@@ -7,6 +6,7 @@ import { useState } from "react";
 import MockFooter from "../footer";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 type UserAnswerData = {
     task1: string;
@@ -23,19 +23,31 @@ const WritingSection = () => {
     //         essay: "",
     //     },
     // });
+    const [loading, setLoading] = useState(false);
+    const router = useRouter();
 
     const methods = useForm<UserAnswerData>();
 
     const onSubmit: SubmitHandler<UserAnswerData> = async (data, e) => {
+        setLoading(true);
         console.log(data);
+
         try {
             const response = await axios.post(
                 `${process.env.NEXT_PUBLIC_API_URL}/prompt/`,
                 data
             );
-            console.log("API Response:", response.data);
+            data = response.data;
+            console.log("API Response:", data);
+            setLoading(false);
+
+            if (data?.id) {
+              window.location.href = `/feedback?promptId=${data.id}`
+            }
+            router.push("/feedback");
         } catch (error) {
             console.error("Error submitting data to API:", error);
+            setLoading(false);
         }
     };
     const [activePart, setActivePart] = useState<number>(1);

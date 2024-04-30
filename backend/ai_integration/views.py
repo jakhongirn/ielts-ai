@@ -4,6 +4,9 @@ from rest_framework.response import Response
 from .serializers import EssayInputSerializer
 import anthropic
 import os
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import csrf_exempt
+
 from dotenv import load_dotenv
 from .testInput import base64_image, system_input
 
@@ -12,6 +15,7 @@ load_dotenv()
 api_key = os.getenv("CLAUDE_API_KEY")
 client = anthropic.Anthropic(api_key=api_key)
 
+@method_decorator(csrf_exempt, name='dispatch') 
 class EssayPromptView(APIView):
     def post(self, request, *args, **kwargs):
         serializer = EssayInputSerializer(data=request.data)
