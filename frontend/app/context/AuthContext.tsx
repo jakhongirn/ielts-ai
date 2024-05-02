@@ -18,6 +18,7 @@ interface AuthContextType {
     login: (email: string, password: string) => Promise<void>;
     logout: () => void;
     isAuthenticated: boolean;
+    setIsAuthenticated: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -36,7 +37,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
             axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
             fetchUserDetails(); // Fetch user details on initial load
         }
-      }, []);
+        else {
+            setIsAuthenticated(false);
+        }
+      }, [window.sessionStorage.getItem('token')]);
     
       const fetchUserDetails = async () => {
         try {
@@ -57,6 +61,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
             const { access } = response.data;
             window.sessionStorage.setItem('token', access)
             await fetchUserDetails();
+            setIsAuthenticated(true);
         } catch (error) {
             console.error("Login failed:", error);
         }
@@ -70,7 +75,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     };
 
     return (
-        <AuthContext.Provider value={{ user, login, logout, isAuthenticated }}>
+        <AuthContext.Provider value={{ user, login, logout, isAuthenticated, setIsAuthenticated }}>
             {children}
         </AuthContext.Provider>
     );

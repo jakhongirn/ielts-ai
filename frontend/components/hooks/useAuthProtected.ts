@@ -2,13 +2,16 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/app/context/AuthContext'; // Assuming you have a useAuth hook
+import { set } from 'react-hook-form';
 
 const useAuthProtected = () => {
-    const { isAuthenticated } = useAuth();
+    const { isAuthenticated, setIsAuthenticated } = useAuth();
     const router = useRouter();
 
     useEffect(() => {
-        if (!isAuthenticated) {
+        const token = window.sessionStorage.getItem('token');
+        setIsAuthenticated(!!token);
+        if (!token) {
             // Redirect them to the login page
             router.push('/auth/login');
         }
