@@ -1,13 +1,12 @@
 "use client";
 
 import ScrollToTop from "@/components/ScrollToTop";
-import { ThemeProvider } from "next-themes";
 import { Inter } from "next/font/google";
 import "../globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 import NextTopLoader from "nextjs-toploader";
-import AuthProvider from "../context/AuthContext";
+import { AuthProvider } from "../context/AuthContext";
 import ToasterContext from "../context/ToastContext";
 
 

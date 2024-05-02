@@ -46,6 +46,6 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
         data = super().validate(attrs)
 
         # Add custom data to the response
-        data.update({'username': user.username, 'email': user.email})
+        data.update({'username': user.username, 'first_name': user.first_name, 'email': user.email})
 
         return data

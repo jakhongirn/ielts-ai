@@ -12,7 +12,7 @@ const Feedback = () => {
       const promptId = queryParams.get('promptId');
       
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/prompt/`);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API}/prompt/`);
         const data = await res.json();
         setResponse(data);
       } catch (error) {

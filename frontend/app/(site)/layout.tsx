@@ -9,8 +9,9 @@ import "../globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 import NextTopLoader from "nextjs-toploader";
-import AuthProvider from "../context/AuthContext";
+
 import ToasterContext from "../context/ToastContext";
+import { AuthProvider } from "../context/AuthContext";
 
 export default function RootLayout({
   children,
@@ -27,7 +28,7 @@ export default function RootLayout({
           shadow="none"
         />
         
-          <AuthProvider>
+            <AuthProvider>
             <Header />
             <ToasterContext />
             {children}

@@ -93,7 +93,7 @@ const Signin = () => {
                         </h2>
                         <form
                             onSubmit={loginUser}
-                            className={`${isPassword ? "" : "hidden"}`}
+                            className={`${isPassword ? "" : ""}`}
                         >
                             <div className="mb-7.5 flex flex-col gap-7.5 lg:mb-12.5 ">
                                 <input
@@ -129,7 +129,7 @@ const Signin = () => {
                                                 onChange={(e) =>
                                                     setData({
                                                         ...data,
-                                                        remember:
+                                                            remember:
                                                             e.target.checked,
                                                     })
                                                 }

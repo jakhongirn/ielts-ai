@@ -100,16 +100,7 @@ const Signin = () => {
             </h2>
 
             <div className="mx-auto mb-12.5 flex w-3/6 flex-col items-center justify-center gap-1 rounded-lg border border-stroke p-1 dark:border-strokedark md:flex-row">
-              <button
-                className={`w-full rounded-lg px-6 py-3 text-base outline-none transition-all duration-300 hover:border-primary hover:bg-primary/5 hover:text-primary dark:border-transparent dark:bg-[#2C303B] dark:hover:border-primary dark:hover:bg-primary/5 dark:hover:text-primary 
-                dark:hover:shadow-none ${
-                  !isPassword &&
-                  "border bg-primary/5 text-primary dark:border-primary dark:bg-primary/5"
-                }`}
-                onClick={() => setIsPassword(false)}
-              >
-                Magic Link
-              </button>
+              
               <button
                 className={`w-full rounded-lg px-6 py-3 text-base outline-none transition-all duration-300 hover:border-primary hover:bg-primary/5 hover:text-primary dark:border-transparent dark:bg-[#2C303B] dark:hover:border-primary dark:hover:bg-primary/5 dark:hover:text-primary dark:hover:shadow-none ${
                   isPassword &&

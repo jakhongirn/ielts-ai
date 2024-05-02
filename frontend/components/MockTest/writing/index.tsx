@@ -34,7 +34,7 @@ const WritingSection = () => {
 
         try {
             const response = await axios.post(
-                `${process.env.NEXT_PUBLIC_API_URL}/prompt/`,
+                `${process.env.NEXT_PUBLIC_API}/prompt/`,
                 data
             );
             data = response.data;
