@@ -30,17 +30,18 @@ interface AuthProviderProps {
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     const [user, setUser] = useState<User | null>(null);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [token, setToken] = useState<string | null>(() => window.sessionStorage.getItem('token'));
 
     useEffect(() => {
-        const token = window.sessionStorage.getItem('token')
+        axios.defaults.headers.common['Authorization'] = token ? `Bearer ${token}` : '';
         if (token) {
-            axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
             fetchUserDetails(); // Fetch user details on initial load
         }
         else {
             setIsAuthenticated(false);
+            setUser(null)
         }
-      }, [window.sessionStorage.getItem('token')]);
+      }, [token]);
     
       const fetchUserDetails = async () => {
         try {
@@ -49,6 +50,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           setIsAuthenticated(true);
         } catch (error) {
           console.error('Error fetching user details:', error);
+          logout();
         }
       };
 
@@ -60,8 +62,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
             );
             const { access } = response.data;
             window.sessionStorage.setItem('token', access)
-            await fetchUserDetails();
-            setIsAuthenticated(true);
+            setToken(access)
         } catch (error) {
             console.error("Login failed:", error);
         }
@@ -69,9 +70,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
     const logout = () => {
         window.sessionStorage.removeItem('token')
-        setUser(null);
-        setIsAuthenticated(false);
-        delete axios.defaults.headers.common["Authorization"];
+        setToken(null)
     };
 
     return (

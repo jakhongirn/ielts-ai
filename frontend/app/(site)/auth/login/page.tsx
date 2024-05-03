@@ -42,8 +42,8 @@ const Signin = () => {
                 toast.success("Logged in successfully");
                 console.log(response.data);
                 sessionStorage.setItem("token", response.data.access); // Save the token to sessionStorage or cookies
-                router.push("/")
-                // Redirect to homepage
+                window.location.href = "/" // Redirect to homepage
+                //router.push("/"); // Redirect to homepage
             }
         } catch (error) {
             toast.error("Login failed: " + error.response.data.detail);
