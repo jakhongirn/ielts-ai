@@ -12,6 +12,6 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-    matcher: ["/profile/:path*"]
+    matcher: ["/dashboard/:path*"]
     // Apply this middleware only to the /profile route
 };

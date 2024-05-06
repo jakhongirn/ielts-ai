@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import SectionHeader from "../Common/SectionHeader";
 import { PricingItem } from "./PricingItem";
-import { pricingData } from "../../stripe/pricingData";
+import { pricingData } from "./pricingData";
 
 const Pricing = () => {
   return (

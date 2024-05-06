@@ -218,7 +218,7 @@ const Header = () => {
 
                             <div className="menu">
                                
-                                    <Link href="/auth/login">Login</Link>
+                                    <Link href="/auth/login" className="px-4 py-2 bg-primary text-white rounded-full">Login</Link>
                                 
                             </div>
 

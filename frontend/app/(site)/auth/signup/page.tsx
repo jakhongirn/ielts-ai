@@ -1,16 +1,47 @@
-import Signup from "@/components/Auth/Signup";
-import { Metadata } from "next";
+'use client';
+import React from "react";
+import { useForm } from "react-hook-form";
+import { AuthActions } from "@/app/api/auth/utils";
+import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
+import SignUp from "@/components/Auth/Signup";
 
-export const metadata: Metadata = {
-  title: "Sign Up Page - Solid SaaS Boilerplate",
-  description: "This is Sign Up page for Startup Pro",
-  // other metadata
+type FormData = {
+  email: string;
+  username: string;
+  password: string;
 };
 
-export default function Register() {
+const RegisterPage = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    setError,
+  } = useForm<FormData>();
+
+  const router = useRouter();
+
+  const { register: registerUser } = AuthActions(); // Note: Renamed to avoid naming conflict with useForm's register
+
+  const onSubmit = (data: FormData) => {
+    registerUser(data.email, data.username, data.password)
+      .json(() => {
+        toast.success("Registered successfully");
+        router.push("/auth/login/");
+      })
+      .catch((err) => {
+        setError("root", {
+          type: "manual",
+          message: err.json.detail,
+        });
+      });
+  };
+
   return (
-    <>
-      <Signup />
-    </>
+    <SignUp />  
   );
-}
+};
+
+
+export default RegisterPage;
