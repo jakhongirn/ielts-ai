@@ -20,6 +20,9 @@ dotenv.load_dotenv()
 SITE_NAME ="IELTS AI"
 SERVER_IP=os.getenv("SERVER_IP")
 SERVER_DOMAIN=os.getenv("SERVER_DOMAIN")
+DOMAIN_SSL = os.getenv('DOMAIN_SSL')
+DOMAIN_NO_SSL = os.getenv('DOMAIN_NO_SSL')
+DOMAIN_WWW = os.getenv('DOMAIN_WWW')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -34,11 +37,12 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", ]
+ALLOWED_HOSTS = [SERVER_DOMAIN, DOMAIN_SSL, DOMAIN_NO_SSL, DOMAIN_WWW]
+CSRF_TRUSTED_ORIGINS = [DOMAIN_SSL]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000", # Adjust the port if your frontend runs on a different one
+    DOMAIN_SSL,
+    DOMAIN_NO_SSL
 ]
 
 
