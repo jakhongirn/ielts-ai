@@ -1,11 +1,12 @@
-"use client";
-
+import React from 'react'
 import useSWR from "swr";
 import { fetcher } from "@/app/api/auth/fetcher";
 import { AuthActions } from "@/app/api/auth/utils";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";  
+import { Menu } from 'lucide-react';
+import { Dashboard } from './MenuProfile';
 
-export default function Profile() {
+const Profile = () => {
     const router = useRouter();
 
     const { data: user } = useSWR("/auth/users/me", fetcher);
@@ -25,8 +26,9 @@ export default function Profile() {
             });
     };
 
-    return (
-        <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
+  return (
+    <>
+    {/* <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
             <div className="bg-white p-6 rounded-lg shadow-lg w-1/3 text-center">
                 <h1 className="text-2xl font-bold mb-4">
                     Hi, {user?.username}!
@@ -43,6 +45,10 @@ export default function Profile() {
                     Logout
                 </button>
             </div>
-        </div>
-    );
+        </div> */}
+        <Dashboard />
+        </>
+  )
 }
+
+export default Profile

@@ -17,7 +17,7 @@ const menuData: Menu[] = [
     id: 2.3,
     title: "Mock Tests",
     newTab: false,
-    path: "/mock",
+    path: "/profile/mock",
   },
   {
     id: 4,

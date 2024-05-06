@@ -1,13 +1,19 @@
 "use client";
 
 import ScrollToTop from "@/components/ScrollToTop";
-import { Inter } from "next/font/google";
+import { Inter as FontSans } from "next/font/google"
 import "../globals.css";
-const inter = Inter({ subsets: ["latin"] });
+import { cn } from "@/lib/utils"
+
 
 import NextTopLoader from "nextjs-toploader";
 
 import ToasterContext from "../context/ToastContext";
+
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
 
 
 export default function RootLayout({
@@ -17,22 +23,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable
+        )}>
         <NextTopLoader
           color="#006BFF"
           crawlSpeed={300}
           showSpinner={false}
           shadow="none"
         />
-        
-          
-            
             <ToasterContext />
             {children}
-            
             <ScrollToTop />
-          
-        
       </body>
     </html>
   )
