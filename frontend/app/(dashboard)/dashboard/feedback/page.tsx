@@ -32,7 +32,7 @@ const Feedback = () => {
   return (
     <div className="max-w-4xl mx-auto p-6">
       <h1 className="text-2xl font-bold mb-4">AI Response</h1>
-      <p className="text-gray-700 text-lg">{response ? response?.content : 'No response received'}</p>
+      {/* <p className="text-gray-700 text-lg">{response ? response?.content : 'No response received'}</p> */}
     </div>
   );
 };

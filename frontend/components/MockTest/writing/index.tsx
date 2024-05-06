@@ -9,8 +9,9 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 
 type UserAnswerData = {
-    task1: string;
-    task2: string;
+    id: number;
+    task1?: string;
+    task2?: string;
 };
 
 const WritingSection = () => {
@@ -41,7 +42,7 @@ const WritingSection = () => {
             console.log("API Response:", data);
             setLoading(false);
 
-            if (data?.id) {
+            if (data.id) {
               window.location.href = `/feedback?promptId=${data.id}`
             }
             router.push("/feedback");
