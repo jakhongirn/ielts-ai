@@ -1,10 +1,10 @@
 "use client";
-import Profile from "@/components/Profile";
+import { MenuProfile } from "@/components/Profile";
 
 
 export default function ProfilePage() {
     
     return (
-       <Profile />
+       <MenuProfile />
     );
 }

@@ -35,7 +35,7 @@ const Login = () => {
                 storeToken(json.refresh, "refresh");
                 toast.success("Logged in successfully");
                 setIsLoading(false);
-                router.push("/profile/");
+                router.push("/dashboard/");
             })
             .catch((err) => {
                 setIsLoading(false);

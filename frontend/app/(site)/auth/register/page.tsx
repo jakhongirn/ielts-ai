@@ -3,6 +3,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { AuthActions } from "@/app/api/auth/utils";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 type FormData = {
   email: string;
@@ -25,7 +26,8 @@ const RegisterPage = () => {
   const onSubmit = (data: FormData) => {
     registerUser(data.email, data.username, data.password)
       .json(() => {
-        router.push("/profile/");
+        toast.success("Registered successfully");
+        router.push("/auth/login/");
       })
       .catch((err) => {
         setError("root", {
