@@ -1,5 +1,5 @@
 import wretch, { Wretch, WretchError } from "wretch";
-import { AuthActions } from "./api/auth/utils";
+import { AuthActions } from "./utils";
 
 const { handleJWTRefresh, storeToken, getToken } = AuthActions();
 
@@ -11,7 +11,7 @@ const api = () => {
                 const { access } = (await handleJWTRefresh().json()) as {
                     access: string;
                 };
-                console.log(access)
+                console.log(access);
                 storeToken(access, "access");
                 // Replay the original request with the new access token.
 
@@ -21,15 +21,13 @@ const api = () => {
                     .unauthorized((error: WretchError) => {
                         console.error(error);
                         // Handle the error
-                        
                     })
                     .json();
             } catch (err) {
-                console.log(err)
+                console.log(err);
             }
         });
 };
-
 
 export const fetcher = (url: string): Promise<any> => {
     return api().get(url).json();

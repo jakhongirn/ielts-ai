@@ -7,14 +7,14 @@ import { useEffect, useState } from "react";
 import ThemeToggler from "./ThemeToggler";
 import menuData from "./menuData";
 import GlobalSearchModal from "../GlobalSearch";
-import { useAuth } from "@/app/context/AuthContext";
+
 
 const Header = () => {
     const [navigationOpen, setNavigationOpen] = useState(false);
     const [dropdownToggler, setDropdownToggler] = useState(false);
     const [stickyMenu, setStickyMenu] = useState(false);
     const [searchModalOpen, setSearchModalOpen] = useState(false);
-    const { isAuthenticated, user, logout } = useAuth();
+    
     
 
     const pathUrl = usePathname();
@@ -217,16 +217,9 @@ const Header = () => {
                             <ThemeToggler />
 
                             <div className="menu">
-                                {isAuthenticated ? (
-                                    <>
-                                        <span>
-                                            Welcome, {user?.first_name}!
-                                        </span>
-                                        <button onClick={logout}>Logout</button>
-                                    </>
-                                ) : (
+                               
                                     <Link href="/auth/login">Login</Link>
-                                )}
+                                
                             </div>
 
                            

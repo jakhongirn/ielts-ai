@@ -20,7 +20,7 @@ const removeTokens = () => {
 
 //Auth actions
 
-const register = (email: string, password: string, username: string) => {
+const register = (email: string,  username: string, password: string,) => {
     return api.post({ email, username, password }, "/auth/users/");
 };
 
@@ -30,7 +30,7 @@ const login = (email: string, password: string) => {
 
 const logout = () => {
     const refreshToken = getToken("refresh");
-    return api.post({ refresh: refreshToken }, "/auth/logout");
+    return api.post({ refresh: refreshToken }, "/auth/logout/");
 };
 
 const handleJWTRefresh = () => {

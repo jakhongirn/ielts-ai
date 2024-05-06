@@ -2,15 +2,11 @@
 
 import React from "react";
 import Link from "next/link";
-import useAuthProtected from "@/components/hooks/useAuthProtected";
+
 import axios from "axios";
 
 const MockPage = () => {
-    const isAuthenticated = useAuthProtected();
-
-    if (!isAuthenticated) {
-        return <div>Redirecting...</div>;
-    }
+   
     return (
         <div className="mock-test h-screen">
             <h1 className="text-2xl text-center my-5 font-bold">

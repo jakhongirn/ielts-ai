@@ -6,7 +6,7 @@ import "../globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 import NextTopLoader from "nextjs-toploader";
-import { AuthProvider } from "../context/AuthContext";
+
 import ToasterContext from "../context/ToastContext";
 
 
@@ -25,13 +25,13 @@ export default function RootLayout({
           shadow="none"
         />
         
-          <AuthProvider>
+          
             
             <ToasterContext />
             {children}
             
             <ScrollToTop />
-          </AuthProvider>
+          
         
       </body>
     </html>

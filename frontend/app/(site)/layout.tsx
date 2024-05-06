@@ -3,7 +3,6 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
-import { ThemeProvider } from "next-themes";
 import { Inter } from "next/font/google";
 import "../globals.css";
 const inter = Inter({ subsets: ["latin"] });
@@ -11,7 +10,6 @@ const inter = Inter({ subsets: ["latin"] });
 import NextTopLoader from "nextjs-toploader";
 
 import ToasterContext from "../context/ToastContext";
-import { AuthProvider } from "../context/AuthContext";
 
 export default function RootLayout({
   children,
@@ -28,13 +26,13 @@ export default function RootLayout({
           shadow="none"
         />
         
-            <AuthProvider>
+        
             <Header />
             <ToasterContext />
             {children}
             <Footer />
             <ScrollToTop />
-          </AuthProvider>
+          
         
       </body>
     </html>
