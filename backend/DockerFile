@@ -1,0 +1,17 @@
+FROM python:3.11
+
+ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE 1
+
+WORKDIR /ielts-platform/backend
+
+COPY requirements.txt /ielts-platform/backend/
+
+# Install build dependencies for psycopg2 if necessary and clean up build deps
+RUN apk add --no-cache postgresql-dev gcc python3-dev musl-dev && \
+    pip install --no-cache-dir -r requirements.txt && \
+    apk del postgresql-dev gcc python3-dev musl-dev
+
+COPY . /ielts-platform/backend/
+
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "your_project.wsgi:application"]
