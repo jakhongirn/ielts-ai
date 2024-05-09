@@ -13,15 +13,15 @@ const MockPage = () => {
             </h1>
             <div className="flex justify-around h-screen items-center">
                 <div className="border-2 border-red-500 bg-red-500 px-8 py-6 text-2xl rounded-xl hover:bg-transparent text-white hover:text-black duration-300">
-                    <Link href="/mock/reading">Reading Section</Link>
+                    <Link href="/dashboard/mock/reading">Reading Section</Link>
                 </div>
 
                 <div className="border-2 border-green-500 px-8 py-6 text-2xl rounded-xl bg-green-500 hover:bg-transparent hover:text-black text-white duration-300">
-                    <Link href="/mock/listening">Listening Section</Link>
+                    <Link href="/dashboard/mock/listening">Listening Section</Link>
                 </div>
 
                 <div className="border-2 border-blue-500 px-8 py-6 text-2xl rounded-xl bg-blue-500 hover:bg-transparent hover:text-black text-white duration-300">
-                    <Link href="/mock/writing">Writing Section</Link>
+                    <Link href="/dashboard/mock/writing">Writing Section</Link>
                 </div>
             </div>
         </div>
