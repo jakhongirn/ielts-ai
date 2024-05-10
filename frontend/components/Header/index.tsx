@@ -5,16 +5,17 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import ThemeToggler from "./ThemeToggler";
 import menuData from "./menuData";
-
-
+import { useAuth } from "@/app/context/AuthContext";
+import { AuthActions } from "@/app/api/auth/utils";
+import { useRouter } from "next/navigation";
 
 const Header = () => {
     const [navigationOpen, setNavigationOpen] = useState(false);
     const [dropdownToggler, setDropdownToggler] = useState(false);
     const [stickyMenu, setStickyMenu] = useState(false);
     const [searchModalOpen, setSearchModalOpen] = useState(false);
-    
-    
+
+    const { isAuthenticated, user, setIsAuthenticated } = useAuth();
 
     const pathUrl = usePathname();
 
@@ -31,6 +32,23 @@ const Header = () => {
         window.addEventListener("scroll", handleStickyMenu);
     });
 
+    const router = useRouter();
+    const { logout, removeTokens } = AuthActions();
+
+    const handleLogout = () => {
+        logout()
+            .res(() => {
+                removeTokens();
+
+                router.push("/");
+            })
+            .catch(() => {
+                removeTokens();
+                router.push("/");
+            });
+        setIsAuthenticated(false);
+    };
+
     return (
         <>
             <header
@@ -42,11 +60,11 @@ const Header = () => {
             >
                 <div className="relative mx-auto max-w-c-1390 items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0">
                     <div className="flex w-full items-center justify-between xl:w-1/4">
-                        <a href="/">
+                        <Link href="/">
                             <Image
                                 src="/images/logo/logo.png"
                                 alt="logo"
-                                width={119.03}
+                                width={119}
                                 height={30}
                                 className="hidden w-full dark:block"
                             />
@@ -57,7 +75,7 @@ const Header = () => {
                                 height={30}
                                 className="w-full dark:hidden"
                             />
-                        </a>
+                        </Link>
 
                         <button
                             onClick={() => setNavigationOpen(!navigationOpen)}
@@ -214,14 +232,27 @@ const Header = () => {
                             </button>
 
                             <ThemeToggler />
-
-                            <div className="menu">
-                               
-                                    <Link href="/auth/login" className="px-4 py-2 bg-primary text-white rounded-full">Login</Link>
-                                
-                            </div>
-
-                           
+                            {isAuthenticated && user ? (
+                                <div className="flex items-center space-x-4">
+                                    <Link href="/dashboard">
+                                        <button className="hover:underline">
+                                            Welcome, {user.username}!
+                                        </button>
+                                    </Link>
+                                    <button
+                                        onClick={handleLogout}
+                                        className="bg-red-500 px-4 py-2 text-white rounded-full"
+                                    >
+                                        Logout
+                                    </button>
+                                </div>
+                            ) : (
+                                <Link href="/auth/login">
+                                    <button className="px-4 py-2 bg-primary text-white rounded-full">
+                                        Login
+                                    </button>
+                                </Link>
+                            )}
                         </div>
                     </div>
                 </div>

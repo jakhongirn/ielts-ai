@@ -8,6 +8,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import toast from "react-hot-toast";
+import { useAuth } from "@/app/context/AuthContext";
 
 type FormData = {
     email: string;
@@ -23,25 +24,19 @@ const Login = () => {
     } = useForm<FormData>();
 
     const [isLoading, setIsLoading] = useState(false);
+
     const router = useRouter();
 
-    const { login, storeToken } = AuthActions();
+    const { login } = useAuth();
 
     const onSubmit = async (data: FormData) => {
-        setIsLoading(true);
-        await login(data.email, data.password)
-            .json((json) => {
-                storeToken(json.access, "access");
-                storeToken(json.refresh, "refresh");
-                toast.success("Logged in successfully");
-                setIsLoading(false);
-                router.push("/dashboard/");
-            })
-            .catch((err) => {
-                setIsLoading(false);
-                toast.error("Failed login", err.json.detail);
-                setError("root", { type: "manual", message: err.json.detail });
-            });
+        try {
+            await login(data.email, data.password);
+            toast.success("Login successful");
+        } catch (err) {
+            toast.error("Login failed");
+            console.error("Login error:", err);
+        }
     };
 
     return (
