@@ -24,9 +24,6 @@ DOMAIN_SSL = os.getenv("DOMAIN_SSL")
 DOMAIN_NO_SSL = os.getenv("DOMAIN_NO_SSL")
 DOMAIN_WWW = os.getenv("DOMAIN_WWW")
 DEBUG_BOOL = os.getenv("DEBUG")
-SERVER_HOST = os.getenv("SERVER_HOST")
-LOCALHOST = os.getenv("LOCALHOST")
-CLIENT_HOST = os.getenv("CLIENT_HOST")
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -41,20 +38,20 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = DEBUG_BOOL
 
 ALLOWED_HOSTS = [
+    "localhost",
+    "http://127.0.0.1",
+    "http://localhost",
     SERVER_IP,
     SERVER_DOMAIN,
     DOMAIN_SSL,
     DOMAIN_NO_SSL,
     DOMAIN_WWW,
-    "localhost",
-    LOCALHOST,
-    CLIENT_HOST,
+    
 ]
 CSRF_TRUSTED_ORIGINS = [
-    SERVER_HOST,
     DOMAIN_SSL,
     DOMAIN_NO_SSL,
-    CLIENT_HOST,
+    DOMAIN_WWW,
     "http://localhost:3000",
     "http://localhost:8000",
     "http://127.0.0.1",
@@ -62,14 +59,13 @@ CSRF_TRUSTED_ORIGINS = [
 
 
 CORS_ALLOWED_ORIGINS = [
-    SERVER_HOST,
     DOMAIN_SSL,
     DOMAIN_NO_SSL,
     DOMAIN_WWW,
-    CLIENT_HOST,
     "http://localhost:8000",
     "http://localhost:3000",
     "http://127.0.0.1",
+    
 ]
 
 
