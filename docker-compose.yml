@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    volumes:
+      - ./backend:/backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend/.env  # Specifies the path to the backend .env file
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    env_file:
+      - ./frontend/.env  # Specifies the path to the frontend .env file
+
+  db:
+    image: postgres
+    env_file:
+      - ./backend/.env 
+    ports:
+      - "5432:5432"

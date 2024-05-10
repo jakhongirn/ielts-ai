@@ -17,14 +17,16 @@ import dotenv
 
 dotenv.load_dotenv()
 
-SITE_NAME ="IELTS AI"
-SERVER_IP=os.getenv("SERVER_IP")
-SERVER_DOMAIN=os.getenv("SERVER_DOMAIN")
-DOMAIN_SSL = os.getenv('DOMAIN_SSL')
-DOMAIN_NO_SSL = os.getenv('DOMAIN_NO_SSL')
-DOMAIN_WWW = os.getenv('DOMAIN_WWW')
+SITE_NAME = "IELTS AI"
+SERVER_IP = os.getenv("SERVER_IP")
+SERVER_DOMAIN = os.getenv("SERVER_DOMAIN")
+DOMAIN_SSL = os.getenv("DOMAIN_SSL")
+DOMAIN_NO_SSL = os.getenv("DOMAIN_NO_SSL")
+DOMAIN_WWW = os.getenv("DOMAIN_WWW")
 DEBUG_BOOL = os.getenv("DEBUG")
-SERVER_HOST=os.getenv("SERVER_HOST")
+SERVER_HOST = os.getenv("SERVER_HOST")
+LOCALHOST = os.getenv("LOCALHOST")
+CLIENT_HOST = os.getenv("CLIENT_HOST")
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -38,14 +40,36 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = DEBUG_BOOL
 
-ALLOWED_HOSTS = [SERVER_IP, SERVER_DOMAIN, DOMAIN_SSL, DOMAIN_NO_SSL, DOMAIN_WWW, "localhost"]
-CSRF_TRUSTED_ORIGINS = [SERVER_HOST, DOMAIN_SSL, DOMAIN_NO_SSL]
+ALLOWED_HOSTS = [
+    SERVER_IP,
+    SERVER_DOMAIN,
+    DOMAIN_SSL,
+    DOMAIN_NO_SSL,
+    DOMAIN_WWW,
+    "localhost",
+    LOCALHOST,
+    CLIENT_HOST,
+]
+CSRF_TRUSTED_ORIGINS = [
+    SERVER_HOST,
+    DOMAIN_SSL,
+    DOMAIN_NO_SSL,
+    CLIENT_HOST,
+    "http://localhost:3000",
+    "http://localhost:8000",
+    "http://127.0.0.1",
+]
+
 
 CORS_ALLOWED_ORIGINS = [
     SERVER_HOST,
     DOMAIN_SSL,
     DOMAIN_NO_SSL,
-    DOMAIN_WWW
+    DOMAIN_WWW,
+    CLIENT_HOST,
+    "http://localhost:8000",
+    "http://localhost:3000",
+    "http://127.0.0.1",
 ]
 
 
@@ -61,13 +85,13 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # Authentication's (app name) apps
     "authentication.apps.AuthenticationConfig",
-    #Mock test app 
+    # Mock test app
     "mocktest",
     "ai_integration",
     # Third-party apps
     "rest_framework",
     "rest_framework_simplejwt",
-    'rest_framework_simplejwt.token_blacklist',
+    "rest_framework_simplejwt.token_blacklist",
     "corsheaders",
 ]
 
@@ -109,18 +133,18 @@ WSGI_APPLICATION = "core.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    # "default": {
-    #     "ENGINE": "django.db.backends.sqlite3",
-    #     "NAME": BASE_DIR / "db.sqlite3",
-    # },
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME'),
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': os.getenv('DB_HOST'),
-        'PORT': '5432',
-    }
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    },
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': os.getenv('DB_NAME'),
+    #     'USER': os.getenv('DB_USER'),
+    #     'PASSWORD': os.getenv('DB_PASSWORD'),
+    #     'HOST': os.getenv('DB_HOST'),
+    #     'PORT': '5432',
+    # }
 }
 
 
@@ -158,8 +182,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = "/media/"
 
 STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
@@ -187,9 +211,9 @@ SITE_ID = 1
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=120),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
-    'ROTATE_REFRESH_TOKENS': True,
-    'BLACKLIST_AFTER_ROTATION': True,
-    'AUTH_HEADER_TYPES': ('Bearer',)
+    "ROTATE_REFRESH_TOKENS": True,
+    "BLACKLIST_AFTER_ROTATION": True,
+    "AUTH_HEADER_TYPES": ("Bearer",),
 }
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
@@ -200,4 +224,3 @@ DJOSER = {
     "SEND_ACTIVATION_EMAIL": False,
     "SERIALIZERS": {},
 }
-

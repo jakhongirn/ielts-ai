@@ -1,19 +1,17 @@
 # Use a base image suitable for your project
-FROM python:3.11
+FROM python:3.11-slim
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
-ARG SECRET_KEY
-ENV SECRET_KEY=${SECRET_KEY}
 
 # Set the working directory within the container
 WORKDIR /backend
 
 # Copy the requirements.txt file to the container
 COPY requirements.txt /backend/
-
+COPY .env /backend/.env
 # Create a virtual environment
-RUN python -m venv /opt/venv
+RUN python -m venv venv
 
 # Activate the virtual environment
 ENV PATH="/opt/venv/bin:$PATH"
@@ -28,10 +26,10 @@ RUN pip install -r requirements.txt
 COPY . /backend/
 
 # Run collectstatic command to collect static files
-RUN python manage.py collectstatic --noinput
+RUN python3 manage.py collectstatic --noinput
 
 # Run database migrations
-RUN python manage.py migrate
+RUN python3 manage.py migrate
 
 # Set any additional configuration or environment variables
 
