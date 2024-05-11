@@ -24,6 +24,7 @@ DOMAIN_SSL = os.getenv("DOMAIN_SSL")
 DOMAIN_NO_SSL = os.getenv("DOMAIN_NO_SSL")
 DOMAIN_WWW = os.getenv("DOMAIN_WWW")
 DEBUG_BOOL = os.getenv("DEBUG")
+SERVER_IP_HTTP= os.getenv("SERVER_IP_HTTP")
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -46,7 +47,7 @@ ALLOWED_HOSTS = [
     DOMAIN_SSL,
     DOMAIN_NO_SSL,
     DOMAIN_WWW,
-    
+    SERVER_IP_HTTP
 ]
 CSRF_TRUSTED_ORIGINS = [
     DOMAIN_SSL,
@@ -55,17 +56,21 @@ CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:8000",
     "http://127.0.0.1",
+    SERVER_IP,
+    SERVER_IP_HTTP
 ]
 
+CORS_ALLOW_ALL_ORIGINS = True 
 
 CORS_ALLOWED_ORIGINS = [
     DOMAIN_SSL,
     DOMAIN_NO_SSL,
     DOMAIN_WWW,
-    "http://localhost:8000",
-    "http://localhost:3000",
+  "http://localhost:8000",
+   "http://localhost:3000",
     "http://127.0.0.1",
-    
+    SERVER_IP, 
+    SERVER_IP_HTTP
 ]
 
 
@@ -129,18 +134,18 @@ WSGI_APPLICATION = "core.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    },
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': os.getenv('DB_NAME'),
-    #     'USER': os.getenv('DB_USER'),
-    #     'PASSWORD': os.getenv('DB_PASSWORD'),
-    #     'HOST': os.getenv('DB_HOST'),
-    #     'PORT': '5432',
-    # }
+    # "default": {
+    #    "ENGINE": "django.db.backends.sqlite3",
+    #    "NAME": BASE_DIR / "db.sqlite3",
+    #},
+     'default': {
+         'ENGINE': 'django.db.backends.postgresql',
+         'NAME': os.getenv('DB_NAME'),
+         'USER': os.getenv('DB_USER'),
+         'PASSWORD': os.getenv('DB_PASSWORD'),
+         'HOST': os.getenv('DB_HOST'),
+         'PORT': os.getenv('DB_PORT')
+     }
 }
 
 

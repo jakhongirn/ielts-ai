@@ -29,7 +29,7 @@ COPY . /backend/
 RUN python3 manage.py collectstatic --noinput
 
 # Run database migrations
-RUN python3 manage.py migrate
+# RUN python3 manage.py migrate
 
 # Set any additional configuration or environment variables
 
