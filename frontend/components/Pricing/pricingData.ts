@@ -1,17 +1,17 @@
 export const pricingData = [
   {
     id: "price_1NQk5TLtGdPVhGLecVfQ7mn0",
-    unit_amount: 9 * 100,
-    nickname: "Small",
+    unit_amount: 69000 * 100,
+    nickname: "Starter",
   },
   {
     id: "price_1NQk55LtGdPVhGLefU8AHqHr",
-    unit_amount: 25 * 100,
-    nickname: "Medium",
+    unit_amount: 149000 * 100,
+    nickname: "Intermediate",
   },
   {
     id: "price_1NQk4eLtGdPVhGLeZsZDsCNz",
-    unit_amount: 50 * 100,
-    nickname: "Large",
+    unit_amount: 499000 * 100,
+    nickname: "Champion",
   },
 ];
