@@ -56,22 +56,21 @@ CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:8000",
     "http://127.0.0.1",
-    SERVER_IP,
     SERVER_IP_HTTP
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True 
 
-CORS_ALLOWED_ORIGINS = [
-    DOMAIN_SSL,
-    DOMAIN_NO_SSL,
-    DOMAIN_WWW,
-  "http://localhost:8000",
-   "http://localhost:3000",
-    "http://127.0.0.1",
-    SERVER_IP, 
-    SERVER_IP_HTTP
-]
+# CORS_ALLOWED_ORIGINS = [
+#     DOMAIN_SSL,
+#     DOMAIN_NO_SSL,
+#     DOMAIN_WWW,
+#   "http://localhost:8000",
+#    "http://localhost:3000",
+#     "http://127.0.0.1",
+#     SERVER_IP, 
+#     SERVER_IP_HTTP
+# ]
 
 
 # Application definition
