@@ -4,7 +4,6 @@ import React from "react";
 import Link from "next/link";
 import * as Tabs from "@radix-ui/react-tabs";
 import { useState } from "react";
-import * as Separator from "@radix-ui/react-separator";
 import {
     Card,
     CardContent,
@@ -15,6 +14,7 @@ import {
 } from "@/components/ui/card";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import MockTestCard from "./MockTestCard";
 
 const MockPage = () => {
     const [selectedTab, setSelectedTab] = useState("mock");
@@ -62,34 +62,8 @@ const MockPage = () => {
                                     List of Mock tests
                                 </h1>
                                 <div className="flex flex-wrap gap-6 px-4 py-2">
-                                    <Card className="shadow-md">
-                                        <CardHeader>
-                                            <CardTitle>Mock test A</CardTitle>
-                                            <CardDescription>
-                                                Full sections
-                                            </CardDescription>
-                                        </CardHeader>
+                                    <MockTestCard />
 
-                                        <div className="flex justify-center px-2">
-                                            <Image
-                                                width={300}
-                                                height={300}
-                                                src="/images/dashboard/mock-tests/mock-test-1.webp"
-                                                alt="mock-test-1"
-                                                className="rounded-lg "
-                                            />
-                                        </div>
-                                        <CardFooter className="flex justify-center">
-                                            <Button
-                                                className="hover:bg-black hover:text-white"
-                                                variant="outline"
-                                            >
-                                                <Link href="/dashboard/mock-test/mock-a1">
-                                                Pass the test
-                                                </Link>
-                                            </Button>
-                                        </CardFooter>
-                                    </Card>
                                     <Card className="shadow-md">
                                         <CardHeader>
                                             <CardTitle>Mock test B</CardTitle>

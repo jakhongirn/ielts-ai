@@ -54,7 +54,7 @@ export function DashboardNav({ items, setOpen }: DashboardNavProps) {
                             >
                                 <span
                                     className={cn(
-                                        "group flex items-center rounded-xl px-3 py-2 font-medium text-lg hover:bg-blue-400 hover:text-white",
+                                        "group flex items-center rounded-xl px-3 py-2 font-medium text-lg hover:bg-blue-400 duration-300 hover:text-white",
                                         path === item.href
                                             ? "bg-blue-400 text-white"
                                             : "transparent text-black",
