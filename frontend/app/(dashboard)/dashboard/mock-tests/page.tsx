@@ -2,18 +2,132 @@
 
 import React from "react";
 import Link from "next/link";
-
+import * as Tabs from "@radix-ui/react-tabs";
+import { useState } from "react";
+import * as Separator from "@radix-ui/react-separator";
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 const MockPage = () => {
-   
+    const [selectedTab, setSelectedTab] = useState("mock");
     return (
-        <div className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
-          <div className="flex items-center">
-            <h1 className="text-lg font-semibold md:text-2xl">IETLS Mock Tests</h1>
-          </div>
-          <div className="h-screen rounded-lg border w-full bg-gray-100"></div>
-         
-        </div>  
+        <div className="flex flex-1  flex-col gap-4 p-4 lg:gap-6 lg:p-6">
+            <div className="flex items-center">
+                <h1 className="text-lg font-semibold md:text-2xl">
+                    IELTS Mock Tests
+                </h1>
+            </div>
+            <div className="rounded-lg border w-full bg-gray-100 p-4">
+                <div className="bg-white shadow-lg rounded-lg p-6">
+                    <div className="border-b border-gray-200">
+                        <Tabs.Root
+                            defaultValue="mock"
+                            onValueChange={setSelectedTab}
+                        >
+                            <Tabs.List
+                                aria-label="User information tabs"
+                                className="flex space-x-1 justify-center"
+                            >
+                                <Tabs.Trigger
+                                    value="mock"
+                                    className={`py-2 px-4 rounded-lg font-medium text-gray-700 focus:outline-none ${
+                                        selectedTab === "mock"
+                                            ? "bg-gray-800 text-white"
+                                            : "hover:bg-gray-100"
+                                    }`}
+                                >
+                                    Mock Tests
+                                </Tabs.Trigger>
+                                <Tabs.Trigger
+                                    value="score"
+                                    className={`py-2 px-4 rounded-lg font-medium text-gray-700 focus:outline-none ${
+                                        selectedTab === "score"
+                                            ? "bg-gray-800 text-white"
+                                            : "hover:bg-gray-100"
+                                    }`}
+                                >
+                                    Full Test Scores
+                                </Tabs.Trigger>
+                            </Tabs.List>
+                            <Tabs.Content value="mock" className="my-4">
+                                <h1 className="text-2xl font-bold my-4">
+                                    List of Mock tests
+                                </h1>
+                                <div className="flex flex-wrap gap-6 px-4 py-2">
+                                    <Card className="shadow-md">
+                                        <CardHeader>
+                                            <CardTitle>Mock test A</CardTitle>
+                                            <CardDescription>
+                                                Full sections
+                                            </CardDescription>
+                                        </CardHeader>
+
+                                        <div className="flex justify-center px-2">
+                                            <Image
+                                                width={300}
+                                                height={300}
+                                                src="/images/dashboard/mock-tests/mock-test-1.webp"
+                                                alt="mock-test-1"
+                                                className="rounded-lg "
+                                            />
+                                        </div>
+                                        <CardFooter className="flex justify-center">
+                                            <Button
+                                                className="hover:bg-black hover:text-white"
+                                                variant="outline"
+                                            >
+                                                <Link href="/dashboard/mock-test/mock-a1">
+                                                Pass the test
+                                                </Link>
+                                            </Button>
+                                        </CardFooter>
+                                    </Card>
+                                    <Card className="shadow-md">
+                                        <CardHeader>
+                                            <CardTitle>Mock test B</CardTitle>
+                                            <CardDescription>
+                                                Full sections
+                                            </CardDescription>
+                                        </CardHeader>
+
+                                        <div className="flex justify-center px-2">
+                                            <Image
+                                                width={300}
+                                                height={300}
+                                                src="/images/dashboard/mock-tests/mock-test-2.webp"
+                                                alt="mock-test-1"
+                                                className="rounded-lg "
+                                            />
+                                        </div>
+                                        <CardFooter className="flex justify-center">
+                                            <Button
+                                                className="hover:bg-black hover:text-white"
+                                                variant="outline"
+                                            >
+                                                Pass the test
+                                            </Button>
+                                        </CardFooter>
+                                    </Card>
+                                </div>
+                            </Tabs.Content>
+                            <Tabs.Content value="score" className="my-4">
+                                <p className="text-sm text-gray-600">
+                                    All passed tests will be here
+                                </p>
+                            </Tabs.Content>
+                        </Tabs.Root>
+                    </div>
+                </div>
+            </div>
+        </div>
     );
 };
 

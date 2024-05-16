@@ -31,7 +31,7 @@ function Profile() {
                 <h1 className="text-lg font-semibold md:text-2xl">User Profile</h1>
             </div>
 
-           <div className="bg-gray-100 min-h-screen p-4">
+           <div className="rounded-lg border w-full bg-gray-100 p-4">
 
            <div className="bg-white shadow-lg rounded-lg p-6">
                 <h2 className="text-2xl font-bold mb-4"></h2>
