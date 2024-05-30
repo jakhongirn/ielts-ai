@@ -2,7 +2,6 @@
 
 import React from "react";
 import { useState } from "react";
-import * as Separator from "@radix-ui/react-separator";
 import {
     Card,
     CardContent,
@@ -19,14 +18,14 @@ import Modal from "@/components/Dashboard/Modal";
 
 const MockTestCard = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const testId = 130; // Example test ID, adjust as needed
+    const testId = "A130"; // Example test ID, adjust as needed
     const router = useRouter();
 
     
     const startTest = () => {
         setIsModalOpen(false);
         // Navigate to the test page and start with the listening section
-        router.push(`/exam/full-test/test-A01/reading`);
+        router.push(`/exams/full-test/${testId}`);
       };
     return (
         <div>

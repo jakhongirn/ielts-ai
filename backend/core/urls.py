@@ -21,5 +21,5 @@ urlpatterns = [
     path('api/admin/', admin.site.urls),
     path('api/auth/', include('authentication.urls')),
     path('api/prompt/', include('ai_integration.urls')),
-    
+    path('api/', include('mocktest.urls')),
 ]
