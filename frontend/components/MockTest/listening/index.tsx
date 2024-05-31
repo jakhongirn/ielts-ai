@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import MockBody from "./body";
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import MockFooter from "../footer";
 import MockHeader from "../header";
 import { useForm, SubmitHandler, FormProvider } from "react-hook-form";
@@ -30,13 +30,13 @@ const ListeningSection = ({ submitSectionForm }: ListeningSectionProps) => {
                         fontColor="text-green-500"
                     />
                     <MockBody methods={methods} activePart={activePart} />
-                    <MockFooter
-                        section="listening"
-                        setActivePart={setActivePart}
-                        fontColor="text-green-500"
-                    />
                 </form>
             </FormProvider>
+            <MockFooter
+                    section="listening"
+                    setActivePart={setActivePart}
+                    fontColor="text-green-500"
+                />
         </div>
     );
 };

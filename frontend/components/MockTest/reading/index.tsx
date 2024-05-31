@@ -30,13 +30,13 @@ const ReadingSection = ({ submitSectionForm }: ReadingSectionProps) => {
                         duration={60}
                     />
                     <MockBody methods={methods} activePart={activePart} />
-                    <MockFooter
+                </form>
+            </FormProvider>
+            <MockFooter
                         fontColor="text-red-500"
                         setActivePart={setActivePart}
                         section="reading"
                     />
-                </form>
-            </FormProvider>
         </div>
     );
 };
