@@ -46,8 +46,9 @@ const MockTest = ({ params }: { params: { id: string } }) => {
     };
 
     const sectionComponents = [
-        <ListeningSection key="listening" submitSectionForm={handleNextStep} />
-        
+        <ListeningSection key="listening" submitSectionForm={handleNextStep} />,
+        <ReadingSection key="reading" submitSectionForm={handleNextStep} />,
+        <WritingSection key="writing" submitSectionForm={handleNextStep} />
     ];
 
     return <div>{sectionComponents[sectionNumber]}</div>;

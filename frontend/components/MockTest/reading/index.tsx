@@ -4,24 +4,39 @@ import React, { useState } from "react";
 import MockHeader from "../header";
 import MockBody from "./body";
 import MockFooter from "../footer";
-import { handleClientScriptLoad } from "next/script";
+import { useForm, SubmitHandler, FormProvider } from "react-hook-form";
+import { UserAnswerDataType } from "@/types/mocktest";
 
 type ReadingSectionProps = {
-    handleSubmit: () => void;
+    submitSectionForm: (data: object) => void;
 };
 
-const ReadingSection = ({handleSubmit}: ReadingSectionProps) => {
+const ReadingSection = ({ submitSectionForm }: ReadingSectionProps) => {
     const [activePart, setActivePart] = useState<number>(1);
+
+    const methods = useForm<UserAnswerDataType>();
+    const { handleSubmit } = methods;
+    const onSubmit: SubmitHandler<UserAnswerDataType> = (data) => {
+        submitSectionForm(data);
+    };
 
     return (
         <div className="mock-test">
-            <MockHeader handleSubmit={handleSubmit} fontColor="text-red-500" bgColor="bg-red-500" duration={60} />
-            <MockBody activePart={activePart} />
-            <MockFooter
-                fontColor="text-red-500"
-                setActivePart={setActivePart}
-                section="reading"
-            />
+            <FormProvider {...methods}>
+                <form id="listening-form" onSubmit={handleSubmit(onSubmit)}>
+                    <MockHeader
+                        fontColor="text-red-500"
+                        bgColor="bg-red-500"
+                        duration={60}
+                    />
+                    <MockBody methods={methods} activePart={activePart} />
+                    <MockFooter
+                        fontColor="text-red-500"
+                        setActivePart={setActivePart}
+                        section="reading"
+                    />
+                </form>
+            </FormProvider>
         </div>
     );
 };

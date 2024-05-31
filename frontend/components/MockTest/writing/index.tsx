@@ -7,18 +7,14 @@ import MockFooter from "../footer";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { UserWritingAnswerType } from "@/types/mocktest";
 
 type WritingSectionProps = {
-    handleSubmit: () => void;
+    submitSectionForm: (data: object) => void;
 };  
 
-type UserAnswerData = {
-    id: number;
-    task1?: string;
-    task2?: string;
-}
 
-const WritingSection = ({handleSubmit}: WritingSectionProps) => {
+const WritingSection = ({submitSectionForm}: WritingSectionProps) => {
     //   const {
     //     register,
     //     watch,
@@ -31,37 +27,42 @@ const WritingSection = ({handleSubmit}: WritingSectionProps) => {
     const [loading, setLoading] = useState(false);
     const router = useRouter();
 
-    const methods = useForm<UserAnswerData>();
-
-    const onSubmit: SubmitHandler<UserAnswerData> = async (data, e) => {
-        setLoading(true);
-        console.log(data);
-
-        try {
-            const response = await axios.post(
-                `${process.env.NEXT_PUBLIC_API}/prompt/`,
-                data
-            );
-            data = response.data;
-            console.log("API Response:", data);
-            setLoading(false);
-
-            if (data.id) {
-              window.location.href = `/feedback?promptId=${data.id}`
-            }
-            router.push("/feedback");
-        } catch (error) {
-            console.error("Error submitting data to API:", error);
-            setLoading(false);
-        }
-    };
     const [activePart, setActivePart] = useState<number>(1);
+
+    const methods = useForm<UserWritingAnswerType>();
+
+    const onSubmit: SubmitHandler<UserWritingAnswerType> = async (data, e) => {
+        e?.preventDefault()
+        submitSectionForm(data);
+        
+        // setLoading(true);
+        // console.log(data);
+
+        // try {
+        //     const response = await axios.post(
+        //         `${process.env.NEXT_PUBLIC_API}/prompt/`,
+        //         data
+        //     );
+        //     data = response.data;
+        //     console.log("API Response:", data);
+        //     setLoading(false);
+
+        //     if (data.id) {
+        //       window.location.href = `/feedback?promptId=${data.id}`
+        //     }
+        //     router.push("/feedback");
+        // } catch (error) {
+        //     console.error("Error submitting data to API:", error);
+        //     setLoading(false);
+        // }
+    };
+    
     return (
         <div className="mock-test">
             <FormProvider {...methods}>
                 <form onSubmit={methods.handleSubmit(onSubmit)}>
                     <MockHeader
-                        handleSubmit={handleSubmit}
+                        
                         duration={60}
                         bgColor="bg-blue-500"
                         fontColor="text-blue-500"

@@ -5,9 +5,10 @@ import QuestionColumn from "../questionColumn";
 
 type MockReadingBodyProps = {
     activePart: number;
+    methods: any;
 };
 
-const MockReadingBody = ({ activePart }: MockReadingBodyProps) => {
+const MockReadingBody = ({ activePart, methods }: MockReadingBodyProps) => {
     const [leftWidth, setLeftWidth] = useState("50%"); // Initial width as a string
     const [isDragging, setIsDragging] = useState(false);
 
@@ -105,7 +106,7 @@ const MockReadingBody = ({ activePart }: MockReadingBodyProps) => {
         }
 
         return (
-            <QuestionColumn questionData={partData} fontColor="text-red-500" />
+            <QuestionColumn methods={methods} questionData={partData} fontColor="text-red-500" />
         );
     };
 

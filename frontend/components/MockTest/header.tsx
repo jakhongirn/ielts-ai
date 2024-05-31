@@ -30,9 +30,9 @@ const MockHeader = ({ duration, fontColor, bgColor }: HeaderPropsType) => {
 
                 <div>
                     <input
-                        value="Submit"
-                        type="Submit"
+                        type="submit"
                         className={`${bgColor} px-3 py-1 text-white rounded-xl`}
+                        value="Submit"
                     />
                 </div>
             </div>
