@@ -3,16 +3,19 @@ import Image from "next/image";
 import mockReadingData from "../data/mocktests.json";
 import QuestionColumn from "../questionColumn";
 
+
 type MockListeningBodyProps = {
     activePart: number;
+    methods: any;
 };
+
 
 interface ListeningTestAudioProps {
     src: string; // Source URL of the audio file
     autoPlay: boolean; // Automatically play the audio when component mounts
 }
 
-const MockListeningBody = ({ activePart }: MockListeningBodyProps) => {
+const MockListeningBody = ({ activePart, methods }: MockListeningBodyProps) => {
     const renderQuestionPart = (partNumber: number) => {
         const partData = mockReadingData.listening.parts.find(
             (part) => part.part_number === partNumber
@@ -22,11 +25,17 @@ const MockListeningBody = ({ activePart }: MockListeningBodyProps) => {
             return <p>Part not found.</p>;
         }
 
+       
+
         return (
-            <QuestionColumn
-                questionData={partData}
-                fontColor="text-green-500"
-            />
+            <div>
+                
+                        <QuestionColumn methods={methods}
+                            questionData={partData}
+                            fontColor="text-green-500"
+                        />
+                    
+            </div>
         );
     };
 

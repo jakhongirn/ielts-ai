@@ -4,13 +4,18 @@ import React, { useState } from "react";
 import MockHeader from "../header";
 import MockBody from "./body";
 import MockFooter from "../footer";
+import { handleClientScriptLoad } from "next/script";
 
-const ReadingSection = () => {
+type ReadingSectionProps = {
+    handleSubmit: () => void;
+};
+
+const ReadingSection = ({handleSubmit}: ReadingSectionProps) => {
     const [activePart, setActivePart] = useState<number>(1);
 
     return (
         <div className="mock-test">
-            <MockHeader fontColor="text-red-500" bgColor="bg-red-500" duration={60} />
+            <MockHeader handleSubmit={handleSubmit} fontColor="text-red-500" bgColor="bg-red-500" duration={60} />
             <MockBody activePart={activePart} />
             <MockFooter
                 fontColor="text-red-500"

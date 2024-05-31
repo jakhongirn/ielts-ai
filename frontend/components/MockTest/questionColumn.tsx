@@ -7,14 +7,8 @@ import OneMultipleChoice from './questionTypes/oneMultipleChoice'
 import SentenceCompletion from './questionTypes/sentenceCompletion'
 import TableCompletion from './questionTypes/tableCompletion'
 
-import {useForm, SubmitHandler, FormProvider} from 'react-hook-form';
 
-
-type UserAnswerData = {
-    [questionId: string]: string; 
-}
-
-const QuestionColumn = ({ questionData, fontColor }) => {
+const QuestionColumn = ({ questionData, fontColor, methods }) => {
 
     const QuestionComponent = ({questionData}: any) => {
         switch(questionData.type) {
@@ -34,27 +28,11 @@ const QuestionColumn = ({ questionData, fontColor }) => {
               return <div>Input field</div>
         }
     }
-    const methods = useForm<UserAnswerData>();
-    const {
-        handleSubmit,
-    } = methods;
-    
-    const onSubmit: SubmitHandler<UserAnswerData> = (data) => {
-        // const processedData: UserAnswerData = {};
-
-        // Object.entries(data).forEach(([key, value]) => {
-        //     processedData[key] = String(value.trim().toLowerCase());
-        // })
-
-        // console.log(processedData);
-
-        console.log(data);
-    };
     
     return (
-        <div>
-            <FormProvider {...methods} >
-            <form onSubmit={handleSubmit(onSubmit)}>
+        
+            
+                <div>
             {questionData.questions?.map((question, index) => (
                 <div key={index} className="mt-6">
                     <h1 id="questionNumber" className={`font-semibold text-lg ${fontColor}`}>
@@ -68,10 +46,10 @@ const QuestionColumn = ({ questionData, fontColor }) => {
                       <QuestionComponent questionData={question} {...methods} />
                 </div>
             ))}
-            <input className='border-black border-2 rounded-lg p-4' type="submit" />
-            </form>
-            </FormProvider>
-        </div>
+            </div>
+            
+        
+        
     );
 };
 

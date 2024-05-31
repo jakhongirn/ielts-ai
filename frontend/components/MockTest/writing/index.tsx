@@ -8,13 +8,17 @@ import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 
+type WritingSectionProps = {
+    handleSubmit: () => void;
+};  
+
 type UserAnswerData = {
     id: number;
     task1?: string;
     task2?: string;
-};
+}
 
-const WritingSection = () => {
+const WritingSection = ({handleSubmit}: WritingSectionProps) => {
     //   const {
     //     register,
     //     watch,
@@ -57,6 +61,7 @@ const WritingSection = () => {
             <FormProvider {...methods}>
                 <form onSubmit={methods.handleSubmit(onSubmit)}>
                     <MockHeader
+                        handleSubmit={handleSubmit}
                         duration={60}
                         bgColor="bg-blue-500"
                         fontColor="text-blue-500"
