@@ -11,10 +11,11 @@ import { UserWritingAnswerType } from "@/types/mocktest";
 
 type WritingSectionProps = {
     submitSectionForm: (data: object) => void;
+    mockTestData?: object | any;
 };  
 
 
-const WritingSection = ({submitSectionForm}: WritingSectionProps) => {
+const WritingSection = ({submitSectionForm, mockTestData}: WritingSectionProps) => {
     //   const {
     //     register,
     //     watch,
@@ -67,7 +68,7 @@ const WritingSection = ({submitSectionForm}: WritingSectionProps) => {
                         bgColor="bg-blue-500"
                         fontColor="text-blue-500"
                     />
-                    <MockBody activePart={activePart} />
+                    <MockBody mockTestData={mockTestData} activePart={activePart} />
                 </form>
             </FormProvider>
             <MockFooter

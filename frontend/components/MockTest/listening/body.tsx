@@ -1,12 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import mockReadingData from "../data/mocktests.json";
 import QuestionColumn from "../questionColumn";
 
 
 type MockListeningBodyProps = {
     activePart: number;
     methods: any;
+    mockTestData?: object | any;
 };
 
 
@@ -15,9 +15,9 @@ interface ListeningTestAudioProps {
     autoPlay: boolean; // Automatically play the audio when component mounts
 }
 
-const MockListeningBody = ({ activePart, methods }: MockListeningBodyProps) => {
+const MockListeningBody = ({ activePart, methods, mockTestData }: MockListeningBodyProps) => {
     const renderQuestionPart = (partNumber: number) => {
-        const partData = mockReadingData.listening.parts.find(
+        const partData = mockTestData?.parts.find(
             (part) => part.part_number === partNumber
         );
 

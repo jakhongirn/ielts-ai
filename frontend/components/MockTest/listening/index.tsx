@@ -9,9 +9,10 @@ import { UserAnswerDataType } from "@/types/mocktest";
 
 type ListeningSectionProps = {
     submitSectionForm: (data: object) => void;
+    mockTestData?: object | any;
 };
 
-const ListeningSection = ({ submitSectionForm }: ListeningSectionProps) => {
+const ListeningSection = ({ submitSectionForm, mockTestData }: ListeningSectionProps) => {
     const [activePart, setActivePart] = useState<number>(1);
 
     const methods = useForm<UserAnswerDataType>();
@@ -29,7 +30,7 @@ const ListeningSection = ({ submitSectionForm }: ListeningSectionProps) => {
                         bgColor="bg-green-500"
                         fontColor="text-green-500"
                     />
-                    <MockBody methods={methods} activePart={activePart} />
+                    <MockBody mockTestData={mockTestData} methods={methods} activePart={activePart} />
                 </form>
             </FormProvider>
             <MockFooter

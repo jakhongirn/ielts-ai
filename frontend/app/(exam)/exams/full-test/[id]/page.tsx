@@ -21,7 +21,11 @@ const MockTest = ({ params }: { params: { id: string } }) => {
     if (error) return <div>Failed to load</div>;
     if (!data) return <div>Loading...</div>;
 
-    const handleNextStep = (sectionAnswers: object) => {
+    const readingData = data.sections.reading;
+    const listeningData = data.sections.listening;
+    const writingData = data.sections.writing;
+
+    const handleNextStep = async (sectionAnswers: object) => {
         const newAnswers = { ...answers };
         console.log(newAnswers);
 
@@ -40,15 +44,16 @@ const MockTest = ({ params }: { params: { id: string } }) => {
         } else {
             // Submit all answers and navigate to feedback
             console.log('Submitting all answers:', newAnswers);
+
             // Replace this with actual submission logic
             router.push('/feedback'); // Navigate to feedback page
         }
     };
 
     const sectionComponents = [
-        <ListeningSection key="listening" submitSectionForm={handleNextStep} />,
-        <ReadingSection key="reading" submitSectionForm={handleNextStep} />,
-        <WritingSection key="writing" submitSectionForm={handleNextStep} />
+        <ListeningSection key="listening" mockTestData={listeningData} submitSectionForm={handleNextStep} />,
+        <ReadingSection key="reading" mockTestData={readingData} submitSectionForm={handleNextStep} />,
+        <WritingSection key="writing" mockTestData={writingData} submitSectionForm={handleNextStep} />
     ];
 
     return <div>{sectionComponents[sectionNumber]}</div>;

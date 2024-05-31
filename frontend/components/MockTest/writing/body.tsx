@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import mockWritingData from "../data/mocktests.json";
 import { useForm, useFormContext } from "react-hook-form";
 
 type MockWritingBodyProps = {
     activePart: number;
+    mockTestData: object | any;
 };
 
-const MockWritingBody = ({ activePart }: MockWritingBodyProps) => {
+const MockWritingBody = ({ activePart, mockTestData }: MockWritingBodyProps) => {
     const [leftWidth, setLeftWidth] = useState("50%"); // Initial width as a string
     const [isDragging, setIsDragging] = useState(false);
 
@@ -34,7 +34,7 @@ const MockWritingBody = ({ activePart }: MockWritingBodyProps) => {
     
 
     const renderLeftColumn = (partNumber: number) => {
-        const task = mockWritingData.writing.parts?.find(
+        const task = mockTestData?.parts?.find(
             (part) => part.part_number === partNumber
         );
 

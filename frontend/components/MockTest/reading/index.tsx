@@ -9,9 +9,10 @@ import { UserAnswerDataType } from "@/types/mocktest";
 
 type ReadingSectionProps = {
     submitSectionForm: (data: object) => void;
+    mockTestData?: object | any;
 };
 
-const ReadingSection = ({ submitSectionForm }: ReadingSectionProps) => {
+const ReadingSection = ({ submitSectionForm, mockTestData }: ReadingSectionProps) => {
     const [activePart, setActivePart] = useState<number>(1);
 
     const methods = useForm<UserAnswerDataType>();
@@ -29,7 +30,7 @@ const ReadingSection = ({ submitSectionForm }: ReadingSectionProps) => {
                         bgColor="bg-red-500"
                         duration={60}
                     />
-                    <MockBody methods={methods} activePart={activePart} />
+                    <MockBody mockTestData={mockTestData} methods={methods} activePart={activePart} />
                 </form>
             </FormProvider>
             <MockFooter
