@@ -1,5 +1,10 @@
 from rest_framework import serializers
-from .models import UserPackage, Package
+from .models import UserPackage, Package, MockTest
+
+class MockTestSerializer(serializers.Serializer):
+    class Meta:
+        model = MockTest
+        fields = '__all__'
 
 
 # serialize package and user package (credential)
@@ -12,4 +17,3 @@ class UserPackageSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserPackage
         fields = '__all__'
-        

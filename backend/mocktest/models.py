@@ -27,7 +27,22 @@ class UserPackage(models.Model):
         return f"{self.user_profile.user.username} - {self.package.name}"
 
 
+class MockTest(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=True)
+    name= models.CharField(max_length=255)
+    json_file = models.FileField(upload_to='json_data/')
+    
+    def __str__(self):
+        return str(self.name)
 
+class UserTestResult(models.Model):
+    id = models.AutoField(primary_key=True)
+    mocktest = models.ForeignKey(MockTest, on_delete=models.CASCADE)
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    
+    
+    def __str__(self):
+        return self.mocktest.name
 
 # class Assesments(models.Model):
 #     SECTIONS = [

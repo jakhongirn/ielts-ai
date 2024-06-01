@@ -18,7 +18,7 @@ import Modal from "@/components/Dashboard/Modal";
 
 const MockTestCard = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const testId = "A130"; // Example test ID, adjust as needed
+    const testId = "0e06e6ef-887b-42a6-a35b-e782250f4165"; // Example test ID, adjust as needed
     const router = useRouter();
 
     
