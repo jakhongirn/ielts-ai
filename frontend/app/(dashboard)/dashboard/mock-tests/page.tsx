@@ -32,31 +32,6 @@ const MockPage = () => {
                             defaultValue="mock"
                             onValueChange={setSelectedTab}
                         >
-                            <Tabs.List
-                                aria-label="User information tabs"
-                                className="flex space-x-1 justify-center"
-                            >
-                                <Tabs.Trigger
-                                    value="mock"
-                                    className={`py-2 px-4 rounded-lg font-medium text-gray-700 focus:outline-none ${
-                                        selectedTab === "mock"
-                                            ? "bg-gray-800 text-white"
-                                            : "hover:bg-gray-100"
-                                    }`}
-                                >
-                                    Mock Tests
-                                </Tabs.Trigger>
-                                <Tabs.Trigger
-                                    value="score"
-                                    className={`py-2 px-4 rounded-lg font-medium text-gray-700 focus:outline-none ${
-                                        selectedTab === "score"
-                                            ? "bg-gray-800 text-white"
-                                            : "hover:bg-gray-100"
-                                    }`}
-                                >
-                                    Full Test Scores
-                                </Tabs.Trigger>
-                            </Tabs.List>
                             <Tabs.Content value="mock" className="my-4">
                                 <h1 className="text-2xl font-bold my-4">
                                     List of Mock tests

@@ -46,9 +46,21 @@ const MockTest = ({ params }: { params: { id: string } }) => {
             console.log('Submitting all answers:', newAnswers);
 
             // Replace this with actual submission logic
-            router.push('/feedback'); // Navigate to feedback page
+            router.push('/dashboard/results'); // Navigate to feedback page
         }
     };
+
+    function handleListeningSubmission() {
+        //pass
+    }
+
+    function handleReadingSubmission() {
+        //pass
+    }
+
+    function handleWritingSubmission() {
+        //pass
+    }
 
     const sectionComponents = [
         <ListeningSection key="listening" mockTestData={listeningData} submitSectionForm={handleNextStep} />,
