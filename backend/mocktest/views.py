@@ -7,29 +7,26 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework import viewsets
 from .models import Package, UserPackage, MockTest
 from .serializers import PackageSerializer, UserPackageSerializer, MockTestSerializer
-from rest_framework.decorators import action
+from rest_framework.decorators import action, permission_classes
 from rest_framework.response import Response
 from rest_framework.validators import ValidationError
 from django.shortcuts import get_object_or_404
 from django.http import JsonResponse
 
 
-# class MockTestView(APIView):
-#     permission_classes = (IsAuthenticated,)
-#     def get(self, request, test_id, format=None):
-#         json_file_path = os.path.join(os.path.dirname(__file__), 'json_data', f'{test_id}.json')
-#         if not os.path.exists(json_file_path):
-#             return Response({'error': 'File not found'}, status=status.HTTP_404_NOT_FOUND)
-#         with open(json_file_path, 'r') as file:
-#             data = json.load(file)
-#         return Response(data, status=status.HTTP_200_OK)
+class MockTestView(APIView):
+    permission_classes = [IsAuthenticated]
 
-
-def get_mock_test(request, pk):
-    mock_test = get_object_or_404(MockTest, pk=pk)
-    with mock_test.json_file.open('r') as f:
-        data = json.load(f)
-    return JsonResponse(data)
+    def get(self, request, pk, format=None):
+        mock_test = get_object_or_404(MockTest, pk=pk)
+        try:
+            with mock_test.json_file.open('r') as file:
+                data = json.load(file)
+            return Response(data, status=status.HTTP_200_OK)
+        except FileNotFoundError:
+            return Response({'error': 'File not found'}, status=status.HTTP_404_NOT_FOUND)
+        except json.JSONDecodeError:
+            return Response({'error': 'Invalid JSON file'}, status=status.HTTP_400_BAD_REQUEST)
 
 class PackageViewSet(viewsets.ModelViewSet):
     queryset = Package.objects.all()
