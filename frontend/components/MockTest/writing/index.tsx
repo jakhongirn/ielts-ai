@@ -34,28 +34,27 @@ const WritingSection = ({submitSectionForm, mockTestData}: WritingSectionProps) 
 
     const onSubmit: SubmitHandler<UserWritingAnswerType> = async (data, e) => {
         e?.preventDefault()
-        submitSectionForm(data);
-        
-        // setLoading(true);
-        // console.log(data);
+    
+        setLoading(true);
+        console.log(data);
 
-        // try {
-        //     const response = await axios.post(
-        //         `${process.env.NEXT_PUBLIC_API}/prompt/`,
-        //         data
-        //     );
-        //     data = response.data;
-        //     console.log("API Response:", data);
-        //     setLoading(false);
+        try {
+            const response = await axios.post(
+                `${process.env.NEXT_PUBLIC_API}/prompt/`,
+                data
+            );
+            data = response.data;
+            console.log("API Response:", data);
+            setLoading(false);
 
-        //     if (data.id) {
-        //       window.location.href = `/feedback?promptId=${data.id}`
-        //     }
-        //     router.push("/feedback");
-        // } catch (error) {
-        //     console.error("Error submitting data to API:", error);
-        //     setLoading(false);
-        // }
+            if (data.id) {
+              window.location.href = `/feedback?promptId=${data.id}`
+            }
+            router.push("/feedback");
+        } catch (error) {
+            console.error("Error submitting data to API:", error);
+            setLoading(false);
+        }
     };
     
     return (

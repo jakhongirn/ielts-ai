@@ -1,11 +1,12 @@
-'use client';
-import { useState } from 'react';
-import useSWR from 'swr';
-import { useRouter } from 'next/navigation';
-import ListeningSection from '@/components/MockTest/listening';
-import ReadingSection from '@/components/MockTest/reading';
-import WritingSection from '@/components/MockTest/writing';
-import { fetcher } from '@/app/api/auth/fetcher';
+"use client";
+import { useState } from "react";
+import useSWR from "swr";
+import { useRouter } from "next/navigation";
+import ListeningSection from "@/components/MockTest/listening";
+import ReadingSection from "@/components/MockTest/reading";
+import WritingSection from "@/components/MockTest/writing";
+import { fetcher } from "@/app/api/auth/fetcher";
+import { UserAnswerDataType } from "@/types/mocktest";
 
 const MockTest = ({ params }: { params: { id: string } }) => {
     const { id: testId } = params;
@@ -13,9 +14,11 @@ const MockTest = ({ params }: { params: { id: string } }) => {
     const router = useRouter();
     const [sectionNumber, setSectionNumber] = useState<number>(0);
     const [answers, setAnswers] = useState({
-        listening: {},
-        reading: {},
-        writing: {},
+        user_answers: {
+            listening: {},
+            reading: {},
+            writing: {},
+        },
     });
 
     if (error) return <div>Failed to load</div>;
@@ -25,28 +28,40 @@ const MockTest = ({ params }: { params: { id: string } }) => {
     const listeningData = data.sections.listening;
     const writingData = data.sections.writing;
 
-    const handleNextStep = async (sectionAnswers: object) => {
+   const transformAnswersListToObject = (data: UserAnswerDataType) => {
+    const answers = data.user_answers
+    return Object.keys(answers).reduce((acc, key)=> {
+        if (answers[key]) {
+            acc[key] = answers[key] as string;
+        }
+        return acc;
+    }, {} as { [key: string]: string})
+   }
+
+
+    const handleNextStep = async (sectionAnswers: UserAnswerDataType) => {
         const newAnswers = { ...answers };
-        console.log(newAnswers);
 
         if (sectionNumber === 0) {
-            newAnswers.listening = sectionAnswers;
+            newAnswers.user_answers.listening = sectionAnswers;
         } else if (sectionNumber === 1) {
-            newAnswers.reading = sectionAnswers;
+            newAnswers.user_answers.reading = sectionAnswers;
         } else if (sectionNumber === 2) {
-            newAnswers.writing = sectionAnswers;
+            newAnswers.user_answers.writing = sectionAnswers;
         }
 
+        const jsonAnswers = JSON.stringify(newAnswers);
+        console.log(jsonAnswers);
         setAnswers(newAnswers);
 
         if (sectionNumber < 2) {
             setSectionNumber((prev) => prev + 1);
         } else {
             // Submit all answers and navigate to feedback
-            console.log('Submitting all answers:', newAnswers);
+            console.log("Submitting all answers:", newAnswers);
 
             // Replace this with actual submission logic
-            router.push('/dashboard/results'); // Navigate to feedback page
+            router.push("/dashboard/results"); // Navigate to feedback page
         }
     };
 
@@ -63,9 +78,21 @@ const MockTest = ({ params }: { params: { id: string } }) => {
     }
 
     const sectionComponents = [
-        <ListeningSection key="listening" mockTestData={listeningData} submitSectionForm={handleNextStep} />,
-        <ReadingSection key="reading" mockTestData={readingData} submitSectionForm={handleNextStep} />,
-        <WritingSection key="writing" mockTestData={writingData} submitSectionForm={handleNextStep} />
+        <ListeningSection
+            key="listening"
+            mockTestData={listeningData}
+            submitSectionForm={handleNextStep}
+        />,
+        <ReadingSection
+            key="reading"
+            mockTestData={readingData}
+            submitSectionForm={handleNextStep}
+        />,
+        <WritingSection
+            key="writing"
+            mockTestData={writingData}
+            submitSectionForm={handleNextStep}
+        />,
     ];
 
     return <div>{sectionComponents[sectionNumber]}</div>;

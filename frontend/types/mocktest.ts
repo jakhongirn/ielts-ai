@@ -1,5 +1,7 @@
 export type UserAnswerDataType = {
-    [questionId: string]: string;
+    user_answers: {
+      [key: string]: string
+    }
   };
 
 

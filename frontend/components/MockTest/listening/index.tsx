@@ -14,11 +14,12 @@ type ListeningSectionProps = {
 
 const ListeningSection = ({ submitSectionForm, mockTestData }: ListeningSectionProps) => {
     const [activePart, setActivePart] = useState<number>(1);
-
     const methods = useForm<UserAnswerDataType>();
     const { handleSubmit } = methods;
-    const onSubmit: SubmitHandler<UserAnswerDataType> = (data) => {
-        submitSectionForm(data);
+    
+    const onSubmit: SubmitHandler<UserAnswerDataType> = (data) => {    
+        submitSectionForm(data)
+        
     };
 
     return (
