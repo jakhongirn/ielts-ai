@@ -15,7 +15,7 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
     else: 
         logger.debug('Updating user profile for {}'.format(instance))
         instance.profile.save()
-  
+
 
 # This is additional function that sends welcome email to user after registering from website        
 # @receiver(post_save, sender=User)

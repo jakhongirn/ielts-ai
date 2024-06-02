@@ -27,6 +27,29 @@ class MockTestView(APIView):
             return Response({'error': 'File not found'}, status=status.HTTP_404_NOT_FOUND)
         except json.JSONDecodeError:
             return Response({'error': 'Invalid JSON file'}, status=status.HTTP_400_BAD_REQUEST)
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
 class PackageViewSet(viewsets.ModelViewSet):
     queryset = Package.objects.all()
