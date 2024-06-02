@@ -30,7 +30,7 @@ class UserPackage(models.Model):
 class MockTest(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=True)
     name= models.CharField(max_length=255)
-    test_json = models.FileField(upload_to='json_data/')
+    json_file = models.FileField(upload_to='json_data/')
     
     def __str__(self):
         return str(self.name)
@@ -69,7 +69,7 @@ class UserTestResult(models.Model):
     id = models.AutoField(primary_key=True)
     user_mocktest = models.ForeignKey(UserMockTest, on_delete=models.CASCADE)
     answers = models.FileField(upload_to='json_data/user_answers/')
-    type = models.CharField(choices=TYPE)
+    type = models.CharField(choices=TYPE, max_length=30)
     date = models.DateTimeField(auto_now_add=True)
 
 class CorrectAnswers(models.Model):
