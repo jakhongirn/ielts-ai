@@ -1,39 +1,46 @@
 from django.db import models
-from authentication.models import User, UserProfile 
+from django.utils import timezone
 import uuid
+from authentication.models import UserProfile
+from django.contrib.auth import get_user_model
 
-# Create your models here.
-
-class Package(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    name = models.CharField(max_length=255)
-    description = models.TextField()
-    price = models.DecimalField(max_digits=10, decimal_places=2)
-    number_of_exams = models.IntegerField()
-    feedback_sessions = models.IntegerField()
-    
-    def __str__(self):
-        return self.name
-    
-    
-class UserPackage(models.Model):
-    user_profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
-    package = models.ForeignKey(Package, on_delete=models.CASCADE)
-    purchase_date = models.DateTimeField(auto_now_add=True)
-    exams_taken = models.IntegerField(default=0)
-    feedback_taken = models.IntegerField(default=0)
-    
-    def __str__(self):
-        return f"{self.user_profile.user.username} - {self.package.name}"
-
+User = get_user_model()
 
 class MockTest(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=True)
-    name= models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
     json_file = models.FileField(upload_to='json_data/')
     
     def __str__(self):
         return str(self.name)
+
+class CorrectAnswers(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=True)
+    mocktest = models.OneToOneField(MockTest, on_delete=models.CASCADE)
+    answers = models.FileField(upload_to='json_data/correct_answers/')
+    
+    def __str__(self):
+        return str(self.mocktest.name)
+
+class PackagePlan(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=True)
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    mocktests_included = models.ManyToManyField(MockTest, related_name='packages')
+    
+    def __str__(self):
+        return str(self.name)
+
+class UserPackagePlan(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=True)
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    package_plan = models.ForeignKey(PackagePlan, on_delete=models.CASCADE)
+    purchase_date = models.DateTimeField(default=timezone.now)
+    remaining_mocktests = models.PositiveIntegerField()
+    
+    def __str__(self):
+        return f"{self.user_profile.user.username} - {self.package_plan.name}"
 
 class UserMockTest(models.Model):
     STATUS = [
@@ -71,11 +78,4 @@ class UserTestResult(models.Model):
     answers = models.FileField(upload_to='json_data/user_answers/')
     type = models.CharField(choices=TYPE, max_length=30)
     date = models.DateTimeField(auto_now_add=True)
-
-class CorrectAnswers(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=True)
-    mocktest = models.OneToOneField(MockTest, on_delete=models.CASCADE)
-    answers = models.FileField(upload_to='json_data/correct_answers/')
-    
-    def __str__(self):
-        return str(self.mocktest.name)
+    score = models.PositiveIntegerField(null=True, blank=True)

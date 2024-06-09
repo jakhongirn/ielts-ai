@@ -1,28 +1,35 @@
 from rest_framework import serializers
-from .models import UserPackage, Package, MockTest
+from .models import MockTest, UserMockTest, UserTestResult, CorrectAnswers, PackagePlan, UserPackagePlan
+from django.contrib.auth import get_user_model
 
-class MockTestSerializer(serializers.Serializer):
+User = get_user_model()
+
+class MockTestSerializer(serializers.ModelSerializer):
     class Meta:
         model = MockTest
         fields = '__all__'
 
-
-
-
-
-
-
-
-
-
-
-# serialize package and user package (credential)
-class PackageSerializer(serializers.ModelSerializer):
+class CorrectAnswersSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Package
+        model = CorrectAnswers
         fields = '__all__'
-        
-class UserPackageSerializer(serializers.ModelSerializer):
+
+class UserMockTestSerializer(serializers.ModelSerializer):
     class Meta:
-        model = UserPackage
+        model = UserMockTest
+        fields = '__all__'
+
+class UserTestResultSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserTestResult
+        fields = '__all__'
+
+class PackagePlanSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PackagePlan
+        fields = '__all__'
+
+class UserPackagePlanSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserPackagePlan
         fields = '__all__'

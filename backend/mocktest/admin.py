@@ -1,29 +1,33 @@
 from django.contrib import admin
-from .models import UserPackage, Package, MockTest, UserMockTest, UserTestResult, CorrectAnswers
-from .forms import MockTestForm
+from .models import MockTest, UserMockTest, UserTestResult, CorrectAnswers, PackagePlan, UserPackagePlan
 
-# Register your models here.
-
-class UserPackageAdmin(admin.ModelAdmin):
-    pass
-class UserMockTestAdmin(admin.ModelAdmin):
-    pass
-class UserTestResultAdmin(admin.ModelAdmin):
-    pass
-class CorrectAnswersAdmin(admin.ModelAdmin):
-    pass
-
-class PackageAdmin(admin.ModelAdmin):
-    pass
-
+@admin.register(MockTest)
 class MockTestAdmin(admin.ModelAdmin):
-    form = MockTestForm
-    list_display = ["name", "id"]
-    
+    list_display = ('name', 'json_file')
 
-admin.site.register(UserPackage, UserPackageAdmin)
-admin.site.register(Package, PackageAdmin)
-admin.site.register(MockTest, MockTestAdmin)
-admin.site.register(UserMockTest, UserMockTestAdmin)
-admin.site.register(UserTestResult, UserTestResultAdmin)
-admin.site.register(CorrectAnswers, CorrectAnswersAdmin)
+@admin.register(UserMockTest)
+class UserMockTestAdmin(admin.ModelAdmin):
+    list_display = ('user_profile', 'mocktest', 'status', 'type', 'date')
+    list_filter = ('status', 'type')
+    search_fields = ('user_profile__user__username', 'mocktest__name')
+
+@admin.register(UserTestResult)
+class UserTestResultAdmin(admin.ModelAdmin):
+    list_display = ('user_mocktest', 'type', 'date')
+    list_filter = ('type', 'date')
+    search_fields = ('user_mocktest__user_profile__user__username',)
+
+@admin.register(CorrectAnswers)
+class CorrectAnswersAdmin(admin.ModelAdmin):
+    list_display = ('mocktest', 'answers')
+
+@admin.register(PackagePlan)
+class PackagePlanAdmin(admin.ModelAdmin):
+    list_display = ('name', 'description', 'price')
+    filter_horizontal = ('mocktests_included',)
+
+@admin.register(UserPackagePlan)
+class UserPackagePlanAdmin(admin.ModelAdmin):
+    list_display = ('user_profile', 'package_plan', 'purchase_date', 'remaining_mocktests')
+    list_filter = ('purchase_date',)
+    search_fields = ('user_profile__user__username', 'package_plan__name')
