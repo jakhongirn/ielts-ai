@@ -29,9 +29,6 @@ class UserMockTestListCreateView(generics.ListCreateAPIView):
     def get_queryset(self):
         user_profile = self.request.user.profile
         print(user_profile)
-        user_package_plans = UserPackagePlan.objects.filter(user_profile=user_profile)
-        if not user_package_plans.exists():
-            return UserMockTest.objects.none()  # No access if no package plans are found
         return UserMockTest.objects.filter(user_profile=user_profile)
 
     def create(self, request, *args, **kwargs):
@@ -63,6 +60,10 @@ class UserMockTestRetrieveView(generics.RetrieveAPIView):
 
     def get(self, request, pk, format=None):
         user_mock_test = get_object_or_404(UserMockTest, pk=pk)
+
+        if user_mock_test.status == "PASSED":
+            return Response({"detail": "The mock test has already been passed."}, status=status.HTTP_403_FORBIDDEN)
+
         mock_test = user_mock_test.mocktest
         try:
             with mock_test.json_file.open('r') as file:
@@ -101,26 +102,28 @@ class PurchasePackagePlanView(APIView):
         package_plan = get_object_or_404(PackagePlan, id=package_plan_id)
         user_profile = request.user.profile
 
+        # Get the number of mock tests to assign from the package plan
+        mock_tests_limit = package_plan.num_mock_tests
+
         # Get a list of mock tests that the user has already used
         used_mocktests = UserMockTest.objects.filter(user_profile=user_profile).values_list('mocktest_id', flat=True)
 
         # Filter out the used mock tests from the available ones in the package plan
         available_mocktests = package_plan.mocktests_included.exclude(id__in=used_mocktests)
 
-        # Ensure there are available mock tests to assign
-        if not available_mocktests.exists():
-            return Response({"detail": "No available mock tests to assign in this package plan."}, status=status.HTTP_400_BAD_REQUEST)
+        # Ensure there are enough available mock tests to assign
+        if available_mocktests.count() < mock_tests_limit:
+            return Response({"detail": "Not enough available mock tests to assign in this package plan."}, status=status.HTTP_400_BAD_REQUEST)
 
         # Create the UserPackagePlan instance
         user_package_plan = UserPackagePlan.objects.create(
             user_profile=user_profile,
             package_plan=package_plan,
-            remaining_mocktests=available_mocktests.count()
+            remaining_mocktests=mock_tests_limit
         )
 
-        # Randomly assign mock tests from the available ones in the package plan to the user
-        mocktests = list(available_mocktests)
-        random.shuffle(mocktests)
+        # Randomly select and assign the limited number of mock tests from the available ones in the package plan to the user
+        mocktests = random.sample(list(available_mocktests), mock_tests_limit)
         for mocktest in mocktests:
             UserMockTest.objects.create(
                 mocktest=mocktest,
@@ -131,3 +134,18 @@ class PurchasePackagePlanView(APIView):
 
         serializer = UserPackagePlanSerializer(user_package_plan)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+def assign_free_mock_test(user_profile):
+    # Replace 'specific-mocktest-id' with the actual ID of the preselected mock test
+    preselected_mocktest_id = '4e06bd4b-ce30-499e-aad6-90f0fcf98a03'
+    try:
+        free_mock_test = MockTest.objects.get(id=preselected_mocktest_id)
+        UserMockTest.objects.create(
+            mocktest=free_mock_test,
+            user_profile=user_profile,
+            status="NEW",
+            type="FREE"
+        )
+    except MockTest.DoesNotExist:
+        # Handle the case where the preselected mock test does not exist
+        pass

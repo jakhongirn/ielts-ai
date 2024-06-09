@@ -5,6 +5,7 @@ from rest_framework.permissions import AllowAny
 from rest_framework import status, generics, permissions
 from rest_framework.response import Response
 from .serializers import UserSerializer, UserProfileSerializer
+from mocktest.views import assign_free_mock_test
 
 from django.core.exceptions import ObjectDoesNotExist
 
@@ -23,20 +24,19 @@ class LogoutView(APIView):
             return Response(status=status.HTTP_400_BAD_REQUEST)
 
 
-class SignUpView(APIView):
-    def post(self, request):
-        serializer = UserSerializer(data=request.data)
-        if serializer.is_valid():
-            user = serializer.save()
-            response_data = {
-                "username": user.username,
-                "email": user.email,
-                "first_name": user.first_name,
-                "last_name": user.last_name,
-            }
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+class SignUpView(generics.CreateAPIView):
+    serializer_class = UserSerializer
 
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        user = serializer.save()
+        
+        # Assign the preselected free mock test to the user
+        assign_free_mock_test(user.profile)
+
+        headers = self.get_success_headers(serializer.data)
+        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
     
 class UserProfileView(generics.RetrieveUpdateAPIView):
     serializer_class = UserProfileSerializer

@@ -16,23 +16,7 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
     if created:
         logger.debug('Creating user profile for {}'.format(instance))
         user_profile = UserProfile.objects.create(user=instance)
-
         # Fetch the mock test using the UUID from the environment variable
-        mock_test_id = os.getenv('FREE_MOCK_TEST')
-        if mock_test_id:
-            try:
-                mock_test = MockTest.objects.get(id=mock_test_id)
-                UserMockTest.objects.create(
-                    user_profile=user_profile,
-                    mocktest=mock_test,
-                    status='NEW',
-                    type='FREE'
-                )
-            except MockTest.DoesNotExist:
-                logger.error('MockTest with id {} does not exist'.format(mock_test_id))
-        else:
-            logger.error('FREE_MOCK_TEST environment variable not set')
-
     else:
         logger.debug('Updating user profile for {}'.format(instance))
         instance.profile.save()
