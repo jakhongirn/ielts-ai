@@ -28,7 +28,6 @@ class UserMockTestListCreateView(generics.ListCreateAPIView):
 
     def get_queryset(self):
         user_profile = self.request.user.profile
-        print(user_profile)
         return UserMockTest.objects.filter(user_profile=user_profile)
 
     def create(self, request, *args, **kwargs):
@@ -44,9 +43,17 @@ class UserMockTestListCreateView(generics.ListCreateAPIView):
         user_package_plan.remaining_mocktests -= 1
         user_package_plan.save()
 
+        mocktest_id = request.data.get('mocktest_id')
+        mocktest = MockTest.objects.get(id=mocktest_id)
+        
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        serializer.save(user_profile=user_profile, date=timezone.now())
+        serializer.save(
+            user_profile=user_profile, 
+            date=timezone.now(),
+            title=mocktest.name(),
+            description=mocktest.description(),
+            )
         return Response(serializer.data, status=status.HTTP_201_CREATED)
         
 class UserMockTestDetailView(generics.RetrieveUpdateDestroyAPIView):
