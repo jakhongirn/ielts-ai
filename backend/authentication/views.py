@@ -36,7 +36,7 @@ class SignUpView(generics.CreateAPIView):
         assign_free_mock_test(user.profile)
 
         headers = self.get_success_headers(serializer.data)
-        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+        return Response(status=status.HTTP_201_CREATED, headers=headers)
     
 class UserProfileView(generics.RetrieveUpdateAPIView):
     serializer_class = UserProfileSerializer

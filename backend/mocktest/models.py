@@ -8,12 +8,12 @@ User = get_user_model()
 
 class MockTest(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=True)
-    name = models.CharField(max_length=255)
+    title = models.CharField(max_length=255)
     description = models.TextField()
     json_file = models.FileField(upload_to='json_data/')
     
     def __str__(self):
-        return str(self.name)
+        return str(self.title)
 
 class CorrectAnswers(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=True)
@@ -21,7 +21,7 @@ class CorrectAnswers(models.Model):
     answers = models.FileField(upload_to='json_data/correct_answers/')
     
     def __str__(self):
-        return str(self.mocktest.name)
+        return str(self.mocktest.title)
 
 class PackagePlan(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=True)
@@ -58,8 +58,6 @@ class UserMockTest(models.Model):
     ]
     
     id = models.AutoField(primary_key=True)
-    title = models.CharField(max_length=255)
-    description = models.TextField()
     mocktest = models.ForeignKey(MockTest, on_delete=models.CASCADE)
     user_profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     reading_answers = models.FileField(upload_to='json_data/reading_answers/', blank=True, null=True)
@@ -71,7 +69,7 @@ class UserMockTest(models.Model):
     type = models.CharField(choices=TYPE, max_length=15)
 
     def __str__(self):
-        return f"{self.user_profile.user.username}: {self.mocktest.name}"
+        return f"{self.user_profile.user.username}: {self.mocktest.title}"
 
 class UserTestResult(models.Model):
     TYPE = [

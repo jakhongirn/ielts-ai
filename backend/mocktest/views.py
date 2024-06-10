@@ -5,8 +5,8 @@ from .models import MockTest, UserMockTest, UserTestResult, CorrectAnswers, Pack
 from .serializers import (
     MockTestSerializer,
     UserMockTestSerializer,
+    UserMockTestDetailSerializer,
     UserTestResultSerializer,
-    CorrectAnswersSerializer,
     PackagePlanSerializer,
     UserPackagePlanSerializer
 )
@@ -51,14 +51,12 @@ class UserMockTestListCreateView(generics.ListCreateAPIView):
         serializer.save(
             user_profile=user_profile, 
             date=timezone.now(),
-            title=mocktest.name(),
-            description=mocktest.description(),
             )
         return Response(serializer.data, status=status.HTTP_201_CREATED)
         
 class UserMockTestDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = UserMockTest.objects.all()
-    serializer_class = UserMockTestSerializer
+    serializer_class = UserMockTestDetailSerializer
     permission_classes = [permissions.IsAuthenticated]
 
 class UserMockTestRetrieveView(generics.RetrieveAPIView):

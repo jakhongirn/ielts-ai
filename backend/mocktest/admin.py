@@ -3,7 +3,7 @@ from .models import MockTest, UserMockTest, UserTestResult, CorrectAnswers, Pack
 
 @admin.register(MockTest)
 class MockTestAdmin(admin.ModelAdmin):
-    list_display = ('name', 'json_file')
+    list_display = ('title', 'description', 'json_file')
 
 @admin.register(UserMockTest)
 class UserMockTestAdmin(admin.ModelAdmin):
