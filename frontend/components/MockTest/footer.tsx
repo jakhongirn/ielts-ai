@@ -1,15 +1,14 @@
-import mockReadingData from "./data/mocktests.json";
 import { useState } from "react";
 
 type MockFooterProps = {
     fontColor: string;
     setActivePart: (partNumber: number) => void;
-    section: string;
+    sectionPart: object | any;
 };
 
 
-const MockFooter = ({ fontColor, setActivePart, section }: MockFooterProps) => {
-    const sectionPart = mockReadingData[section];
+const MockFooter = ({ fontColor, setActivePart, sectionPart }: MockFooterProps) => {
+    
     return (
         <div className="fixed z-10 w-full py-2 text-center bottom-0 bg-gray-100 text-xl font-semibold shadow-2xl">
             {/* Tabs to switch between parts */}

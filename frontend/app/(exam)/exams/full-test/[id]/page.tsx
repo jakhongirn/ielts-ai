@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import useSWR from "swr";
 import { useRouter } from "next/navigation";
 import ListeningSection from "@/components/MockTest/listening";
@@ -7,11 +7,14 @@ import ReadingSection from "@/components/MockTest/reading";
 import WritingSection from "@/components/MockTest/writing";
 import { fetcher } from "@/app/api/auth/fetcher";
 import { UserAnswerDataType } from "@/types/mocktest";
+import { PreventNavigation } from "@/components/PreventNavigation";
 
 const MockTest = ({ params }: { params: { id: string } }) => {
     const { id: testId } = params;
     const { data, error } = useSWR(`/user-mocktests/${testId}/`, fetcher);
+    
     const router = useRouter();
+    
     const [sectionNumber, setSectionNumber] = useState<number>(0);
     const [answers, setAnswers] = useState({
         user_answers: {
@@ -20,6 +23,21 @@ const MockTest = ({ params }: { params: { id: string } }) => {
             writing: {},
         },
     });
+
+    // Prevent user from leaving the pag
+    useEffect(() => {
+        const handleBeforeUnload = (event) => {
+            event.preventDefault();
+            event.returnValue = 'Are you sure you want to leave? Your progress will be lost.';
+        };
+
+        window.addEventListener('beforeunload', handleBeforeUnload);
+
+        return () => {
+            window.removeEventListener('beforeunload', handleBeforeUnload);
+        };
+    }, []);
+    
 
     if (error) return <div>Failed to load</div>;
     if (!data) return <div>Loading...</div>;
@@ -95,7 +113,12 @@ const MockTest = ({ params }: { params: { id: string } }) => {
         />,
     ];
 
-    return <div>{sectionComponents[sectionNumber]}</div>;
+    return (
+    <>
+        
+        {sectionComponents[sectionNumber]
+        }</>
+    )
 };
 
 export default MockTest;

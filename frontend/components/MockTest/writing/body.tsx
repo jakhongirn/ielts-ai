@@ -82,7 +82,7 @@ const MockWritingBody = ({ activePart, mockTestData }: MockWritingBodyProps) => 
                     {task.type === "task-1" ? (
                         <div>
                             <Image
-                                src={`/mock_images/${task.q_imageURL}`}
+                                src={task.q_imageURL}
                                 alt="task 1"
                                 layout="responsive"
                                 width={1000}

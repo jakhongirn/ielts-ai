@@ -1,29 +1,80 @@
-"use client";
-import React from "react";
-import MockBody from "./body";
-import { useState } from "react";
-import MockFooter from "../footer";
-import MockHeader from "../header";
-import { useForm, SubmitHandler, FormProvider } from "react-hook-form";
-import { UserAnswerDataType } from "@/types/mocktest";
+import React, { useState, useRef, useEffect } from 'react';
+import { useForm, SubmitHandler, FormProvider } from 'react-hook-form';
+import MockBody from './body';
+import MockFooter from '../footer';
+import MockHeader from '../header';
+import QuestionColumn from '../questionColumn';
+import { UserAnswerDataType } from '@/types/mocktest';
+
+type MockListeningBodyProps = {
+    activePart: number;
+    methods: any;
+    mockTestData?: object | any;
+};
 
 type ListeningSectionProps = {
     submitSectionForm: (data: object) => void;
     mockTestData?: object | any;
 };
 
+const MockListeningBody = ({ activePart, methods, mockTestData }: MockListeningBodyProps) => {
+    const renderQuestionPart = (partNumber: number) => {
+        const partData = mockTestData?.parts.find(
+            (part) => part.part_number === partNumber
+        );
+
+        if (!partData) {
+            return <p>Part not found.</p>;
+        }
+
+        return (
+            <div>
+                <QuestionColumn
+                    methods={methods}
+                    questionData={partData}
+                    fontColor="text-green-500"
+                />
+            </div>
+        );
+    };
+
+    return (
+        <div className="pt-16 pb-12 flex w-full h-screen">
+            <div className="border-gray-400 p-4 h-full w-full overflow-auto">
+                {renderQuestionPart(activePart)}
+            </div>
+        </div>
+    );
+};
+
 const ListeningSection = ({ submitSectionForm, mockTestData }: ListeningSectionProps) => {
     const [activePart, setActivePart] = useState<number>(1);
     const methods = useForm<UserAnswerDataType>();
     const { handleSubmit } = methods;
-    
+
+    const audioRef = useRef<HTMLAudioElement>(null);
+
+    useEffect(() => {
+        if (audioRef.current) {
+            audioRef.current.play().catch((error) => {
+                console.error('Playback failed:', error);
+                // Handle playback failure (e.g., show error message to the user)
+            });
+        }
+    }, []);
+
     const onSubmit: SubmitHandler<UserAnswerDataType> = (data) => {    
-        submitSectionForm(data)
-        
+        submitSectionForm(data);
     };
 
     return (
         <div className="mock-test">
+            <audio
+                ref={audioRef}
+                src="https://mocktests.fra1.cdn.digitaloceanspaces.com/mocktest-A001/mock-listening-1.mp3"
+                preload="auto"
+                autoPlay
+            />
             <FormProvider {...methods}>
                 <form id="listening-form" onSubmit={handleSubmit(onSubmit)}>
                     <MockHeader
@@ -31,14 +82,14 @@ const ListeningSection = ({ submitSectionForm, mockTestData }: ListeningSectionP
                         bgColor="bg-green-500"
                         fontColor="text-green-500"
                     />
-                    <MockBody mockTestData={mockTestData} methods={methods} activePart={activePart} />
+                    <MockListeningBody mockTestData={mockTestData} methods={methods} activePart={activePart} />
                 </form>
             </FormProvider>
             <MockFooter
-                    section="listening"
-                    setActivePart={setActivePart}
-                    fontColor="text-green-500"
-                />
+                setActivePart={setActivePart}
+                fontColor="text-green-500"
+                sectionPart={mockTestData}
+            />
         </div>
     );
 };
