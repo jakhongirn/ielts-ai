@@ -1,6 +1,21 @@
 import wretch from "wretch";
 import Cookies from "js-cookie";
 
+// Define the UserMockTest type
+interface UserMockTest {
+    id: string;
+    user_profile: string;
+    status: string;
+    type: string;
+    mocktest: {
+        id: number;
+        title: string;
+        description: string;
+    };
+    date: string;
+}
+
+
 // Base API setup
 const api = wretch(`${process.env.NEXT_PUBLIC_API}`).accept("application/json");
 
@@ -20,8 +35,10 @@ const removeTokens = () => {
 
 //Auth actions
 
-const register = (email: string,  username: string, password: string,) => {
-    return api.post({ email, username, password }, "/auth/users/");
+const register = (first_name: string, email: string,  username: string, password: string, password_confirmation: string) => {
+    return api
+            .post({ first_name, email, username, password, password_confirmation }, "/auth/signup/")
+            .res();
 };
 
 const login = (email: string, password: string) => {
@@ -53,6 +70,13 @@ const resetPasswordConfirm = (
         "/auth/users/reset_password_confirm/"
     );
 };
+const getUserMockTests = (): Promise<UserMockTest[]> => {
+    const token = getToken("access");
+    return api.url("/user-mocktests/")
+        .auth(`Bearer ${token}`)
+        .get()
+        .json<UserMockTest[]>();
+};
 
 export const AuthActions = () => {
     return {
@@ -65,5 +89,6 @@ export const AuthActions = () => {
         getToken,
         logout,
         removeTokens,
+        getUserMockTests,
     };
 };

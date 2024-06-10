@@ -37,7 +37,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({children}) => {
     if (accessToken) {
       setIsLoading(true);  // <-- Start loading
       try {
-        const userResponse = await wretch(`${process.env.NEXT_PUBLIC_API}/auth/users/me/`)
+        const userResponse = await wretch(`${process.env.NEXT_PUBLIC_API}/auth/user/`)
           .auth(`Bearer ${accessToken}`)
           .get()
           .json<User>();
@@ -57,7 +57,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({children}) => {
   const login = async (email: string, password: string) => {
     setIsLoading(true);  // <-- Start loading
     try {
-      const response = await wretch(`${process.env.NEXT_PUBLIC_API}/auth/jwt/create`)
+      const response = await wretch(`${process.env.NEXT_PUBLIC_API}/auth/token/`)
         .post({ email, password })
         .json<{ access: string; refresh: string }>();
       Cookies.set('accessToken', response.access);

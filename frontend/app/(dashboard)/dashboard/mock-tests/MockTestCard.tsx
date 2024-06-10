@@ -4,7 +4,6 @@ import React from "react";
 import { useState } from "react";
 import {
     Card,
-    CardContent,
     CardDescription,
     CardFooter,
     CardHeader,
@@ -12,27 +11,39 @@ import {
 } from "@/components/ui/card";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Modal from "@/components/Dashboard/Modal";
 
-const MockTestCard = () => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const testId = "0e06e6ef-887b-42a6-a35b-e782250f4165"; // Example test ID, adjust as needed
-    const router = useRouter();
+interface MockTestCardProps {
+    mockTestId: number;
+    mocktestId: number;
+    status: string;
+    title: string;
+    description: string;
+}
 
-    
+const MockTestCard = ({
+    title,
+    description,
+    status,
+    mocktestId,
+}: MockTestCardProps) => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const router = useRouter();
+    const [isPassedTest, setIsPassedTest] = useState(status);
+
     const startTest = () => {
         setIsModalOpen(false);
         // Navigate to the test page and start with the listening section
-        router.push(`/exams/full-test/${testId}`);
-      };
+        router.push(`/exams/full-test/${mocktestId}`);
+    };
     return (
         <div>
             <Card className="shadow-md">
                 <CardHeader>
-                    <CardTitle>Mock test A</CardTitle>
-                    <CardDescription>Full sections</CardDescription>
+                    <CardTitle>{title}</CardTitle>
+                    <CardDescription>{description}</CardDescription>
+                    <p>{status}</p>
                 </CardHeader>
 
                 <div className="flex justify-center px-2">
@@ -44,15 +55,26 @@ const MockTestCard = () => {
                         className="rounded-lg "
                     />
                 </div>
-                <CardFooter className="flex justify-center">
-                    <Button
-                        className="hover:bg-black hover:text-white"
-                        variant="outline"
-                        onClick={() => setIsModalOpen(true)}
-                    >
-                        Pass the test
-                    </Button>
-                </CardFooter>
+                {isPassedTest=="NEW" ? (
+                    <CardFooter className="flex justify-center">
+                        <Button
+                            className="hover:bg-black hover:text-white mt-4"
+                            variant="outline"
+                            onClick={() => setIsModalOpen(true)}
+                        >
+                            Pass the test
+                        </Button>
+                    </CardFooter>
+                ) : (
+                    <CardFooter className="flex justify-center">
+                        <Button
+                            className="hover:bg-black hover:text-white mt-4"
+                            variant="outline"
+                        >
+                            See the result
+                        </Button>
+                    </CardFooter>
+                )}
             </Card>
 
             <Modal

@@ -10,7 +10,7 @@ import { UserAnswerDataType } from "@/types/mocktest";
 
 const MockTest = ({ params }: { params: { id: string } }) => {
     const { id: testId } = params;
-    const { data, error } = useSWR(`/mocktests/${testId}/`, fetcher);
+    const { data, error } = useSWR(`/user-mocktests/${testId}/`, fetcher);
     const router = useRouter();
     const [sectionNumber, setSectionNumber] = useState<number>(0);
     const [answers, setAnswers] = useState({

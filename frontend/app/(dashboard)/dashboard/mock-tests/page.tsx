@@ -1,25 +1,58 @@
 "use client";
 
-import React from "react";
-import Link from "next/link";
+import React, { useEffect, useState } from "react";
 import * as Tabs from "@radix-ui/react-tabs";
-import { useState } from "react";
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card";
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import MockTestCard from "./MockTestCard";
+import { AuthActions } from "@/app/api/auth/utils";
+import useSWR from "swr";
+import { fetcher } from "@/app/api/auth/fetcher";
 
-const MockPage = () => {
-    const [selectedTab, setSelectedTab] = useState("mock");
+interface UserMockTest {
+    id: number;
+    reading_answers: string;
+    listening_answers: string;
+    writing_answers: string;
+    feedback: string;
+    status: string;
+    date: string;
+    type: string;
+    mocktest:string;
+    mocktest_details: {
+        id:string;
+        title: string;
+        description: string;
+    };
+    user_profile: string;
+}
+
+const authActions = AuthActions();
+
+const MockPage: React.FC = () => {
+    const [mockTests, setMockTests] = useState<UserMockTest[]>([]);
+    const { data: user, error: userError } = useSWR("/auth/user/", fetcher);
+
+    useEffect(() => {
+        const fetchMockTests = async () => {
+            if (!user) return;
+
+            try {
+                const data: UserMockTest[] =
+                    await authActions.getUserMockTests();
+                setMockTests(data);
+                console.log(data);
+            } catch (error) {
+                console.error("Error fetching mock tests:", error);
+            }
+        };
+
+        fetchMockTests();
+    }, [user]);
+
+    if (userError) return <p>Error loading user information.</p>;
+    if (!user) return <p>Loading user information...</p>;
+
     return (
-        <div className="flex flex-1  flex-col gap-4 p-4 lg:gap-6 lg:p-6">
+        <div className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
             <div className="flex items-center">
                 <h1 className="text-lg font-semibold md:text-2xl">
                     IELTS Mock Tests
@@ -28,49 +61,30 @@ const MockPage = () => {
             <div className="rounded-lg border w-full bg-gray-100 p-4">
                 <div className="bg-white shadow-lg rounded-lg p-6">
                     <div className="border-b border-gray-200">
-                        <Tabs.Root
-                            defaultValue="mock"
-                            onValueChange={setSelectedTab}
-                        >
+                        <Tabs.Root defaultValue="mock">
                             <Tabs.Content value="mock" className="my-4">
                                 <h1 className="text-2xl font-bold my-4">
                                     List of Mock tests
                                 </h1>
-                                <div className="flex flex-wrap gap-6 px-4 py-2">
-                                    <MockTestCard />
 
-                                    <Card className="shadow-md">
-                                        <CardHeader>
-                                            <CardTitle>Mock test B</CardTitle>
-                                            <CardDescription>
-                                                Full sections
-                                            </CardDescription>
-                                        </CardHeader>
-
-                                        <div className="flex justify-center px-2">
-                                            <Image
-                                                width={300}
-                                                height={300}
-                                                src="/images/dashboard/mock-tests/mock-test-2.webp"
-                                                alt="mock-test-1"
-                                                className="rounded-lg "
+                                {mockTests.length === 0 ? (
+                                    <p>No mock tests available.</p>
+                                ) : (
+                                    <div className="grid grid-cols-3 gap-6 px-4 py-2">
+                                        {mockTests.map((test, index) => (
+                                            <MockTestCard
+                                                key={index}
+                                                mockTestId={test.id}
+                                                mocktestId={test.id}
+                                                title={test.mocktest_details.title}
+                                                description={
+                                                    test.mocktest_details.description
+                                                }
+                                                status={test.status}
                                             />
-                                        </div>
-                                        <CardFooter className="flex justify-center">
-                                            <Button
-                                                className="hover:bg-black hover:text-white"
-                                                variant="outline"
-                                            >
-                                                Pass the test
-                                            </Button>
-                                        </CardFooter>
-                                    </Card>
-                                </div>
-                            </Tabs.Content>
-                            <Tabs.Content value="score" className="my-4">
-                                <p className="text-sm text-gray-600">
-                                    All passed tests will be here
-                                </p>
+                                        ))}
+                                    </div>
+                                )}
                             </Tabs.Content>
                         </Tabs.Root>
                     </div>
@@ -79,7 +93,5 @@ const MockPage = () => {
         </div>
     );
 };
-
-MockPage.disableLayout = true;
 
 export default MockPage;
