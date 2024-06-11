@@ -36,7 +36,7 @@ const ReadingSection = ({ submitSectionForm, mockTestData }: ReadingSectionProps
             <MockFooter
                         fontColor="text-red-500"
                         setActivePart={setActivePart}
-                        section="reading"
+                        sectionPart={mockTestData}
                     />
         </div>
     );

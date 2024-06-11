@@ -8,11 +8,6 @@ type MockListeningBodyProps = {
     mockTestData?: object | any;
 };
 
-interface ListeningTestAudioProps {
-    src: string; // Source URL of the audio file
-    autoPlay: boolean; // Automatically play the audio when component mounts
-}
-
 const MockListeningBody = ({ activePart, methods, mockTestData }: MockListeningBodyProps) => {
     const renderQuestionPart = (partNumber: number) => {
         const partData = mockTestData?.parts.find(
@@ -33,11 +28,7 @@ const MockListeningBody = ({ activePart, methods, mockTestData }: MockListeningB
             </div>
         );
     };
-    const ListeningTestAudio = ({ src }) => {
-        const audioRef = useRef<HTMLAudioElement>(null);
     
-        return <audio ref={audioRef} src={src} preload="auto" autoPlay />;
-    };
     return (
         <div className="pt-16 pb-12 flex w-full h-screen">
             <ReactPlayer url='https://mocktests.fra1.cdn.digitaloceanspaces.com/mocktest-A001/mock-listening-1.mp3' />

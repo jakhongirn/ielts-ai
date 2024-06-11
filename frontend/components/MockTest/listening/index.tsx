@@ -51,6 +51,7 @@ const ListeningSection = ({ submitSectionForm, mockTestData }: ListeningSectionP
     const [activePart, setActivePart] = useState<number>(1);
     const methods = useForm<UserAnswerDataType>();
     const { handleSubmit } = methods;
+    const listeningAudioSrc = mockTestData.listeningAudioSrc
 
     const audioRef = useRef<HTMLAudioElement>(null);
 
@@ -71,7 +72,7 @@ const ListeningSection = ({ submitSectionForm, mockTestData }: ListeningSectionP
         <div className="mock-test">
             <audio
                 ref={audioRef}
-                src="https://mocktests.fra1.cdn.digitaloceanspaces.com/mocktest-A001/mock-listening-1.mp3"
+                src={listeningAudioSrc}
                 preload="auto"
                 autoPlay
             />

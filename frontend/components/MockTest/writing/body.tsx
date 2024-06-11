@@ -39,27 +39,16 @@ const MockWritingBody = ({ activePart, mockTestData }: MockWritingBodyProps) => 
         );
 
         if (!task) {
-            return <p>Part not found.</p>;
+            return <p>Task not found.</p>;
         }
+
+        const task1ImgURL = mockTestData?.parts[0].task1_imgURL;
 
         const {register, setValue} = useFormContext();
 
-        setValue('task_1_img', "true")
+        setValue('task1_img', task1ImgURL)
 
-        // useEffect(() => {
-        //     const convertImageToBase64 = async () => {
-        //         const imageUrl = `/public/mock_images/${task.q_imageURL}` // Adjust the path to your image
-        //         const response = await fetch(imageUrl);
-        //         const blob = await response.blob();
-        //         const reader = new FileReader();
-        //         reader.onloadend = () => {
-        //             setValue('task_1_img', reader.result); // Using react-hook-form's setValue to set base64 string
-        //         };
-        //         reader.readAsDataURL(blob);
-        //     };
-    
-        //     convertImageToBase64();
-        // }, [setValue]);
+        
 
         
 
@@ -82,7 +71,7 @@ const MockWritingBody = ({ activePart, mockTestData }: MockWritingBodyProps) => 
                     {task.type === "task-1" ? (
                         <div>
                             <Image
-                                src={task.q_imageURL}
+                                src={task.task1_imgURL}
                                 alt="task 1"
                                 layout="responsive"
                                 width={1000}
@@ -156,7 +145,7 @@ const MockWritingBody = ({ activePart, mockTestData }: MockWritingBodyProps) => 
         <>
             <div className="pt-16 pb-12 flex w-full h-screen">
                 <div
-                    id="leftColumn "
+                    id="leftColumn"
                     style={{ width: leftWidth }}
                     className="p-4 border-gray-400 h-full overflow-auto"
                 >

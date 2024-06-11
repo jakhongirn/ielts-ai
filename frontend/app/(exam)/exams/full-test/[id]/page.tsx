@@ -59,11 +59,12 @@ const MockTest = ({ params }: { params: { id: string } }) => {
 
     const handleNextStep = async (sectionAnswers: UserAnswerDataType) => {
         const newAnswers = { ...answers };
+        console.log(sectionAnswers)
 
         if (sectionNumber === 0) {
-            newAnswers.user_answers.listening = sectionAnswers;
+            newAnswers.user_answers.listening = transformAnswersListToObject(sectionAnswers);
         } else if (sectionNumber === 1) {
-            newAnswers.user_answers.reading = sectionAnswers;
+            newAnswers.user_answers.reading = transformAnswersListToObject(sectionAnswers);
         } else if (sectionNumber === 2) {
             newAnswers.user_answers.writing = sectionAnswers;
         }
@@ -97,10 +98,10 @@ const MockTest = ({ params }: { params: { id: string } }) => {
 
     const sectionComponents = [
         <ListeningSection
-            key="listening"
-            mockTestData={listeningData}
-            submitSectionForm={handleNextStep}
-        />,
+        key="listening"
+        mockTestData={listeningData}
+        submitSectionForm={handleNextStep}
+    />,
         <ReadingSection
             key="reading"
             mockTestData={readingData}
