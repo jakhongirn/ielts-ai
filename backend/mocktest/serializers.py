@@ -32,7 +32,7 @@ class UserMockTestDetailSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = UserMockTest
-        fields = ['id', 'title', 'description', 'reading_answers', 'listening_answers', 'writing_answers', 'feedback', 'status', 'date', 'type', 'mocktest', 'mocktest_details', 'user_profile']
+        fields = ['id', 'reading_answers', 'listening_answers', 'writing_answers', 'feedback', 'status', 'date', 'type', 'mocktest', 'mocktest_details', 'user_profile']
         read_only_fields = ['id']
 
 
@@ -48,9 +48,13 @@ class UserPackagePlanSerializer(serializers.ModelSerializer):
         fields = '__all__'
         read_only_fields = ['id']
 
-
-class UserAnswerSerializer(serializers.ModelSerializer):
+class UserAnswerListSerializer(serializers.ModelSerializer):
+    mocktest_id = serializers.UUIDField(source='user_mocktest.mocktest.id')
     class Meta:
         model = UserAnswer
-        fields = '__all__'
-        read_only_fields = ['id']
+        fields = ['id', 'mocktest_id', 'passed_date', 'listening_band', 'listening_score', 'reading_band', 'reading_score']
+
+class UserAnswerDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserAnswer
+        fields = ['id', 'user_mocktest', 'listening_answers', 'reading_answers', 'listening_correct_answers', 'reading_correct_answers', 'listening_results', 'reading_results', 'passed_date', 'listening_band', 'listening_score', 'reading_score', 'reading_band']

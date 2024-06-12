@@ -13,7 +13,7 @@ class UserMockTestAdmin(admin.ModelAdmin):
 
 @admin.register(UserAnswer)
 class UserAnswerAdmin(admin.ModelAdmin):
-    list_display = ('user_mocktest', 'listening_score', 'reading_score', 'listening_results', 'reading_results', 'listening_correct_answers', 'reading_correct_answers', 'listening_answers', 'reading_answers')
+    list_display = ('user_mocktest', 'listening_score', 'reading_score', 'listening_band', 'reading_band')
 
 @admin.register(CorrectAnswers)
 class CorrectAnswersAdmin(admin.ModelAdmin):

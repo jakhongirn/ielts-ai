@@ -84,3 +84,4 @@ class UserAnswer(models.Model):
     reading_score = models.IntegerField()
     reading_band = models.FloatField()
     listening_band = models.FloatField() 
+    passed_date=models.DateTimeField(default=timezone.now)

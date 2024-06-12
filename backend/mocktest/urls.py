@@ -2,13 +2,15 @@ from django.urls import path, re_path, include
 from .views import (
     MockTestListCreateView,
     UserMockTestListCreateView,
-    UserMockTestDetailView,
     PackagePlanListCreateView,
     UserPackagePlanListCreateView,
     UserPackagePlanDetailView,
     PurchasePackagePlanView,
     UserMockTestRetrieveView,
     CheckMockTestView,
+    UserAnswerListView,
+    UserAnswerDetailView,
+    UserAnswerDetailByMocktestIdView
 )
 from rest_framework.routers import DefaultRouter
 
@@ -46,4 +48,6 @@ urlpatterns = [
         name="purchase-package-plan",
     ),
     path("check-mocktest/", CheckMockTestView.as_view(), name="check-mocktest"),
+    path("user-answers/", UserAnswerListView.as_view(), name="user-answers"),
+    path("user-answers/<uuid:mocktest_id>/", UserAnswerDetailByMocktestIdView.as_view(), name="user-answers-by-mocktest-id"),
 ]

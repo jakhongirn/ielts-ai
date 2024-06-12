@@ -1,14 +1,16 @@
 from rest_framework import generics, permissions, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .models import MockTest, UserMockTest, CorrectAnswers, PackagePlan, UserPackagePlan
+from .models import MockTest, UserMockTest, CorrectAnswers, PackagePlan, UserPackagePlan, UserAnswer
 from .serializers import (
     MockTestSerializer,
     UserMockTestSerializer,
     UserMockTestDetailSerializer,
     PackagePlanSerializer,
-    UserPackagePlanSerializer
-)
+    UserPackagePlanSerializer,
+    UserAnswerListSerializer,
+    UserAnswerDetailSerializer
+    )
 from django.shortcuts import get_object_or_404
 import json
 from rest_framework import serializers
@@ -54,10 +56,6 @@ class UserMockTestListCreateView(generics.ListCreateAPIView):
             )
         return Response(serializer.data, status=status.HTTP_201_CREATED)
         
-class UserMockTestDetailView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = UserMockTest.objects.all()
-    serializer_class = UserMockTestDetailSerializer
-    permission_classes = [permissions.IsAuthenticated]
 
 class UserMockTestRetrieveView(generics.RetrieveAPIView):
     queryset = UserMockTest.objects.all()
@@ -177,3 +175,34 @@ class CheckMockTestView(APIView):
         reading_results, reading_score, reading_band, listening_results, listening_score, listening_band = check_answers(user_answers, correct_answers_data, user_mocktest)
         
         return Response({"reading_results": reading_results, "reading_score": reading_score, "reading_band": reading_band, "listening_results": listening_results, "listening_score": listening_score, "listening_band": listening_band}, status=status.HTTP_200_OK)
+    
+class UserAnswerListView(generics.ListAPIView):
+    queryset = UserAnswer.objects.all()
+    serializer_class = UserAnswerListSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+class UserAnswerDetailView(generics.RetrieveAPIView):
+    queryset = UserAnswer.objects.all()
+    serializer_class = UserAnswerDetailSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+class UserAnswerDetailByMocktestIdView(generics.RetrieveAPIView):
+    serializer_class = UserAnswerDetailSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    
+    def get_object(self):
+        mocktest_id = self.kwargs.get('mocktest_id')
+        user_profile = self.request.user.profile
+        
+        try:
+            user_mocktest = UserMockTest.objects.get(mocktest__id=mocktest_id, user_profile=user_profile)
+            user_answer = UserAnswer.objects.get(user_mocktest=user_mocktest)
+            return user_answer
+        except (UserMockTest.DoesNotExist, UserAnswer.DoesNotExist):
+            return None
+    def get(self, request, *args, **kwargs):
+        instance = self.get_object()
+        if not instance:
+            return Response({"detail": "UserAnswer not found."}, status=status.HTTP_404_NOT_FOUND)
+        serializer = self.get_serializer(instance)
+        return Response(serializer.data)
