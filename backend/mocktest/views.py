@@ -169,6 +169,6 @@ class CheckMockTestView(APIView):
             "reading_answers": correct_answer.reading_answers
         }
         
-        reading_results, reading_score, listening_results, listening_score = check_answers(user_answers, correct_answers_data, user_mocktest)
+        reading_results, reading_score, reading_band, listening_results, listening_score, listening_band = check_answers(user_answers, correct_answers_data, user_mocktest)
         
-        return Response({"reading_results": reading_results, "reading_score": reading_score, "listening_results": listening_results, "listening_score": listening_score}, status=status.HTTP_200_OK)
+        return Response({"reading_results": reading_results, "reading_score": reading_score, "reading_band": reading_band, "listening_results": listening_results, "listening_score": listening_score, "listening_band": listening_band}, status=status.HTTP_200_OK)
