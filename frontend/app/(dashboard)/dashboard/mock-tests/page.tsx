@@ -6,6 +6,7 @@ import MockTestCard from "./MockTestCard";
 import { AuthActions } from "@/app/api/auth/utils";
 import useSWR from "swr";
 import { fetcher } from "@/app/api/auth/fetcher";
+import {getUserMockTests} from "@/app/api/mocktest/utils";
 
 interface UserMockTest {
     id: number;
@@ -37,7 +38,7 @@ const MockPage: React.FC = () => {
 
             try {
                 const data: UserMockTest[] =
-                    await authActions.getUserMockTests();
+                    await getUserMockTests();
                 setMockTests(data);
                 console.log(data);
             } catch (error) {
@@ -74,8 +75,7 @@ const MockPage: React.FC = () => {
                                         {mockTests.map((test, index) => (
                                             <MockTestCard
                                                 key={index}
-                                                mockTestId={test.id}
-                                                mocktestId={test.id}
+                                                mocktestId={test.mocktest}
                                                 title={test.mocktest_details.title}
                                                 description={
                                                     test.mocktest_details.description

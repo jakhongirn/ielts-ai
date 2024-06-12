@@ -8,36 +8,36 @@ import WritingSection from "@/components/MockTest/writing";
 import { fetcher } from "@/app/api/auth/fetcher";
 import { UserAnswerDataType } from "@/types/mocktest";
 import { PreventNavigation } from "@/components/PreventNavigation";
+import { postUserAnswers } from "../../../../api/mocktest/utils";
+import { AuthActions } from "@/app/api/auth/utils";
 
 const MockTest = ({ params }: { params: { id: string } }) => {
     const { id: testId } = params;
     const { data, error } = useSWR(`/user-mocktests/${testId}/`, fetcher);
-    
+
     const router = useRouter();
-    
+
     const [sectionNumber, setSectionNumber] = useState<number>(0);
     const [answers, setAnswers] = useState({
-        user_answers: {
-            listening: {},
-            reading: {},
-            writing: {},
-        },
+        listening: {},
+        reading: {},
+        writing: {},
     });
 
     // Prevent user from leaving the pag
     useEffect(() => {
         const handleBeforeUnload = (event) => {
             event.preventDefault();
-            event.returnValue = 'Are you sure you want to leave? Your progress will be lost.';
+            event.returnValue =
+                "Are you sure you want to leave? Your progress will be lost.";
         };
 
-        window.addEventListener('beforeunload', handleBeforeUnload);
+        window.addEventListener("beforeunload", handleBeforeUnload);
 
         return () => {
-            window.removeEventListener('beforeunload', handleBeforeUnload);
+            window.removeEventListener("beforeunload", handleBeforeUnload);
         };
     }, []);
-    
 
     if (error) return <div>Failed to load</div>;
     if (!data) return <div>Loading...</div>;
@@ -46,41 +46,48 @@ const MockTest = ({ params }: { params: { id: string } }) => {
     const listeningData = data.sections.listening;
     const writingData = data.sections.writing;
 
-   const transformAnswersListToObject = (data: UserAnswerDataType) => {
-    const answers = data.user_answers
-    return Object.keys(answers).reduce((acc, key)=> {
-        if (answers[key]) {
-            acc[key] = answers[key] as string;
-        }
-        return acc;
-    }, {} as { [key: string]: string})
-   }
-
+    const transformAnswersListToObject = (data: UserAnswerDataType) => {
+        const answers = data.user_answers;
+        return Object.keys(answers).reduce(
+            (acc, key) => {
+                if (answers[key]) {
+                    acc[key] = answers[key] as string;
+                }
+                return acc;
+            },
+            {} as { [key: string]: string }
+        );
+    };
 
     const handleNextStep = async (sectionAnswers: UserAnswerDataType) => {
         const newAnswers = { ...answers };
-        console.log(sectionAnswers)
+        console.log(sectionAnswers);
 
         if (sectionNumber === 0) {
-            newAnswers.user_answers.listening = transformAnswersListToObject(sectionAnswers);
+            newAnswers.listening =
+                transformAnswersListToObject(sectionAnswers);
         } else if (sectionNumber === 1) {
-            newAnswers.user_answers.reading = transformAnswersListToObject(sectionAnswers);
+            newAnswers.reading =
+                transformAnswersListToObject(sectionAnswers);
         } else if (sectionNumber === 2) {
-            newAnswers.user_answers.writing = sectionAnswers;
+            newAnswers.writing = sectionAnswers;
         }
 
-        const jsonAnswers = JSON.stringify(newAnswers);
-        console.log(jsonAnswers);
         setAnswers(newAnswers);
 
         if (sectionNumber < 2) {
             setSectionNumber((prev) => prev + 1);
         } else {
+            
+
             // Submit all answers and navigate to feedback
             console.log("Submitting all answers:", newAnswers);
 
+            postUserAnswers(testId, newAnswers);
+
             // Replace this with actual submission logic
-            router.push("/dashboard/results"); // Navigate to feedback page
+
+            router.push("/dashboard/results/"); // Navigate to feedback page
         }
     };
 
@@ -98,10 +105,10 @@ const MockTest = ({ params }: { params: { id: string } }) => {
 
     const sectionComponents = [
         <ListeningSection
-        key="listening"
-        mockTestData={listeningData}
-        submitSectionForm={handleNextStep}
-    />,
+            key="listening"
+            mockTestData={listeningData}
+            submitSectionForm={handleNextStep}
+        />,
         <ReadingSection
             key="reading"
             mockTestData={readingData}
@@ -114,12 +121,7 @@ const MockTest = ({ params }: { params: { id: string } }) => {
         />,
     ];
 
-    return (
-    <>
-        
-        {sectionComponents[sectionNumber]
-        }</>
-    )
+    return <>{sectionComponents[sectionNumber]}</>;
 };
 
 export default MockTest;

@@ -15,8 +15,7 @@ import { useRouter } from "next/navigation";
 import Modal from "@/components/Dashboard/Modal";
 
 interface MockTestCardProps {
-    mockTestId: number;
-    mocktestId: number;
+    mocktestId: string;
     status: string;
     title: string;
     description: string;
