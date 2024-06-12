@@ -2,26 +2,16 @@
 
 import useSWR from "swr";
 import { fetcher } from "@/app/api/auth/fetcher";
-import { AuthActions } from "@/app/api/auth/utils";
-import { useRouter } from "next/navigation";
 import * as Tabs from "@radix-ui/react-tabs";
 import { InfoCircledIcon } from "@radix-ui/react-icons";
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card";
 import AvatarProfile from "@/components/Dashboard/Avatar";
 import { Button } from "@/components/ui/button"
 
 
-function Profile() {
-    const router = useRouter();
 
-    const { data: user } = useSWR("/auth/users/me", fetcher);
+function Profile() {
+
+    const { data: user } = useSWR("/auth/user/", fetcher);
 
     if (!user) return <p>No user information available</p>;
 
@@ -67,19 +57,19 @@ function Profile() {
                                 <div className="flex items-center space-x-2">
                                     <InfoCircledIcon />
                                     <span className="text-lg text-gray-600">
-                                        <span className="font-medium">Email:</span> {user.email}
+                                        <span className="font-medium">Email:</span> {user.user.email}
                                     </span>
                                 </div>
                                 <div className="flex items-center space-x-2">
                                     <InfoCircledIcon />
                                     <span className="text-lg text-gray-600">
-                                    <span className="font-medium">Username:</span> {user.username}
+                                    <span className="font-medium">Username:</span> {user.user.username}
                                     </span>
                                 </div>
                                 <div className="flex items-center space-x-2">
                                     <InfoCircledIcon />
                                     <span className="text-lg text-gray-600">
-                                    <span className="font-medium">Name:</span> {user.username}
+                                    <span className="font-medium">Name:</span> {user.user.first_name}
                                     </span>
                                 </div>
                                 <div className="flex items-center space-x-2">

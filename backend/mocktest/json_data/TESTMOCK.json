@@ -1,0 +1,1535 @@
+{
+    "testId": 130,
+    "sections": {
+        "reading": {
+            "partName": "Part",
+            "parts": [
+                {
+                    "part_number": 1,
+                    "title": "Father of modern management",
+                    "instruction": "You should spend about 20 minutes on Questions 1-14 which are based on Reading Passage 1",
+                    "imageURL": "mock1-reading-p1.jpg",
+                    "type": "multi-heading",
+                    "paragraphs": [
+                        {
+                            "title": "A",
+                            "content": "Peter Drucker was one of the most important management thinkers of the past hundred years. He wrote about 40 book and thousands of articles and he never rested in his mission to persuade the world that management matters. “Management is an organ of institutions … the organ that converts a mob into an organisation, and human efforts into performance.” Did he succeed? The range of his influence was extraordinary. Wherever people grapple with tricky management problems, from big organizations to small ones, from the public sector to the private, and increasingly in the voluntary sector, you can find Drucker’s fingerprints."
+                        },
+                        {
+                            "title": "B",
+                            "content": "His first two books – The End of Economic Man (1939) and The Future of Industrial Man (1942) – had their admirers, including Winston Churchill, but they annoyed academic critics by ranging so widely over so many different subjects. Still, the second of these books attracted attention with its passionate insistence that companies had a social dimension as well as an economic purpose. His third book, The Concept of the Corporation, became an instant bestseller and has remained in print ever since."
+                        },
+                        {
+                            "title": "C",
+                            "content": "The two most interesting arguments in The Concept of the Corporation actually had little to do with the decentralization fad. They were to dominate his work. The first had to do with “empowering” workers. Drucker believed in treating workers as resources rather than just as costs. He was a harsh critic of the assembly-line system of production that then dominated the manufacturing sector – partly because assembly lines moved at the speed of the slowest and partly because they failed to engage the creativity of individual workers. The second argument had to do with the rise of knowledge workers. Drucker argued that the world is moving from an “economy of goods” to an economy of “knowledge” – and from a society dominated by an industrial proletariat to one dominated by brain workers. He insisted that this had profound implications for both managers and politicians. Managers had to stop treating workers like cogs in a huge inhuman machine and start treating them as brain workers. In turn, politicians had to realise that knowledge, and hence education, was the single most important resource for any advanced society. Yet Drucker also thought that this economy had implications for knowledge workers themselves. They had to come to terms with the fact that they were neither “bosses” nor “workers”, but something in between: entrepreneurs who had responsibility for developing their most important resource, brainpower, and who also needed to take more control of their own careers, including their pension plans."
+                        },
+                        {
+                            "title": "D",
+                            "content": "However, there was also a hard side to his work. Drucker was responsible for inventing one of the rational school of management’s most successful products – “management by objectives”. In one of his most substantial works, The Practice of Management (1954), he emphasised the importance of managers and corporations setting clear long-term objectives and then translating those long-term objectives into more immediate goals. He argued that firms should have an elite corps of general managers, who set these long-term objectives, and then a group of more specialised managers. For his critics, this was a retreat from his earlier emphasis on the soft side of management. For Drucker it was all perfectly consistent: if you rely too much on empowerment you risk anarchy, whereas if you rely too much on command-and-control you sacrifice creativity. The trick is for managers to set long-term goals, but then allow their employees to work out ways of achieving those goals. If Drucker helped make management a global industry, he also helped push it beyond its business base. He was emphatically a management thinker, not just a business one. He believed that management is “the defining organ of all modern institutions”, not just corporations."
+                        },
+                        {
+                            "title": "E",
+                            "content": "There are three persistent criticisms of Drucker’s work. The first is that he focused on big organisations rather than small ones. The Concept of the Corporation was in many ways a fanfare to big organisations. As Drucker said, “We know today that in modern industrial production, particularly in modern mass production, the small unit is not only inefficient, it cannot produce at all.” The book helped to launch the “big organisation boom” that dominated business thinking for the next 20 years. The second criticism is that Drucker’s enthusiasm for management by objectives helped to lead the business down a dead end. They prefer to allow ideas, including ideas for long-term strategies, to bubble up from the bottom and middle of the organisations rather than being imposed from on high. Thirdly, Drucker is criticised for being a maverick who has increasingly been left behind by the increasing rigour of his chosen field. There is no single area of academic management theory that he made his own."
+                        },
+                        {
+                            "title": "F",
+                            "content": "There are three persistent criticisms of Drucker’s work. The first is that he focused on big organisations rather than small ones. The Concept of the Corporation was in many ways a fanfare to big organisations. As Drucker said, “We know today that in modern industrial production, particularly in modern mass production, the small unit is not only inefficient, it cannot produce at all.” The book helped to launch the “big organisation boom” that dominated business thinking for the next 20 years. The second criticism is that Drucker’s enthusiasm for management by objectives helped to lead the business down a dead end. They prefer to allow ideas, including ideas for long-term strategies, to bubble up from the bottom and middle of the organisations rather than being imposed from on high. Thirdly, Drucker is criticised for being a maverick who has increasingly been left behind by the increasing rigour of his chosen field. There is no single area of academic management theory that he made his own."
+                        }
+                    ],
+                    "questions": [
+                        {
+                            "q_id": 1,
+                            "q_numbers": "1-6",
+                            "q_instructions": [
+                                {
+                                    "text": "Reading Passage has six paragraphs, A-F"
+                                },
+                                {
+                                    "text": "Choose the correct heading for each paragraph from the list below."
+                                },
+                                {
+                                    "text": "Write the correct number, i-ix, in boxes 1-6 on your answer sheet."
+                                }
+                            ],
+                            "type": "matching-heading",
+                            "titleHeading": "List of Headings",
+                            "headings": [
+                                {
+                                    "h_id": "i",
+                                    "h_text": "The popularity and impact of Drucker's work"
+                                },
+                                {
+                                    "h_id": "ii",
+                                    "h_text": "Heading 2"
+                                },
+                                {
+                                    "h_id": "iii",
+                                    "h_text": "Heading 3"
+                                },
+                                {
+                                    "h_id": "iv",
+                                    "h_text": "Heading 4"
+                                }
+                            ],
+                            "q_answers": [
+                                {
+                                    "q_number": "1",
+                                    "q_text": "Paragraph A"
+                                },
+                                {
+                                    "q_number": "2",
+                                    "q_text": "Paragraph B"
+                                },
+                                {
+                                    "q_number": "3",
+                                    "q_text": "Paragraph C"
+                                },
+                                {
+                                    "q_number": "4",
+                                    "q_text": "Paragraph D"
+                                }
+                            ]
+                        },
+
+                        {
+                            "q_id": 2,
+                            "type": "identify-information",
+                            "q_numbers": "7-10",
+                            "q_instructions": [
+                                {
+                                    "text": "Do the following statements agree with the information given in Reading Passage 1?"
+                                },
+                                {
+                                    "text": "In boxes 7-10 on your answer sheet, write:"
+                                }
+                            ],
+                            "isAnswerTypeTrueFalse": false,
+                            "question_texts": [
+                                {
+                                    "q_number": 7,
+                                    "q_text": "Drucker's first two books were not well received by academic critics."
+                                },
+                                {
+                                    "q_number": 8,
+                                    "q_text": "Drucker's third book was a bestseller."
+                                },
+                                {
+                                    "q_number": 9,
+                                    "q_text": "Drucker believed that workers should be treated as resources."
+                                },
+                                {
+                                    "q_number": 10,
+                                    "q_text": "Drucker believed that knowledge workers should take more control of their careers."
+                                }
+                            ]
+                        },
+                        {
+                            "q_id": 4,
+                            "type": "multiple-choice-more",
+                            "q_numbers": "11-12",
+                            "q_instructions": [
+                                {
+                                    "text": "Choose TWO letters from A-E."
+                                },
+                                {
+                                    "text": "Write your answers in boxes 11 and 12 on your answer sheet."
+                                },
+                                {
+                                    "text": "Which TWO of the following are true of Drucker’s views?"
+                                }
+                            ],
+                            "choices": [
+                                {
+                                    "q_id": "A",
+                                    "q_text": "High-rank executives and workers should be put in balanced positions in management practice"
+                                },
+                                {
+                                    "q_id": "B",
+                                    "q_text": "Young executives should be given chances to start from low-level jobs"
+                                },
+                                {
+                                    "q_id": "C",
+                                    "q_text": "More emphasis should be laid on fostering the development of the union."
+                                },
+                                {
+                                    "q_id": "D",
+                                    "q_text": "Management should facilitate workers with tools of self-appraisal instead of controlling them from the outside force"
+                                },
+                                {
+                                    "q_id": "E",
+                                    "q_text": "Leaders should go beyond the scope of management details and strategically establish goals"
+                                }
+                            ]
+                        },
+                        {
+                            "q_id": 3,
+                            "type": "multiple-choice-more",
+                            "q_numbers": "13-14",
+                            "q_instructions": [
+                                {
+                                    "text": "Choose TWO letters from A-E."
+                                },
+                                {
+                                    "text": "Write your answers in boxes 13 and 14 on your answer sheet."
+                                },
+                                {
+                                    "text": "Which TWO of the following are true of Drucker’s views?"
+                                }
+                            ],
+                            "choices": [
+                                {
+                                    "q_id": "A",
+                                    "q_text": "High-rank executives and workers should be put in balanced positions in management practice"
+                                },
+                                {
+                                    "q_id": "B",
+                                    "q_text": "Young executives should be given chances to start from low-level jobs"
+                                },
+                                {
+                                    "q_id": "C",
+                                    "q_text": "More emphasis should be laid on fostering the development of the union."
+                                },
+                                {
+                                    "q_id": "D",
+                                    "q_text": "Management should facilitate workers with tools of self-appraisal instead of controlling them from the outside force"
+                                },
+                                {
+                                    "q_id": "E",
+                                    "q_text": "Leaders should go beyond the scope of management details and strategically establish goals"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "part_number": 2,
+                    "title": "New Agriculture in Oregon, US",
+                    "instruction": "You should spend about 20 minutes on Questions 15-27 which are based on Reading Passage 2.",
+                    "imageURL": "mock1-reading-p2.jpg",
+                    "type": "multi-heading",
+                    "paragraphs": [
+                        {
+                            "title": "A",
+                            "content": "Onion growers in eastern Oregon are adopting a system that saves water and keeps topsoil in place while producing the highest quality “super-colossal” onions. Pear growers in southern Oregon have reduced their use of some of the most toxic pesticides by up to two-thirds, and are still producing top-quality pear. Range managers throughout the state have controlled the poisonous weed tansy ragwort with insect predators and saved the Oregon livestock industry up to $4.8 million a year."
+                        },
+                        {
+                            "title": "B",
+                            "content": "These are some of the results Oregon growers have achieved in collaboration with Oregon State University (OSU) researchers as they test new farming methods including integrated pest management (IPM). Nationwide, however, IPM has not delivered results comparable to those in Oregon. A recent U.S General Accounting Office (GAO) report indicates that while integrated pest management can result in dramatically reduced pesticide use, the federal government has been lacking in effectively promoting that goal and implementing IPM. Farmers also blame the government for not making the new options of pest management attractive. “Wholesale changes in the way that farmers control the pests on their farms is an expensive business.” Tony Brown, of the National Farmers Association, says. “If the farmers are given tax breaks to offset the expenditure, then they would willingly accept the new practices.” The report goes on to note that even though the use of the riskiest pesticides has declined nationwide, they still make up more than 40 percent of all pesticides used today; and national pesticide use has risen by 40 million kilograms since 1992. “Our food supply remains the safest and highest quality on Earth but we continue to overdose our farmland with powerful and toxic pesticides and to under-use the safe and effective alternatives,” charged Patrick Leahy, who commissioned the report. Green action groups disagree about the safety issue. “There is no way that habitual consumption of foodstuffs grown using toxic chemical of the nature found on today’s farms can be healthy for consumers,” noted Bill Bowler, spokesman for Green Action, one of many lobbyists interested in this issue."
+                        },
+                        {
+                            "title": "C",
+                            "content": "The GAO report singles out Oregon’s apple and pear producers who have used the new IPM techniques with growing success. Although Oregon is clearly ahead of the nation, scientists at OSU are taking the Government Accounting Office criticisms seriously. “We must continue to develop effective alternative practices that will reduce environmental hazards and produce high-quality products,” said Paul Jepson, a professor of entomology at OSU and new director of"
+                        },
+                        {
+                            "title": "D",
+                            "content": "However, there was also a hard side to his work. Drucker was responsible for inventing one of the rational school of management’s most successful products – “management by objectives”. In one of his most substantial works, The Practice of Management (1954), he emphasised the importance of managers and corporations setting clear long-term objectives and then translating those long-term objectives into more immediate goals. He argued that firms should have an elite corps of general managers, who set these long-term objectives, and then a group of more specialised managers. For his critics, this was a retreat from his earlier emphasis on the soft side of management. For Drucker it was all perfectly consistent: if you rely too much on empowerment you risk anarchy, whereas if you rely too much on command-and-control you sacrifice creativity. The trick is for managers to set long-term goals, but then allow their employees to work out ways of achieving those goals. If Drucker helped make management a global industry, he also helped push it beyond its business base. He was emphatically a management thinker, not just a business one. He believed that management is “the defining organ of all modern institutions”, not just corporations."
+                        },
+                        {
+                            "title": "E",
+                            "content": "There are three persistent criticisms of Drucker’s work. The first is that he focused on big organisations rather than small ones. The Concept of the Corporation was in many ways a fanfare to big organisations. As Drucker said, “We know today that in modern industrial production, particularly in modern mass production, the small unit is not only inefficient, it cannot produce at all.” The book helped to launch the “big organisation boom” that dominated business thinking for the next 20 years. The second criticism is that Drucker’s enthusiasm for management by objectives helped to lead the business down a dead end. They prefer to allow ideas, including ideas for long-term strategies, to bubble up from the bottom and middle of the organisations rather than being imposed from on high. Thirdly, Drucker is criticised for being a maverick who has increasingly been left behind by the increasing rigour of his chosen field. There is no single area of academic management theory that he made his own."
+                        },
+                        {
+                            "title": "F",
+                            "content": "There are three persistent criticisms of Drucker’s work. The first is that he focused on big organisations rather than small ones. The Concept of the Corporation was in many ways a fanfare to big organisations. As Drucker said, “We know today that in modern industrial production, particularly in modern mass production, the small unit is not only inefficient, it cannot produce at all.” The book helped to launch the “big organisation boom” that dominated business thinking for the next 20 years. The second criticism is that Drucker’s enthusiasm for management by objectives helped to lead the business down a dead end. They prefer to allow ideas, including ideas for long-term strategies, to bubble up from the bottom and middle of the organisations rather than being imposed from on high. Thirdly, Drucker is criticised for being a maverick who has increasingly been left behind by the increasing rigour of his chosen field. There is no single area of academic management theory that he made his own."
+                        },
+                        {
+                            "title": "G",
+                            "content": "In addition, the new system produced crops of very large onions, rated “super-colossal” and highly valued by the restaurant industry and food processors. Art Pimms, one of the researchers at Malheur comments: “Growers are finding that when they adopt more environmentally benign practices, they can have excellent results. The new practices benefit the environment and give the growers their success."
+                        },
+                        {
+                            "title": "H",
+                            "content": "OSU researcher in Malheur next tested straw mulch and found that it successfully held soil in place and kept the ground moist with less irrigation. In addition, and unexpectedly, the scientists found that the mulched soil created a home for beneficial beetles and spiders that prey on onion thrips – a notorious pest in commercial onion fields – a discovery that could reduce the need for pesticides. “I would never have believed that we could replace the artificial pest controls that we had before and still keep our good results,” commented Steve Black, a commercial onion farmer in Oregon, “but instead we have actually surpassed expectations.”"
+                        },
+                        {
+                            "title": "I",
+                            "content": "OSU researchers throughout the state have been working to reduce dependence on broad-spectrum chemical spays that are toxic to many kinds of organisms, including humans. “Consumers are rightly putting more and more pressure on the industry to change its reliance on chemical pesticides, but they still want a picture-perfect product,” said Rick Hilton, an entomologist at OSU’s Southern Oregon Research and Extension Centre, where researches help pear growers reduce the need for highly toxic pesticides. Picture perfect pears are an important product in Oregon and traditionally they have required lots of chemicals. In recent years, the industry has faced stiff competition from overseas producers, so any new methods that growers adopt must make sense economically as well as environmentally. Hilton is testing a growth regulator that interferes with the molting of codling moth larvae. Another study used pheromone dispensers to disrupt codling moth mating. These and other methods of integrated pest management have allowed pear growers to reduce their use of organophosphates by two-thirds and reduce all other synthetic pesticides by even more and still produce top-quality pears. These and other studies around the state are part of the effort of the IPPC to find alternative farming practices that benefit both the economy and the environment."
+                        }
+                    ],
+                    "questions": [
+                        {
+                            "q_id": 1,
+                            "q_numbers": "15-22",
+                            "q_instructions": [
+                                {
+                                    "text": "Use the information in the passage to match the people (listed A-G) with opinions or deeds below."
+                                },
+                                {
+                                    "text": "Write the appropriate letters A-G in boxes 15-22 on your answer sheet."
+                                },
+                                {
+                                    "text": "NB You may use any letter more than once"
+                                }
+                            ],
+                            "type": "matching-heading",
+                            "titleHeading": "",
+                            "headings": [
+                                {
+                                    "h_id": "A",
+                                    "h_text": "Tony Brown"
+                                },
+                                {
+                                    "h_id": "B",
+                                    "h_text": "Patrick Leahy"
+                                },
+                                {
+                                    "h_id": "C",
+                                    "h_text": "Heading 3"
+                                },
+                                {
+                                    "h_id": "D",
+                                    "h_text": "Heading 4"
+                                }
+                            ],
+                            "q_answers": [
+                                {
+                                    "q_number": 15,
+                                    "q_text": "There is a double-advantage to the new techniques."
+                                },
+                                {
+                                    "q_number": 16,
+                                    "q_text": "The work on developing these alternative techniques is not finished."
+                                },
+                                {
+                                    "q_number": 17,
+                                    "q_text": "Eating food that has had chemicals used in its production is dangerous to our health."
+                                },
+                                {
+                                    "q_number": 18,
+                                    "q_text": "Changing current farming methods into a new one is not a cheap process."
+                                },
+                                {
+                                    "q_number": 19,
+                                    "q_text": "Changing current farming methods into a new one is not a cheap process."
+                                },
+                                {
+                                    "q_number": 20,
+                                    "q_text": "Changing current farming methods into a new one is not a cheap process."
+                                },
+                                {
+                                    "q_number": 21,
+                                    "q_text": "Changing current farming methods into a new one is not a cheap process."
+                                },
+                                {
+                                    "q_number": 22,
+                                    "q_text": "Changing current farming methods into a new one is not a cheap process."
+                                }
+                            ]
+                        },
+
+                        {
+                            "q_id": 2,
+                            "type": "identify-information",
+                            "q_numbers": "23-27",
+                            "q_instructions": [
+                                {
+                                    "text": "Do the following statements agree with the information given in Reading Passage 2?"
+                                },
+                                {
+                                    "text": "In boxes 23-27 on your answer sheet, write:"
+                                }
+                            ],
+                            "isAnswerTypeTrueFalse": false,
+                            "question_texts": [
+                                {
+                                    "q_number": 23,
+                                    "q_text": "Drucker's first two books were not well received by academic critics."
+                                },
+                                {
+                                    "q_number": 24,
+                                    "q_text": "Drucker's third book was a bestseller."
+                                },
+                                {
+                                    "q_number": 25,
+                                    "q_text": "Drucker believed that workers should be treated as resources."
+                                },
+                                {
+                                    "q_number": 26,
+                                    "q_text": "Drucker believed that knowledge workers should take more control of their careers."
+                                },
+                                {
+                                    "q_number": 27,
+                                    "q_text": "Drucker believed that knowledge workers should take more control of their careers."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "part_number": 3,
+                    "title": "Terminated Dinosaur Era",
+                    "instruction": "You should spend about 20 minutes on Questions 28-40 which are based on Reading Passage 3.",
+                    "imageURL": "mock1-reading-p3.jpg",
+                    "type": "multi-heading",
+                    "paragraphs": [
+                        {
+                            "title": "A",
+                            "content": "Onion growers in eastern Oregon are adopting a system that saves water and keeps topsoil in place while producing the highest quality “super-colossal” onions. Pear growers in southern Oregon have reduced their use of some of the most toxic pesticides by up to two-thirds, and are still producing top-quality pear. Range managers throughout the state have controlled the poisonous weed tansy ragwort with insect predators and saved the Oregon livestock industry up to $4.8 million a year."
+                        },
+                        {
+                            "title": "B",
+                            "content": "These are some of the results Oregon growers have achieved in collaboration with Oregon State University (OSU) researchers as they test new farming methods including integrated pest management (IPM). Nationwide, however, IPM has not delivered results comparable to those in Oregon. A recent U.S General Accounting Office (GAO) report indicates that while integrated pest management can result in dramatically reduced pesticide use, the federal government has been lacking in effectively promoting that goal and implementing IPM. Farmers also blame the government for not making the new options of pest management attractive. “Wholesale changes in the way that farmers control the pests on their farms is an expensive business.” Tony Brown, of the National Farmers Association, says. “If the farmers are given tax breaks to offset the expenditure, then they would willingly accept the new practices.” The report goes on to note that even though the use of the riskiest pesticides has declined nationwide, they still make up more than 40 percent of all pesticides used today; and national pesticide use has risen by 40 million kilograms since 1992. “Our food supply remains the safest and highest quality on Earth but we continue to overdose our farmland with powerful and toxic pesticides and to under-use the safe and effective alternatives,” charged Patrick Leahy, who commissioned the report. Green action groups disagree about the safety issue. “There is no way that habitual consumption of foodstuffs grown using toxic chemical of the nature found on today’s farms can be healthy for consumers,” noted Bill Bowler, spokesman for Green Action, one of many lobbyists interested in this issue."
+                        },
+                        {
+                            "title": "C",
+                            "content": "The GAO report singles out Oregon’s apple and pear producers who have used the new IPM techniques with growing success. Although Oregon is clearly ahead of the nation, scientists at OSU are taking the Government Accounting Office criticisms seriously. “We must continue to develop effective alternative practices that will reduce environmental hazards and produce high-quality products,” said Paul Jepson, a professor of entomology at OSU and new director of"
+                        },
+                        {
+                            "title": "D",
+                            "content": "However, there was also a hard side to his work. Drucker was responsible for inventing one of the rational school of management’s most successful products – “management by objectives”. In one of his most substantial works, The Practice of Management (1954), he emphasised the importance of managers and corporations setting clear long-term objectives and then translating those long-term objectives into more immediate goals. He argued that firms should have an elite corps of general managers, who set these long-term objectives, and then a group of more specialised managers. For his critics, this was a retreat from his earlier emphasis on the soft side of management. For Drucker it was all perfectly consistent: if you rely too much on empowerment you risk anarchy, whereas if you rely too much on command-and-control you sacrifice creativity. The trick is for managers to set long-term goals, but then allow their employees to work out ways of achieving those goals. If Drucker helped make management a global industry, he also helped push it beyond its business base. He was emphatically a management thinker, not just a business one. He believed that management is “the defining organ of all modern institutions”, not just corporations."
+                        },
+                        {
+                            "title": "E",
+                            "content": "There are three persistent criticisms of Drucker’s work. The first is that he focused on big organisations rather than small ones. The Concept of the Corporation was in many ways a fanfare to big organisations. As Drucker said, “We know today that in modern industrial production, particularly in modern mass production, the small unit is not only inefficient, it cannot produce at all.” The book helped to launch the “big organisation boom” that dominated business thinking for the next 20 years. The second criticism is that Drucker’s enthusiasm for management by objectives helped to lead the business down a dead end. They prefer to allow ideas, including ideas for long-term strategies, to bubble up from the bottom and middle of the organisations rather than being imposed from on high. Thirdly, Drucker is criticised for being a maverick who has increasingly been left behind by the increasing rigour of his chosen field. There is no single area of academic management theory that he made his own."
+                        }
+                    ],
+                    "questions": [
+                        {
+                            "q_id": 99,
+                            "q_instructions": [
+                                {
+                                    "text": "Choose the appropriate letters A-D"
+                                },
+                                {
+                                    "text": "Write a theme in Boxes 28-32 on your answer sheet."
+                                }
+                            ],
+                            "q_numbers": "28-32",
+                            "type": "multiple-choice-one",
+                            "question_choices": [
+                                {
+                                    "q_title": "The author...",
+                                    "q_number": "28",
+                                    "choices": [
+                                        {
+                                            "choice_id": "A",
+                                            "choice_text": "believes that man is causing global warming"
+                                        },
+                                        {
+                                            "choice_id": "B",
+                                            "choice_text": "believes that global warming is a natural process"
+                                        },
+                                        {
+                                            "choice_id": "C",
+                                            "choice_text": "is sure what the causes of global warming are"
+                                        },
+                                        {
+                                            "choice_id": "D",
+                                            "choice_text": "does not say what he believes the causes of global warming are"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "q_title": "As to the cause of global warming, the author believes that …",
+                                    "q_number": "29",
+                                    "choices": [
+                                        {
+                                            "choice_id": "A",
+                                            "choice_text": "believes that man is causing global warming"
+                                        },
+                                        {
+                                            "choice_id": "B",
+                                            "choice_text": "believes that global warming is a natural process"
+                                        },
+                                        {
+                                            "choice_id": "C",
+                                            "choice_text": "is sure what the causes of global warming are"
+                                        },
+                                        {
+                                            "choice_id": "D",
+                                            "choice_text": "does not say what he believes the causes of global warming are"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "q_title": "More than 80% of the top meteorologists in the United States are of the opinion that…",
+                                    "q_number": "30",
+                                    "choices": [
+                                        {
+                                            "choice_id": "A",
+                                            "choice_text": "believes that man is causing global warming"
+                                        },
+                                        {
+                                            "choice_id": "B",
+                                            "choice_text": "believes that global warming is a natural process"
+                                        },
+                                        {
+                                            "choice_id": "C",
+                                            "choice_text": "is sure what the causes of global warming are"
+                                        },
+                                        {
+                                            "choice_id": "D",
+                                            "choice_text": "does not say what he believes the causes of global warming are"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "q_title": "Our understanding of the weather…",
+                                    "q_number": "31",
+                                    "choices": [
+                                        {
+                                            "choice_id": "A",
+                                            "choice_text": "believes that man is causing global warming"
+                                        },
+                                        {
+                                            "choice_id": "B",
+                                            "choice_text": "believes that global warming is a natural process"
+                                        },
+                                        {
+                                            "choice_id": "C",
+                                            "choice_text": "is sure what the causes of global warming are"
+                                        },
+                                        {
+                                            "choice_id": "D",
+                                            "choice_text": "does not say what he believes the causes of global warming are"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "q_title": "Currently, Dr. James Hansen’s beliefs include the fact that …",
+                                    "q_number": "32",
+                                    "choices": [
+                                        {
+                                            "choice_id": "A",
+                                            "choice_text": "believes that man is causing global warming"
+                                        },
+                                        {
+                                            "choice_id": "B",
+                                            "choice_text": "believes that global warming is a natural process"
+                                        },
+                                        {
+                                            "choice_id": "C",
+                                            "choice_text": "is sure what the causes of global warming are"
+                                        },
+                                        {
+                                            "choice_id": "D",
+                                            "choice_text": "does not say what he believes the causes of global warming are"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "q_id": 2,
+                            "type": "identify-information",
+                            "q_numbers": "33-38",
+                            "q_instructions": [
+                                {
+                                    "text": "Do the statements below agree with the information in Reading Passage 3?"
+                                },
+                                {
+                                    "text": "In Boxes 33-38, write:"
+                                }
+                            ],
+                            "isAnswerTypeTrueFalse": false,
+                            "question_texts": [
+                                {
+                                    "q_number": 33,
+                                    "q_text": "Drucker's first two books were not well received by academic critics."
+                                },
+                                {
+                                    "q_number": 34,
+                                    "q_text": "Drucker's third book was a bestseller."
+                                },
+                                {
+                                    "q_number": 35,
+                                    "q_text": "Drucker believed that workers should be treated as resources."
+                                },
+                                {
+                                    "q_number": 36,
+                                    "q_text": "Drucker believed that knowledge workers should take more control of their careers."
+                                },
+                                {
+                                    "q_number": 37,
+                                    "q_text": "Drucker believed that knowledge workers should take more control of their careers."
+                                },
+                                {
+                                    "q_number": 38,
+                                    "q_text": "Drucker believed that knowledge workers should take more control of their careers."
+                                }
+                            ]
+                        },
+                        {
+                            "q_id": 2,
+                            "type": "sentence-completion",
+                            "q_numbers": "39-40",
+                            "q_instructions": [
+                                {
+                                    "text": "Complete the sentences below."
+                                },
+                                {
+                                    "text": "Use NO MORE THAN THREE WORDS from the passage for each blank space."
+                                },
+                                {
+                                    "text": "Write your answers in boxes 39-40 on your answer sheet."
+                                }
+                            ],
+                            "sentences": [
+                                {
+                                    "parts": [
+                                        "As well as planting trees and not driving, the environmentalist would like us to choose products that are wrapped",
+                                        {
+                                            "inputId": "39",
+                                            "correctAnswer": "some_answer"
+                                        },
+                                        " and can be used more than once."
+                                    ]
+                                },
+                                {
+                                    "parts": [
+                                        "Big businesses would have us believe that we are making too much fuss about global warming, because they have",
+                                        {
+                                            "inputId": "40",
+                                            "correctAnswer": "some_answer"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "q_id": 3,
+                            "type": "table-completion",
+                            "q_numbers": "40-45",
+                            "q_instructions": [
+                                {
+                                    "text": "Complete the sentences below."
+                                },
+                                {
+                                    "text": "Use NO MORE THAN THREE WORDS from the passage for each blank space."
+                                },
+                                {
+                                    "text": "Write your answers in boxes 39-40 on your answer sheet."
+                                }
+                            ],
+                            "q_imageURL": "mock1-reading-img1.png",
+                            "answers": 6,
+                            "q_start": 40,
+                            "q_end": 45
+                        }
+                    ]
+                }
+            ]
+        },
+        "listening": {
+            "introduction": "Introduction to IELTS Listening Section",
+            "partName": "Part",
+            "listeningAudioSrc": "https://mocktests.fra1.cdn.digitaloceanspaces.com/mocktest-A001/mock-listening-1.mp3",
+            "parts": [
+                {
+                    "part_number": 1,
+                    "questions": [
+                        {
+                            "q_id": 1,
+                            "type": "table-completion",
+                            "q_numbers": "1-5",
+                            "q_instructions": [
+                                {
+                                    "text": "Complete the sentences below."
+                                },
+                                {
+                                    "text": "Use NO MORE THAN THREE WORDS from the passage for each blank space."
+                                },
+                                {
+                                    "text": "Write your answers in boxes 39-40 on your answer sheet."
+                                }
+                            ],
+                            "q_imageURL": "mock1-listening-img1.png",
+                            "answers": 5,
+                            "q_start": 1,
+                            "q_end": 5
+                        },
+                        {
+                            "q_id": 2,
+                            "type": "identify-information",
+                            "q_numbers": "7-10",
+                            "q_instructions": [
+                                {
+                                    "text": "Do the following statements agree with the information given in Reading Passage 1?"
+                                },
+                                {
+                                    "text": "In boxes 7-10 on your answer sheet, write:"
+                                }
+                            ],
+                            "isAnswerTypeTrueFalse": false,
+                            "question_texts": [
+                                {
+                                    "q_number": 7,
+                                    "q_text": "Drucker's first two books were not well received by academic critics."
+                                },
+                                {
+                                    "q_number": 8,
+                                    "q_text": "Drucker's third book was a bestseller."
+                                },
+                                {
+                                    "q_number": 9,
+                                    "q_text": "Drucker believed that workers should be treated as resources."
+                                },
+                                {
+                                    "q_number": 10,
+                                    "q_text": "Drucker believed that knowledge workers should take more control of their careers."
+                                }
+                            ]
+                        },
+                        {
+                            "q_id": 3,
+                            "type": "multiple-choice-more",
+                            "q_numbers": "11-12",
+                            "q_instructions": [
+                                {
+                                    "text": "Choose TWO letters from A-E."
+                                },
+                                {
+                                    "text": "Write your answers in boxes 12 and 13 on your answer sheet."
+                                },
+                                {
+                                    "text": "Which TWO of the following are true of Drucker’s views?"
+                                }
+                            ],
+                            "max-selection": 2,
+                            "options": [
+                                {
+                                    "q_id": "A",
+                                    "q_text": "High-rank executives and workers should be put in balanced positions in management practice"
+                                },
+                                {
+                                    "q_id": "B",
+                                    "q_text": "Young executives should be given chances to start from low-level jobs"
+                                },
+                                {
+                                    "q_id": "C",
+                                    "q_text": "More emphasis should be laid on fostering the development of the union."
+                                },
+                                {
+                                    "q_id": "D",
+                                    "q_text": "Management should facilitate workers with tools of self-appraisal instead of controlling them from the outside force"
+                                },
+                                {
+                                    "q_id": "E",
+                                    "q_text": "Leaders should go beyond the scope of management details and strategically establish goals"
+                                }
+                            ]
+                        },
+                        {
+                            "q_id": 4,
+                            "type": "multiple-choice-more",
+                            "q_numbers": "13-14",
+                            "q_instructions": [
+                                {
+                                    "text": "Choose TWO letters from A-E."
+                                },
+                                {
+                                    "text": "Write your answers in boxes 12 and 13 on your answer sheet."
+                                },
+                                {
+                                    "text": "Which TWO of the following are mentioned in the passage as criticisms to Drucker and his views?"
+                                }
+                            ],
+
+                            "question_texts": [
+                                {
+                                    "q_id": "A",
+                                    "q_text": "High-rank executives and workers should be put in balanced positions in management practice"
+                                },
+                                {
+                                    "q_id": "B",
+                                    "q_text": "Young executives should be given chances to start from low-level jobs"
+                                },
+                                {
+                                    "q_id": "C",
+                                    "q_text": "More emphasis should be laid on fostering the development of the union."
+                                },
+                                {
+                                    "q_id": "D",
+                                    "q_text": "Management should facilitate workers with tools of self-appraisal instead of controlling them from the outside force"
+                                },
+                                {
+                                    "q_id": "E",
+                                    "q_text": "Leaders should go beyond the scope of management details and strategically establish goals"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "part_number": 2,
+                    "title": "New Agriculture in Oregon, US",
+                    "instruction": "You should spend about 20 minutes on Questions 15-27 which are based on Reading Passage 2.",
+                    "imageURL": "mock1-reading-p2.jpg",
+                    "type": "multi-heading",
+                    "paragraphs": [
+                        {
+                            "title": "A",
+                            "content": "Onion growers in eastern Oregon are adopting a system that saves water and keeps topsoil in place while producing the highest quality “super-colossal” onions. Pear growers in southern Oregon have reduced their use of some of the most toxic pesticides by up to two-thirds, and are still producing top-quality pear. Range managers throughout the state have controlled the poisonous weed tansy ragwort with insect predators and saved the Oregon livestock industry up to $4.8 million a year."
+                        },
+                        {
+                            "title": "B",
+                            "content": "These are some of the results Oregon growers have achieved in collaboration with Oregon State University (OSU) researchers as they test new farming methods including integrated pest management (IPM). Nationwide, however, IPM has not delivered results comparable to those in Oregon. A recent U.S General Accounting Office (GAO) report indicates that while integrated pest management can result in dramatically reduced pesticide use, the federal government has been lacking in effectively promoting that goal and implementing IPM. Farmers also blame the government for not making the new options of pest management attractive. “Wholesale changes in the way that farmers control the pests on their farms is an expensive business.” Tony Brown, of the National Farmers Association, says. “If the farmers are given tax breaks to offset the expenditure, then they would willingly accept the new practices.” The report goes on to note that even though the use of the riskiest pesticides has declined nationwide, they still make up more than 40 percent of all pesticides used today; and national pesticide use has risen by 40 million kilograms since 1992. “Our food supply remains the safest and highest quality on Earth but we continue to overdose our farmland with powerful and toxic pesticides and to under-use the safe and effective alternatives,” charged Patrick Leahy, who commissioned the report. Green action groups disagree about the safety issue. “There is no way that habitual consumption of foodstuffs grown using toxic chemical of the nature found on today’s farms can be healthy for consumers,” noted Bill Bowler, spokesman for Green Action, one of many lobbyists interested in this issue."
+                        },
+                        {
+                            "title": "C",
+                            "content": "The GAO report singles out Oregon’s apple and pear producers who have used the new IPM techniques with growing success. Although Oregon is clearly ahead of the nation, scientists at OSU are taking the Government Accounting Office criticisms seriously. “We must continue to develop effective alternative practices that will reduce environmental hazards and produce high-quality products,” said Paul Jepson, a professor of entomology at OSU and new director of"
+                        },
+                        {
+                            "title": "D",
+                            "content": "However, there was also a hard side to his work. Drucker was responsible for inventing one of the rational school of management’s most successful products – “management by objectives”. In one of his most substantial works, The Practice of Management (1954), he emphasised the importance of managers and corporations setting clear long-term objectives and then translating those long-term objectives into more immediate goals. He argued that firms should have an elite corps of general managers, who set these long-term objectives, and then a group of more specialised managers. For his critics, this was a retreat from his earlier emphasis on the soft side of management. For Drucker it was all perfectly consistent: if you rely too much on empowerment you risk anarchy, whereas if you rely too much on command-and-control you sacrifice creativity. The trick is for managers to set long-term goals, but then allow their employees to work out ways of achieving those goals. If Drucker helped make management a global industry, he also helped push it beyond its business base. He was emphatically a management thinker, not just a business one. He believed that management is “the defining organ of all modern institutions”, not just corporations."
+                        },
+                        {
+                            "title": "E",
+                            "content": "There are three persistent criticisms of Drucker’s work. The first is that he focused on big organisations rather than small ones. The Concept of the Corporation was in many ways a fanfare to big organisations. As Drucker said, “We know today that in modern industrial production, particularly in modern mass production, the small unit is not only inefficient, it cannot produce at all.” The book helped to launch the “big organisation boom” that dominated business thinking for the next 20 years. The second criticism is that Drucker’s enthusiasm for management by objectives helped to lead the business down a dead end. They prefer to allow ideas, including ideas for long-term strategies, to bubble up from the bottom and middle of the organisations rather than being imposed from on high. Thirdly, Drucker is criticised for being a maverick who has increasingly been left behind by the increasing rigour of his chosen field. There is no single area of academic management theory that he made his own."
+                        },
+                        {
+                            "title": "F",
+                            "content": "There are three persistent criticisms of Drucker’s work. The first is that he focused on big organisations rather than small ones. The Concept of the Corporation was in many ways a fanfare to big organisations. As Drucker said, “We know today that in modern industrial production, particularly in modern mass production, the small unit is not only inefficient, it cannot produce at all.” The book helped to launch the “big organisation boom” that dominated business thinking for the next 20 years. The second criticism is that Drucker’s enthusiasm for management by objectives helped to lead the business down a dead end. They prefer to allow ideas, including ideas for long-term strategies, to bubble up from the bottom and middle of the organisations rather than being imposed from on high. Thirdly, Drucker is criticised for being a maverick who has increasingly been left behind by the increasing rigour of his chosen field. There is no single area of academic management theory that he made his own."
+                        },
+                        {
+                            "title": "G",
+                            "content": "In addition, the new system produced crops of very large onions, rated “super-colossal” and highly valued by the restaurant industry and food processors. Art Pimms, one of the researchers at Malheur comments: “Growers are finding that when they adopt more environmentally benign practices, they can have excellent results. The new practices benefit the environment and give the growers their success."
+                        },
+                        {
+                            "title": "H",
+                            "content": "OSU researcher in Malheur next tested straw mulch and found that it successfully held soil in place and kept the ground moist with less irrigation. In addition, and unexpectedly, the scientists found that the mulched soil created a home for beneficial beetles and spiders that prey on onion thrips – a notorious pest in commercial onion fields – a discovery that could reduce the need for pesticides. “I would never have believed that we could replace the artificial pest controls that we had before and still keep our good results,” commented Steve Black, a commercial onion farmer in Oregon, “but instead we have actually surpassed expectations.”"
+                        },
+                        {
+                            "title": "I",
+                            "content": "OSU researchers throughout the state have been working to reduce dependence on broad-spectrum chemical spays that are toxic to many kinds of organisms, including humans. “Consumers are rightly putting more and more pressure on the industry to change its reliance on chemical pesticides, but they still want a picture-perfect product,” said Rick Hilton, an entomologist at OSU’s Southern Oregon Research and Extension Centre, where researches help pear growers reduce the need for highly toxic pesticides. Picture perfect pears are an important product in Oregon and traditionally they have required lots of chemicals. In recent years, the industry has faced stiff competition from overseas producers, so any new methods that growers adopt must make sense economically as well as environmentally. Hilton is testing a growth regulator that interferes with the molting of codling moth larvae. Another study used pheromone dispensers to disrupt codling moth mating. These and other methods of integrated pest management have allowed pear growers to reduce their use of organophosphates by two-thirds and reduce all other synthetic pesticides by even more and still produce top-quality pears. These and other studies around the state are part of the effort of the IPPC to find alternative farming practices that benefit both the economy and the environment."
+                        }
+                    ],
+                    "questions": [
+                        {
+                            "q_id": 1,
+                            "q_numbers": "15-22",
+                            "q_instructions": [
+                                {
+                                    "text": "Use the information in the passage to match the people (listed A-G) with opinions or deeds below."
+                                },
+                                {
+                                    "text": "Write the appropriate letters A-G in boxes 15-22 on your answer sheet."
+                                },
+                                {
+                                    "text": "NB You may use any letter more than once"
+                                }
+                            ],
+                            "type": "matching-heading",
+                            "titleHeading": "",
+                            "headings": [
+                                {
+                                    "h_id": "A",
+                                    "h_text": "Tony Brown"
+                                },
+                                {
+                                    "h_id": "B",
+                                    "h_text": "Patrick Leahy"
+                                },
+                                {
+                                    "h_id": "C",
+                                    "h_text": "Heading 3"
+                                },
+                                {
+                                    "h_id": "D",
+                                    "h_text": "Heading 4"
+                                }
+                            ],
+                            "q_answers": [
+                                {
+                                    "q_number": 15,
+                                    "q_text": "There is a double-advantage to the new techniques."
+                                },
+                                {
+                                    "q_number": 16,
+                                    "q_text": "The work on developing these alternative techniques is not finished."
+                                },
+                                {
+                                    "q_number": 17,
+                                    "q_text": "Eating food that has had chemicals used in its production is dangerous to our health."
+                                },
+                                {
+                                    "q_number": 18,
+                                    "q_text": "Changing current farming methods into a new one is not a cheap process."
+                                },
+                                {
+                                    "q_number": 19,
+                                    "q_text": "Changing current farming methods into a new one is not a cheap process."
+                                },
+                                {
+                                    "q_number": 20,
+                                    "q_text": "Changing current farming methods into a new one is not a cheap process."
+                                },
+                                {
+                                    "q_number": 21,
+                                    "q_text": "Changing current farming methods into a new one is not a cheap process."
+                                },
+                                {
+                                    "q_number": 22,
+                                    "q_text": "Changing current farming methods into a new one is not a cheap process."
+                                }
+                            ]
+                        },
+
+                        {
+                            "q_id": 2,
+                            "type": "identify-information",
+                            "q_numbers": "23-27",
+                            "q_instructions": [
+                                {
+                                    "text": "Do the following statements agree with the information given in Reading Passage 2?"
+                                },
+                                {
+                                    "text": "In boxes 23-27 on your answer sheet, write:"
+                                }
+                            ],
+                            "isAnswerTypeTrueFalse": false,
+                            "question_texts": [
+                                {
+                                    "q_number": 23,
+                                    "q_text": "Drucker's first two books were not well received by academic critics."
+                                },
+                                {
+                                    "q_number": 24,
+                                    "q_text": "Drucker's third book was a bestseller."
+                                },
+                                {
+                                    "q_number": 25,
+                                    "q_text": "Drucker believed that workers should be treated as resources."
+                                },
+                                {
+                                    "q_number": 26,
+                                    "q_text": "Drucker believed that knowledge workers should take more control of their careers."
+                                },
+                                {
+                                    "q_number": 27,
+                                    "q_text": "Drucker believed that knowledge workers should take more control of their careers."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "part_number": 3,
+                    "title": "Terminated Dinosaur Era",
+                    "instruction": "You should spend about 20 minutes on Questions 28-40 which are based on Reading Passage 3.",
+                    "imageURL": "mock1-reading-p3.jpg",
+                    "type": "multi-heading",
+                    "paragraphs": [
+                        {
+                            "title": "A",
+                            "content": "Onion growers in eastern Oregon are adopting a system that saves water and keeps topsoil in place while producing the highest quality “super-colossal” onions. Pear growers in southern Oregon have reduced their use of some of the most toxic pesticides by up to two-thirds, and are still producing top-quality pear. Range managers throughout the state have controlled the poisonous weed tansy ragwort with insect predators and saved the Oregon livestock industry up to $4.8 million a year."
+                        },
+                        {
+                            "title": "B",
+                            "content": "These are some of the results Oregon growers have achieved in collaboration with Oregon State University (OSU) researchers as they test new farming methods including integrated pest management (IPM). Nationwide, however, IPM has not delivered results comparable to those in Oregon. A recent U.S General Accounting Office (GAO) report indicates that while integrated pest management can result in dramatically reduced pesticide use, the federal government has been lacking in effectively promoting that goal and implementing IPM. Farmers also blame the government for not making the new options of pest management attractive. “Wholesale changes in the way that farmers control the pests on their farms is an expensive business.” Tony Brown, of the National Farmers Association, says. “If the farmers are given tax breaks to offset the expenditure, then they would willingly accept the new practices.” The report goes on to note that even though the use of the riskiest pesticides has declined nationwide, they still make up more than 40 percent of all pesticides used today; and national pesticide use has risen by 40 million kilograms since 1992. “Our food supply remains the safest and highest quality on Earth but we continue to overdose our farmland with powerful and toxic pesticides and to under-use the safe and effective alternatives,” charged Patrick Leahy, who commissioned the report. Green action groups disagree about the safety issue. “There is no way that habitual consumption of foodstuffs grown using toxic chemical of the nature found on today’s farms can be healthy for consumers,” noted Bill Bowler, spokesman for Green Action, one of many lobbyists interested in this issue."
+                        },
+                        {
+                            "title": "C",
+                            "content": "The GAO report singles out Oregon’s apple and pear producers who have used the new IPM techniques with growing success. Although Oregon is clearly ahead of the nation, scientists at OSU are taking the Government Accounting Office criticisms seriously. “We must continue to develop effective alternative practices that will reduce environmental hazards and produce high-quality products,” said Paul Jepson, a professor of entomology at OSU and new director of"
+                        },
+                        {
+                            "title": "D",
+                            "content": "However, there was also a hard side to his work. Drucker was responsible for inventing one of the rational school of management’s most successful products – “management by objectives”. In one of his most substantial works, The Practice of Management (1954), he emphasised the importance of managers and corporations setting clear long-term objectives and then translating those long-term objectives into more immediate goals. He argued that firms should have an elite corps of general managers, who set these long-term objectives, and then a group of more specialised managers. For his critics, this was a retreat from his earlier emphasis on the soft side of management. For Drucker it was all perfectly consistent: if you rely too much on empowerment you risk anarchy, whereas if you rely too much on command-and-control you sacrifice creativity. The trick is for managers to set long-term goals, but then allow their employees to work out ways of achieving those goals. If Drucker helped make management a global industry, he also helped push it beyond its business base. He was emphatically a management thinker, not just a business one. He believed that management is “the defining organ of all modern institutions”, not just corporations."
+                        },
+                        {
+                            "title": "E",
+                            "content": "There are three persistent criticisms of Drucker’s work. The first is that he focused on big organisations rather than small ones. The Concept of the Corporation was in many ways a fanfare to big organisations. As Drucker said, “We know today that in modern industrial production, particularly in modern mass production, the small unit is not only inefficient, it cannot produce at all.” The book helped to launch the “big organisation boom” that dominated business thinking for the next 20 years. The second criticism is that Drucker’s enthusiasm for management by objectives helped to lead the business down a dead end. They prefer to allow ideas, including ideas for long-term strategies, to bubble up from the bottom and middle of the organisations rather than being imposed from on high. Thirdly, Drucker is criticised for being a maverick who has increasingly been left behind by the increasing rigour of his chosen field. There is no single area of academic management theory that he made his own."
+                        }
+                    ],
+                    "questions": [
+                        {
+                            "q_id": 99,
+                            "q_numbers": "28-32",
+                            "q_instructions": [
+                                {
+                                    "text": "Choose the appropriate letters A-D"
+                                },
+                                {
+                                    "text": "Write a theme in Boxes 28-32 on your answer sheet."
+                                }
+                            ],
+                            "type": "multiple-choice-one",
+                            "question_choices": [
+                                {
+                                    "q_title": "The author...",
+                                    "q_number": "28",
+                                    "choices": [
+                                        {
+                                            "choice_id": "A",
+                                            "choice_text": "believes that man is causing global warming"
+                                        },
+                                        {
+                                            "choice_id": "B",
+                                            "choice_text": "believes that global warming is a natural process"
+                                        },
+                                        {
+                                            "choice_id": "C",
+                                            "choice_text": "is sure what the causes of global warming are"
+                                        },
+                                        {
+                                            "choice_id": "D",
+                                            "choice_text": "does not say what he believes the causes of global warming are"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "q_title": "As to the cause of global warming, the author believes that …",
+                                    "q_number": "29",
+                                    "choices": [
+                                        {
+                                            "choice_id": "A",
+                                            "choice_text": "believes that man is causing global warming"
+                                        },
+                                        {
+                                            "choice_id": "B",
+                                            "choice_text": "believes that global warming is a natural process"
+                                        },
+                                        {
+                                            "choice_id": "C",
+                                            "choice_text": "is sure what the causes of global warming are"
+                                        },
+                                        {
+                                            "choice_id": "D",
+                                            "choice_text": "does not say what he believes the causes of global warming are"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "q_title": "More than 80% of the top meteorologists in the United States are of the opinion that…",
+                                    "q_number": "30",
+                                    "choices": [
+                                        {
+                                            "choice_id": "A",
+                                            "choice_text": "believes that man is causing global warming"
+                                        },
+                                        {
+                                            "choice_id": "B",
+                                            "choice_text": "believes that global warming is a natural process"
+                                        },
+                                        {
+                                            "choice_id": "C",
+                                            "choice_text": "is sure what the causes of global warming are"
+                                        },
+                                        {
+                                            "choice_id": "D",
+                                            "choice_text": "does not say what he believes the causes of global warming are"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "q_title": "Our understanding of the weather…",
+                                    "q_number": "31",
+                                    "choices": [
+                                        {
+                                            "choice_id": "A",
+                                            "choice_text": "believes that man is causing global warming"
+                                        },
+                                        {
+                                            "choice_id": "B",
+                                            "choice_text": "believes that global warming is a natural process"
+                                        },
+                                        {
+                                            "choice_id": "C",
+                                            "choice_text": "is sure what the causes of global warming are"
+                                        },
+                                        {
+                                            "choice_id": "D",
+                                            "choice_text": "does not say what he believes the causes of global warming are"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "q_title": "Currently, Dr. James Hansen’s beliefs include the fact that …",
+                                    "q_number": "32",
+                                    "choices": [
+                                        {
+                                            "choice_id": "A",
+                                            "choice_text": "believes that man is causing global warming"
+                                        },
+                                        {
+                                            "choice_id": "B",
+                                            "choice_text": "believes that global warming is a natural process"
+                                        },
+                                        {
+                                            "choice_id": "C",
+                                            "choice_text": "is sure what the causes of global warming are"
+                                        },
+                                        {
+                                            "choice_id": "D",
+                                            "choice_text": "does not say what he believes the causes of global warming are"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "q_id": 2,
+                            "type": "identify-information",
+                            "q_numbers": "33-38",
+                            "q_instructions": [
+                                {
+                                    "text": "Do the statements below agree with the information in Reading Passage 3?"
+                                },
+                                {
+                                    "text": "In Boxes 33-38, write:"
+                                }
+                            ],
+                            "isAnswerTypeTrueFalse": false,
+                            "question_texts": [
+                                {
+                                    "q_number": 33,
+                                    "q_text": "Drucker's first two books were not well received by academic critics."
+                                },
+                                {
+                                    "q_number": 34,
+                                    "q_text": "Drucker's third book was a bestseller."
+                                },
+                                {
+                                    "q_number": 35,
+                                    "q_text": "Drucker believed that workers should be treated as resources."
+                                },
+                                {
+                                    "q_number": 36,
+                                    "q_text": "Drucker believed that knowledge workers should take more control of their careers."
+                                },
+                                {
+                                    "q_number": 37,
+                                    "q_text": "Drucker believed that knowledge workers should take more control of their careers."
+                                },
+                                {
+                                    "q_number": 38,
+                                    "q_text": "Drucker believed that knowledge workers should take more control of their careers."
+                                }
+                            ]
+                        },
+                        {
+                            "q_id": 2,
+                            "type": "sentence-completion",
+                            "q_numbers": "39-40",
+                            "q_instructions": [
+                                {
+                                    "text": "Complete the sentences below."
+                                },
+                                {
+                                    "text": "Use NO MORE THAN THREE WORDS from the passage for each blank space."
+                                },
+                                {
+                                    "text": "Write your answers in boxes 39-40 on your answer sheet."
+                                }
+                            ],
+                            "sentences": [
+                                {
+                                    "parts": [
+                                        "As well as planting trees and not driving, the environmentalist would like us to choose products that are wrapped",
+                                        {
+                                            "inputId": "39",
+                                            "correctAnswer": "some_answer"
+                                        },
+                                        " and can be used more than once."
+                                    ]
+                                },
+                                {
+                                    "parts": [
+                                        "Big businesses would have us believe that we are making too much fuss about global warming, because they have",
+                                        {
+                                            "inputId": "40",
+                                            "correctAnswer": "some_answer"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "q_id": 3,
+                            "type": "table-completion",
+                            "q_numbers": "40-45",
+                            "q_instructions": [
+                                {
+                                    "text": "Complete the sentences below."
+                                },
+                                {
+                                    "text": "Use NO MORE THAN THREE WORDS from the passage for each blank space."
+                                },
+                                {
+                                    "text": "Write your answers in boxes 39-40 on your answer sheet."
+                                }
+                            ],
+                            "q_imageURL": "mock1-reading-img1.png",
+                            "answers": 6,
+                            "q_start": 40,
+                            "q_end": 45
+                        },
+                        {
+                            "q_id": 4,
+                            "type": "sentence-completion",
+                            "q_numbers": "39-40",
+                            "q_instructions": [
+                                {
+                                    "text": "Complete the sentences below."
+                                },
+                                {
+                                    "text": "Use NO MORE THAN THREE WORDS from the passage for each blank space."
+                                },
+                                {
+                                    "text": "Write your answers in boxes 39-40 on your answer sheet."
+                                }
+                            ],
+                            "sentences": [
+                                {
+                                    "parts": [
+                                        "What did Sereno and Garcea produce in the initial weeks before digging work?",
+                                        {
+                                            "inputId": "46",
+                                            "correctAnswer": "some_answer"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "parts": [
+                                        "Big businesses would have us believe that we are making too much fuss about global warming, because they have",
+                                        {
+                                            "inputId": "40",
+                                            "correctAnswer": "some_answer"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "part_number": 4,
+                    "title": "Terminated Dinosaur Era",
+                    "instruction": "You should spend about 20 minutes on Questions 28-40 which are based on Reading Passage 3.",
+                    "imageURL": "mock1-reading-p3.jpg",
+                    "type": "multi-heading",
+                    "paragraphs": [
+                        {
+                            "title": "A",
+                            "content": "Onion growers in eastern Oregon are adopting a system that saves water and keeps topsoil in place while producing the highest quality “super-colossal” onions. Pear growers in southern Oregon have reduced their use of some of the most toxic pesticides by up to two-thirds, and are still producing top-quality pear. Range managers throughout the state have controlled the poisonous weed tansy ragwort with insect predators and saved the Oregon livestock industry up to $4.8 million a year."
+                        },
+                        {
+                            "title": "B",
+                            "content": "These are some of the results Oregon growers have achieved in collaboration with Oregon State University (OSU) researchers as they test new farming methods including integrated pest management (IPM). Nationwide, however, IPM has not delivered results comparable to those in Oregon. A recent U.S General Accounting Office (GAO) report indicates that while integrated pest management can result in dramatically reduced pesticide use, the federal government has been lacking in effectively promoting that goal and implementing IPM. Farmers also blame the government for not making the new options of pest management attractive. “Wholesale changes in the way that farmers control the pests on their farms is an expensive business.” Tony Brown, of the National Farmers Association, says. “If the farmers are given tax breaks to offset the expenditure, then they would willingly accept the new practices.” The report goes on to note that even though the use of the riskiest pesticides has declined nationwide, they still make up more than 40 percent of all pesticides used today; and national pesticide use has risen by 40 million kilograms since 1992. “Our food supply remains the safest and highest quality on Earth but we continue to overdose our farmland with powerful and toxic pesticides and to under-use the safe and effective alternatives,” charged Patrick Leahy, who commissioned the report. Green action groups disagree about the safety issue. “There is no way that habitual consumption of foodstuffs grown using toxic chemical of the nature found on today’s farms can be healthy for consumers,” noted Bill Bowler, spokesman for Green Action, one of many lobbyists interested in this issue."
+                        },
+                        {
+                            "title": "C",
+                            "content": "The GAO report singles out Oregon’s apple and pear producers who have used the new IPM techniques with growing success. Although Oregon is clearly ahead of the nation, scientists at OSU are taking the Government Accounting Office criticisms seriously. “We must continue to develop effective alternative practices that will reduce environmental hazards and produce high-quality products,” said Paul Jepson, a professor of entomology at OSU and new director of"
+                        },
+                        {
+                            "title": "D",
+                            "content": "However, there was also a hard side to his work. Drucker was responsible for inventing one of the rational school of management’s most successful products – “management by objectives”. In one of his most substantial works, The Practice of Management (1954), he emphasised the importance of managers and corporations setting clear long-term objectives and then translating those long-term objectives into more immediate goals. He argued that firms should have an elite corps of general managers, who set these long-term objectives, and then a group of more specialised managers. For his critics, this was a retreat from his earlier emphasis on the soft side of management. For Drucker it was all perfectly consistent: if you rely too much on empowerment you risk anarchy, whereas if you rely too much on command-and-control you sacrifice creativity. The trick is for managers to set long-term goals, but then allow their employees to work out ways of achieving those goals. If Drucker helped make management a global industry, he also helped push it beyond its business base. He was emphatically a management thinker, not just a business one. He believed that management is “the defining organ of all modern institutions”, not just corporations."
+                        },
+                        {
+                            "title": "E",
+                            "content": "There are three persistent criticisms of Drucker’s work. The first is that he focused on big organisations rather than small ones. The Concept of the Corporation was in many ways a fanfare to big organisations. As Drucker said, “We know today that in modern industrial production, particularly in modern mass production, the small unit is not only inefficient, it cannot produce at all.” The book helped to launch the “big organisation boom” that dominated business thinking for the next 20 years. The second criticism is that Drucker’s enthusiasm for management by objectives helped to lead the business down a dead end. They prefer to allow ideas, including ideas for long-term strategies, to bubble up from the bottom and middle of the organisations rather than being imposed from on high. Thirdly, Drucker is criticised for being a maverick who has increasingly been left behind by the increasing rigour of his chosen field. There is no single area of academic management theory that he made his own."
+                        }
+                    ],
+                    "questions": [
+                        {
+                            "q_id": 99,
+                            "q_numbers": "28-32",
+                            "q_instructions": [
+                                {
+                                    "text": "Choose the appropriate letters A-D"
+                                },
+                                {
+                                    "text": "Write a theme in Boxes 28-32 on your answer sheet."
+                                }
+                            ],
+                            "type": "multiple-choice-one",
+                            "question_choices": [
+                                {
+                                    "q_title": "The author...",
+                                    "q_number": "28",
+                                    "choices": [
+                                        {
+                                            "choice_id": "A",
+                                            "choice_text": "believes that man is causing global warming"
+                                        },
+                                        {
+                                            "choice_id": "B",
+                                            "choice_text": "believes that global warming is a natural process"
+                                        },
+                                        {
+                                            "choice_id": "C",
+                                            "choice_text": "is sure what the causes of global warming are"
+                                        },
+                                        {
+                                            "choice_id": "D",
+                                            "choice_text": "does not say what he believes the causes of global warming are"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "q_title": "As to the cause of global warming, the author believes that …",
+                                    "q_number": "29",
+                                    "choices": [
+                                        {
+                                            "choice_id": "A",
+                                            "choice_text": "believes that man is causing global warming"
+                                        },
+                                        {
+                                            "choice_id": "B",
+                                            "choice_text": "believes that global warming is a natural process"
+                                        },
+                                        {
+                                            "choice_id": "C",
+                                            "choice_text": "is sure what the causes of global warming are"
+                                        },
+                                        {
+                                            "choice_id": "D",
+                                            "choice_text": "does not say what he believes the causes of global warming are"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "q_title": "More than 80% of the top meteorologists in the United States are of the opinion that…",
+                                    "q_number": "30",
+                                    "choices": [
+                                        {
+                                            "choice_id": "A",
+                                            "choice_text": "believes that man is causing global warming"
+                                        },
+                                        {
+                                            "choice_id": "B",
+                                            "choice_text": "believes that global warming is a natural process"
+                                        },
+                                        {
+                                            "choice_id": "C",
+                                            "choice_text": "is sure what the causes of global warming are"
+                                        },
+                                        {
+                                            "choice_id": "D",
+                                            "choice_text": "does not say what he believes the causes of global warming are"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "q_title": "Our understanding of the weather…",
+                                    "q_number": "31",
+                                    "choices": [
+                                        {
+                                            "choice_id": "A",
+                                            "choice_text": "believes that man is causing global warming"
+                                        },
+                                        {
+                                            "choice_id": "B",
+                                            "choice_text": "believes that global warming is a natural process"
+                                        },
+                                        {
+                                            "choice_id": "C",
+                                            "choice_text": "is sure what the causes of global warming are"
+                                        },
+                                        {
+                                            "choice_id": "D",
+                                            "choice_text": "does not say what he believes the causes of global warming are"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "q_title": "Currently, Dr. James Hansen’s beliefs include the fact that …",
+                                    "q_number": "32",
+                                    "choices": [
+                                        {
+                                            "choice_id": "A",
+                                            "choice_text": "believes that man is causing global warming"
+                                        },
+                                        {
+                                            "choice_id": "B",
+                                            "choice_text": "believes that global warming is a natural process"
+                                        },
+                                        {
+                                            "choice_id": "C",
+                                            "choice_text": "is sure what the causes of global warming are"
+                                        },
+                                        {
+                                            "choice_id": "D",
+                                            "choice_text": "does not say what he believes the causes of global warming are"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "q_id": 2,
+                            "type": "identify-information",
+                            "q_numbers": "33-38",
+                            "q_instructions": [
+                                {
+                                    "text": "Do the statements below agree with the information in Reading Passage 3?"
+                                },
+                                {
+                                    "text": "In Boxes 33-38, write:"
+                                }
+                            ],
+                            "isAnswerTypeTrueFalse": false,
+                            "question_texts": [
+                                {
+                                    "q_number": 33,
+                                    "q_text": "Drucker's first two books were not well received by academic critics."
+                                },
+                                {
+                                    "q_number": 34,
+                                    "q_text": "Drucker's third book was a bestseller."
+                                },
+                                {
+                                    "q_number": 35,
+                                    "q_text": "Drucker believed that workers should be treated as resources."
+                                },
+                                {
+                                    "q_number": 36,
+                                    "q_text": "Drucker believed that knowledge workers should take more control of their careers."
+                                },
+                                {
+                                    "q_number": 37,
+                                    "q_text": "Drucker believed that knowledge workers should take more control of their careers."
+                                },
+                                {
+                                    "q_number": 38,
+                                    "q_text": "Drucker believed that knowledge workers should take more control of their careers."
+                                }
+                            ]
+                        },
+                        {
+                            "q_id": 2,
+                            "type": "sentence-completion",
+                            "q_numbers": "39-40",
+                            "q_instructions": [
+                                {
+                                    "text": "Complete the sentences below."
+                                },
+                                {
+                                    "text": "Use NO MORE THAN THREE WORDS from the passage for each blank space."
+                                },
+                                {
+                                    "text": "Write your answers in boxes 39-40 on your answer sheet."
+                                }
+                            ],
+                            "sentences": [
+                                {
+                                    "parts": [
+                                        "As well as planting trees and not driving, the environmentalist would like us to choose products that are wrapped",
+                                        {
+                                            "inputId": "39",
+                                            "correctAnswer": "some_answer"
+                                        },
+                                        " and can be used more than once."
+                                    ]
+                                },
+                                {
+                                    "parts": [
+                                        "Big businesses would have us believe that we are making too much fuss about global warming, because they have",
+                                        {
+                                            "inputId": "40",
+                                            "correctAnswer": "some_answer"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "q_id": 3,
+                            "type": "table-completion",
+                            "q_numbers": "40-45",
+                            "q_instructions": [
+                                {
+                                    "text": "Complete the sentences below."
+                                },
+                                {
+                                    "text": "Use NO MORE THAN THREE WORDS from the passage for each blank space."
+                                },
+                                {
+                                    "text": "Write your answers in boxes 39-40 on your answer sheet."
+                                }
+                            ],
+                            "q_imageURL": "mock1-reading-img1.png",
+                            "answers": 6,
+                            "q_start": 40,
+                            "q_end": 45
+                        },
+                        {
+                            "q_id": 4,
+                            "type": "sentence-completion",
+                            "q_numbers": "39-40",
+                            "q_instructions": [
+                                {
+                                    "text": "Complete the sentences below."
+                                },
+                                {
+                                    "text": "Use NO MORE THAN THREE WORDS from the passage for each blank space."
+                                },
+                                {
+                                    "text": "Write your answers in boxes 39-40 on your answer sheet."
+                                }
+                            ],
+                            "sentences": [
+                                {
+                                    "parts": [
+                                        "What did Sereno and Garcea produce in the initial weeks before digging work?",
+                                        {
+                                            "inputId": "46",
+                                            "correctAnswer": "some_answer"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "parts": [
+                                        "Big businesses would have us believe that we are making too much fuss about global warming, because they have",
+                                        {
+                                            "inputId": "40",
+                                            "correctAnswer": "some_answer"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "writing": {
+            "partName": "Task",
+            "parts": [
+                {
+                    "part_number": 1,
+                    "type": "task-1",
+                    "q_id": 1,
+                    "q_instructions": [
+                        {
+                            "text": "You should spend about 20 minutes on this task."
+                        },
+                        {
+                            "text": "The bar chart below describes some changes about the percentage of people were born in Australia and who were born outside Australia living in urban, rural and town between 1995 and 2010."
+                        },
+                        {
+                            "text": "Summarise the information by selecting and reporting the main features and make comparisons where relevant."
+                        },
+                        {
+                            "text": "You should write at least 150 words."
+                        }
+                    ],
+                    "task1_imgURL": "https://mocktests.fra1.cdn.digitaloceanspaces.com/mocktests/writing-task-1.jpg",
+                    "answers": 5,
+                    "q_start": 1,
+                    "q_end": 5
+                },
+                {
+                    "part_number": 2,
+
+                    "q_id": 1,
+                    "type": "task-2",
+                    "q_instructions": [
+                        {
+                            "text": "You should spend about 40 minutes on this task."
+                        },
+                        {
+                            "text": "Rich countries often give money to poorer countries, but it does not solve poverty. Therefore, developed countries should give other types of help to the poor countries rather than financial aid. To what extent do you agree or disagree?"
+                        },
+                        {
+                            "text": "You should write at least 250 words."
+                        }
+                    ],
+                    "q_imageURL": "",
+                    "answers": 5,
+                    "q_start": 1,
+                    "q_end": 5
+                }
+            ]
+        }
+    }
+}

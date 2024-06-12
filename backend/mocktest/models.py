@@ -1,97 +1,98 @@
 from django.db import models
+from django.utils import timezone
+import uuid
+from authentication.models import UserProfile
+from django.contrib.auth import get_user_model
 
-# Create your models here.
+User = get_user_model()
 
-class Assesments(models.Model):
-    SECTIONS = [
-        ('READING', "Reading"),
-        ('LISTENING', "Listening"),
-        ('WRITING', "Writing"),
-        ('SPEAKING', "Speaking")
-    ]
-    
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=255)
-    total_questions = models.IntegerField()
-    duration = models.IntegerField()
-    is_public = models.BooleanField()
-    section_type = models.CharField(choices=SECTIONS, max_length=10)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    cover_image = models.ImageField(upload_to='assesment_images/', null=True, blank=True)
-    book_name = models.CharField(max_length=100, null=True, blank=True)
-
-
-class Result(models.Model):
-    id = models.AutoField(primary_key=True)
-    total_correct_answers = models.IntegerField()
-    score = models.IntegerField()
-    time_spent = models.IntegerField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-    assesment = models.OneToOneField(Assesments, on_delete=models.CASCADE, related_name='results')
-    
-
-class Part(models.Model):
-    id = models.AutoField(primary_key=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+class MockTest(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=True)
     title = models.CharField(max_length=255)
     description = models.TextField()
-    order = models.IntegerField()
-    assessment = models.ForeignKey(Assesments, on_delete=models.CASCADE, related_name='parts')
+    json_file = models.FileField(upload_to='json_data/')
     
-    
-class Question(models.Model):
-    id = models.AutoField(primary_key=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-    question_text = models.TextField()
-    question_group = models.ForeignKey('QuestionGroup', on_delete=models.CASCADE, related_name='questions')
-    correct_answer = models.TextField()
-    
+    def __str__(self):
+        return str(self.title)
 
-from django.db import models
+class CorrectAnswers(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=True)
+    mocktest = models.OneToOneField(MockTest, on_delete=models.CASCADE)
+    listening_answers = models.JSONField()
+    reading_answers = models.JSONField()
+    
+    def __str__(self):
+        return f"Correct Answers for {self.mocktest.title}"
 
-class QuestionGroup(models.Model):
-    QUESTION_TYPES = [
-        ("MULTIPLE_CHOICE_ONE_ANSWER", "Multiple Choice Question"),
-        ("MULTIPLE_CHOICE_MORE_ANSWER", "Multiple Choice More Answers"),
-        ("IDENTIFYING_INFORMATION", "Identifying Information"),
-        ("COMPLETION", "Completion"),
-        ("TABLE_COMPLETION", "Table Completion"),
-        ("MATCHING", "Matching"),
-        ("MATCHING_HEADINGS", "Matching Headings"),
+class PackagePlan(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=True)
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    num_mock_tests = models.PositiveIntegerField(default=1)
+    mocktests_included = models.ManyToManyField(MockTest, related_name='packages')
+    
+    def __str__(self):
+        return str(self.name)
+
+class UserPackagePlan(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=True)
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    package_plan = models.ForeignKey(PackagePlan, on_delete=models.CASCADE)
+    purchase_date = models.DateTimeField(default=timezone.now)
+    remaining_mocktests = models.PositiveIntegerField()
+    
+    
+    def __str__(self):
+        return f"{self.user_profile.user.username} - {self.package_plan.name}"
+
+class UserMockTest(models.Model):
+    STATUS = [
+        ("NEW", "new"),
+        ("PASSED", "passed"),
+        ("LISTENING", "listening"),
+        ("READING", "reading")
     ]
-    id = models.CharField(primary_key=True, max_length=255, default="")  # Assuming a method for CUID generation
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Created At")
-    updated_at = models.DateTimeField(auto_now=True, verbose_name="Updated At")
-    title = models.CharField(max_length=255, verbose_name="Title")
-    description = models.TextField(null=True, blank=True, verbose_name="Description")
-    start_question_num = models.IntegerField(verbose_name="Start Question Number")
-    end_question_num = models.IntegerField(verbose_name="End Question Number")
-    question_type = models.CharField(QUESTION_TYPES, max_length=50)  # This should be adjusted based on your QuestionType enum
-    part = models.ForeignKey('Part', on_delete=models.CASCADE, related_name='questionGroups', verbose_name="Part")
-
-    class Meta:
-        verbose_name = "Question Group"
-        verbose_name_plural = "Question Groups"
-
-
-class Passage(models.Model):
-    PASSAGE_TYPES = [
-        ("PASSAGE_SIMPLE", "Simple Passage"),
-        ("PASSAGE_MULTI_HEADING", "Multi heading Passages")
+    TYPE = [
+        ("FREE", "free"),
+        ("PAID", "paid")
     ]
-    id = models.AutoField(primary_key=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
     
-    title = models.CharField(max_length=255)
-    description=models.TextField(null=True, blank=True)
-    image = models.ImageField(null=True, blank=True)
-    type = models.CharField(choices=PASSAGE_TYPES, max_length=50)
-    part = models.ForeignKey("Part", verbose_name=("Part"), on_delete=models.CASCADE, related_name="Passage")
+    id = models.AutoField(primary_key=True)
+    mocktest = models.ForeignKey(MockTest, on_delete=models.CASCADE)
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    reading_answers = models.FileField(upload_to='json_data/reading_answers/', blank=True, null=True)
+    listening_answers = models.FileField(upload_to='json_data/listening_answers/', blank=True, null=True)
+    writing_answers = models.FileField(upload_to='json_data/writing_answers/', blank=True, null=True)
+    feedback = models.FileField(upload_to='json_data/ai_feedback/', blank=True, null=True)
+    status = models.CharField(choices=STATUS, max_length=15)
+    date = models.DateTimeField(blank=True, null=True)
+    type = models.CharField(choices=TYPE, max_length=15)
 
+    def __str__(self):
+        return f"{self.user_profile.user.username}: {self.mocktest.title}"
+    
+class UserAnswer(models.Model):
+    user_mocktest = models.ForeignKey(UserMockTest, on_delete=models.CASCADE, related_name='user_answers')
+    listening_answers = models.JSONField()
+    reading_answers = models.JSONField()
+    listening_correct_answers = models.JSONField()
+    reading_correct_answers = models.JSONField()
+    listening_results = models.JSONField()
+    reading_results = models.JSONField()
+    listening_score = models.IntegerField()
+    reading_score = models.IntegerField()
+    reading_band = models.FloatField(default=0)
+    listening_band = models.FloatField(default=0) 
+    writing_answers = models.JSONField(blank=True, null=True)
+    writing_feedback = models.JSONField(blank=True, null=True)
+    writing_score = models.IntegerField(default=0)
+    passed_date=models.DateTimeField(default=timezone.now())
 
+class WritingFeedback(models.Model):
+    user_answer = models.ForeignKey(UserAnswer, on_delete=models.CASCADE, related_name='writing_feedback_user')
+    user_writing_answer = models.JSONField()
+    ai_feedback = models.JSONField()
+    
+    def __str__(self):
+        return f"Feedback for {self.user_answer.user_mocktest.mocktest.title}"

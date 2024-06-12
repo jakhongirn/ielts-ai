@@ -134,6 +134,12 @@ export const navItems: NavItem[] = [
     title: "Mock tests",
     href: "/dashboard/mock-tests",
     icon: "packs",
-    label: "transactions",
+    label: "mocktest",
   },
+  {
+    title: "Results",
+    href: "/dashboard/results",
+    icon: "check",
+    label: "results",
+  }
 ];

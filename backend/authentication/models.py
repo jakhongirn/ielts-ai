@@ -5,6 +5,7 @@ from django.contrib.auth.models import (
     PermissionsMixin,
 )
 from django.utils import timezone
+import uuid
 
 class UserManager(BaseUserManager):
     def create_user(self, username, email, password=None, **extra_fields):
@@ -32,11 +33,11 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-    id = models.AutoField(primary_key=True)
-    username = models.CharField(max_length=150, unique=True)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    username = models.CharField(max_length=150, unique=True, blank=True, null=True)
     email = models.EmailField(unique=True)
     first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100, blank=True, null=True)
     password = models.CharField(max_length=128)
     created_at = models.DateTimeField(default=timezone.now)
     is_active = models.BooleanField(default=True)
@@ -45,7 +46,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     objects = UserManager()
     
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username']
+    REQUIRED_FIELDS = ['first_name', 'username']
 
     def __str__(self):
         return self.email
@@ -53,7 +54,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
-    id = models.AutoField(primary_key=True)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     phone_number = models.CharField(max_length=50, null=True, blank=True)
     date_birth = models.DateField(null=True, blank=True)
     updated_at = models.DateTimeField(default=timezone.now, null=True, blank=True)

@@ -6,6 +6,7 @@ type HeaderPropsType = {
     duration: number;
     fontColor: string;
     bgColor: string;
+    
 };
 
 const MockHeader = ({ duration, fontColor, bgColor }: HeaderPropsType) => {
@@ -31,6 +32,7 @@ const MockHeader = ({ duration, fontColor, bgColor }: HeaderPropsType) => {
                     <input
                         type="submit"
                         className={`${bgColor} px-3 py-1 text-white rounded-xl`}
+                        value="Submit"
                     />
                 </div>
             </div>

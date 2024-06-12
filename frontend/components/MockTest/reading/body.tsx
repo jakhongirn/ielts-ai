@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import mockReadingData from "../data/mocktests.json";
 import QuestionColumn from "../questionColumn";
 
 type MockReadingBodyProps = {
     activePart: number;
+    methods: any;
+    mockTestData?: object | any;
 };
 
-const MockReadingBody = ({ activePart }: MockReadingBodyProps) => {
+const MockReadingBody = ({ activePart, mockTestData, methods }: MockReadingBodyProps) => {
     const [leftWidth, setLeftWidth] = useState("50%"); // Initial width as a string
     const [isDragging, setIsDragging] = useState(false);
 
@@ -33,7 +34,7 @@ const MockReadingBody = ({ activePart }: MockReadingBodyProps) => {
     };
 
     const renderLeftColumn = (partNumber: number) => {
-        const partData = mockReadingData.reading.parts.find(
+        const partData = mockTestData?.parts.find(
             (part) => part.part_number === partNumber
         );
 
@@ -96,7 +97,7 @@ const MockReadingBody = ({ activePart }: MockReadingBodyProps) => {
     };
 
     const renderRightColumn = (partNumber: number) => {
-        const partData = mockReadingData.reading.parts.find(
+        const partData = mockTestData.parts.find(
             (part) => part.part_number === partNumber
         );
 
@@ -105,7 +106,7 @@ const MockReadingBody = ({ activePart }: MockReadingBodyProps) => {
         }
 
         return (
-            <QuestionColumn questionData={partData} fontColor="text-red-500" />
+            <QuestionColumn methods={methods} questionData={partData} fontColor="text-red-500" />
         );
     };
 

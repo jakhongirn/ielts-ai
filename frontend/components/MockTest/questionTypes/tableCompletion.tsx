@@ -6,13 +6,13 @@ const TableCompletion = ({ question }: any) => {
     const { register } = useFormContext();
     return (
         <div>
-            <Image
-                src={`/mock_images/${question.q_imageURL}`}
+            {/* <Image
+                src={question.q_imageURL}
                 alt="mock reading image"
                 layout="responsive"
                 width={1000}
                 height={500}
-            />
+            /> */}
             {[...Array(question.answers)].map((_, index) => (
                 
                 <div className="flex items-center gap-x-2 my-2" key={index}>

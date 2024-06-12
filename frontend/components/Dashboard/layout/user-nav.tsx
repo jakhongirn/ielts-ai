@@ -16,7 +16,7 @@ import { useRouter } from "next/navigation";
 import { CircleUser } from "lucide-react";
 
 export function UserNav() {
-    const { data: user } = useSWR("/auth/users/me", fetcher);
+    const { data: user } = useSWR("/auth/user/", fetcher);
     const router = useRouter();
     const { logout, removeTokens } = AuthActions();
     const handleLogout = () => {
