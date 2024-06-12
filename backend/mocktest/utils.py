@@ -1,8 +1,11 @@
 from .models import UserAnswer
+from datetime import datetime
+from django.utils import timezone
 
 def check_answers(user_answers, correct_answers, user_mocktest):
     listening_user_answers = user_answers.get('listening', {})
     reading_user_answers = user_answers.get('reading', {})
+    writing_user_answers = user_answers.get('writing', {})
 
     listening_correct_answers = correct_answers.get('listening_answers', {})
     reading_correct_answers = correct_answers.get('reading_answers', {})
@@ -34,21 +37,41 @@ def check_answers(user_answers, correct_answers, user_mocktest):
             reading_score += 1
             
     listening_band = get_listening_band_score(listening_score)
-    reading_band= get_reading_band_score_academic(reading_score)
+    reading_band = get_reading_band_score_academic(reading_score)
 
-    UserAnswer.objects.create(
-        user_mocktest=user_mocktest,
-        listening_answers=listening_user_answers,
-        reading_answers=reading_user_answers,
-        listening_correct_answers=listening_correct_answers,
-        reading_correct_answers=reading_correct_answers,
-        listening_results=listening_results,
-        reading_results=reading_results,
-        listening_score=listening_score,
-        reading_score=reading_score,
-        listening_band=listening_band,
-        reading_band=reading_band
-    )
+    current_time = timezone.now()
+    # Check if UserAnswer exists and update it, otherwise create a new one
+    try:
+        user_answer = UserAnswer.objects.get(user_mocktest=user_mocktest)
+        user_answer.listening_answers = listening_user_answers
+        user_answer.reading_answers = reading_user_answers
+        user_answer.writing_answers = writing_user_answers
+        user_answer.listening_correct_answers = listening_correct_answers
+        user_answer.reading_correct_answers = reading_correct_answers
+        user_answer.listening_results = listening_results
+        user_answer.reading_results = reading_results
+        user_answer.listening_score = listening_score
+        user_answer.reading_score = reading_score
+        user_answer.listening_band = listening_band
+        user_answer.reading_band = reading_band
+        user_answer.passed_data=current_time
+        user_answer.save()
+    except UserAnswer.DoesNotExist:
+        UserAnswer.objects.create(
+            user_mocktest=user_mocktest,
+            listening_answers=listening_user_answers,
+            reading_answers=reading_user_answers,
+            writing_answer=writing_user_answers,
+            listening_correct_answers=listening_correct_answers,
+            reading_correct_answers=reading_correct_answers,
+            listening_results=listening_results,
+            reading_results=reading_results,
+            listening_score=listening_score,
+            reading_score=reading_score,
+            listening_band=listening_band,
+            reading_band=reading_band,
+            passed_data=current_time
+        )
 
     return reading_results, reading_score, reading_band, listening_results, listening_score, listening_band
 

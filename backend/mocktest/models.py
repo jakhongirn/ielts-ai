@@ -82,6 +82,17 @@ class UserAnswer(models.Model):
     reading_results = models.JSONField()
     listening_score = models.IntegerField()
     reading_score = models.IntegerField()
-    reading_band = models.FloatField()
-    listening_band = models.FloatField() 
-    passed_date=models.DateTimeField(default=timezone.now)
+    reading_band = models.FloatField(default=0)
+    listening_band = models.FloatField(default=0) 
+    writing_answers = models.JSONField(blank=True, null=True)
+    writing_feedback = models.JSONField(blank=True, null=True)
+    writing_score = models.IntegerField(default=0)
+    passed_date=models.DateTimeField(default=timezone.now())
+
+class WritingFeedback(models.Model):
+    user_answer = models.ForeignKey(UserAnswer, on_delete=models.CASCADE, related_name='writing_feedback_user')
+    user_writing_answer = models.JSONField()
+    ai_feedback = models.JSONField()
+    
+    def __str__(self):
+        return f"Feedback for {self.user_answer.user_mocktest.mocktest.title}"

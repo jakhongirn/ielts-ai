@@ -50,11 +50,13 @@ class UserPackagePlanSerializer(serializers.ModelSerializer):
 
 class UserAnswerListSerializer(serializers.ModelSerializer):
     mocktest_id = serializers.UUIDField(source='user_mocktest.mocktest.id')
+    mocktest_title = serializers.CharField(source='user_mocktest.mocktest.title')
     class Meta:
         model = UserAnswer
-        fields = ['id', 'mocktest_id', 'passed_date', 'listening_band', 'listening_score', 'reading_band', 'reading_score']
+        fields = ['id', 'mocktest_id', 'mocktest_title', 'passed_date', 'listening_band', 'listening_score', 'reading_band', 'reading_score']
 
 class UserAnswerDetailSerializer(serializers.ModelSerializer):
+    mocktest_title = serializers.CharField(source='user_mocktest.mocktest.title')
     class Meta:
         model = UserAnswer
-        fields = ['id', 'user_mocktest', 'listening_answers', 'reading_answers', 'listening_correct_answers', 'reading_correct_answers', 'listening_results', 'reading_results', 'passed_date', 'listening_band', 'listening_score', 'reading_score', 'reading_band']
+        fields = ['id', 'user_mocktest', 'mocktest_title', 'listening_answers', 'reading_answers', 'listening_correct_answers', 'reading_correct_answers', 'listening_results', 'reading_results', 'passed_date', 'listening_band', 'listening_score', 'reading_score', 'reading_band', 'writing_answers', 'writing_feedback', 'writing_score']

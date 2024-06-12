@@ -8,7 +8,7 @@ import WritingSection from "@/components/MockTest/writing";
 import { fetcher } from "@/app/api/auth/fetcher";
 import { UserAnswerDataType } from "@/types/mocktest";
 import { PreventNavigation } from "@/components/PreventNavigation";
-import { postUserAnswers } from "../../../../api/mocktest/utils";
+import { postUserAnswers, postUserWritingToAI } from "../../../../api/mocktest/utils";
 import { AuthActions } from "@/app/api/auth/utils";
 
 const MockTest = ({ params }: { params: { id: string } }) => {
@@ -45,6 +45,8 @@ const MockTest = ({ params }: { params: { id: string } }) => {
     const readingData = data.sections.reading;
     const listeningData = data.sections.listening;
     const writingData = data.sections.writing;
+    const task_1_question = writingData.parts[0].q_instructions;
+    const task_2_question = writingData.parts[1].q_instructions;
 
     const transformAnswersListToObject = (data: UserAnswerDataType) => {
         const answers = data.user_answers;
@@ -71,6 +73,9 @@ const MockTest = ({ params }: { params: { id: string } }) => {
                 transformAnswersListToObject(sectionAnswers);
         } else if (sectionNumber === 2) {
             newAnswers.writing = sectionAnswers;
+            
+            
+            
         }
 
         setAnswers(newAnswers);
@@ -79,12 +84,14 @@ const MockTest = ({ params }: { params: { id: string } }) => {
             setSectionNumber((prev) => prev + 1);
         } else {
             
+        
 
             // Submit all answers and navigate to feedback
             console.log("Submitting all answers:", newAnswers);
 
             postUserAnswers(testId, newAnswers);
-
+            postUserWritingToAI(newAnswers.writing)
+            
             // Replace this with actual submission logic
 
             router.push("/dashboard/results/"); // Navigate to feedback page

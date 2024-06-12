@@ -46,8 +46,9 @@ const MockWritingBody = ({ activePart, mockTestData }: MockWritingBodyProps) => 
 
         const {register, setValue} = useFormContext();
 
-        setValue('task1_img', task1ImgURL)
-
+        setValue('task_1_img', "true")
+        setValue('task_1_question', mockTestData.parts[0].task_1_question)
+        setValue('task_2_question', mockTestData.parts[1].task_2_question)
         
 
         
