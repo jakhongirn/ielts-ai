@@ -1503,7 +1503,7 @@
                             "text": "You should write at least 150 words."
                         }
                     ],
-                    "task1_imgURL": "https://mocktests.fra1.cdn.digitaloceanspaces.com/mocktests/writing-task-1.jpg",
+                    "task1_imgURL": "https://mocktests.fra1.cdn.digitaloceanspaces.com/mocktest-A001/writing-task-1.jpg",
                     "answers": 5,
                     "q_start": 1,
                     "q_end": 5

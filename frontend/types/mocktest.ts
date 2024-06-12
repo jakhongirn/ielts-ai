@@ -12,14 +12,19 @@ export type UserWritingAnswerType = {
 }
 
 export interface UserMockTest {
-  id: string;
-  user_profile: string;
+  id: number;
+  reading_answers: string;
+  listening_answers: string;
+  writing_answers: string;
+  feedback: string;
   status: string;
+  date: string;
   type: string;
-  mocktest: {
-      id: number;
+  mocktest:string;
+  mocktest_details: {
+      id:string;
       title: string;
       description: string;
   };
-  date: string;
+  user_profile: string;
 }

@@ -60,9 +60,10 @@ class EssayPromptView(APIView):
                     if block.type == "text":
                         feedback_content += block.text + "\n"
 
+                mocktest_id = request.data.get('mocktest_id')
                 # Find or create UserAnswer
                 user_mocktest = UserMockTest.objects.get(
-                    user_profile=request.user.profile
+                    user_profile=request.user.profile, mocktest=mocktest_id
                 )
                 user_answer, created = UserAnswer.objects.get_or_create(
                     user_mocktest=user_mocktest

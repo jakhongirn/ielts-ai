@@ -45,8 +45,6 @@ const MockTest = ({ params }: { params: { id: string } }) => {
     const readingData = data.sections.reading;
     const listeningData = data.sections.listening;
     const writingData = data.sections.writing;
-    const task_1_question = writingData.parts[0].q_instructions;
-    const task_2_question = writingData.parts[1].q_instructions;
 
     const transformAnswersListToObject = (data: UserAnswerDataType) => {
         const answers = data.user_answers;
@@ -73,9 +71,6 @@ const MockTest = ({ params }: { params: { id: string } }) => {
                 transformAnswersListToObject(sectionAnswers);
         } else if (sectionNumber === 2) {
             newAnswers.writing = sectionAnswers;
-            
-            
-            
         }
 
         setAnswers(newAnswers);
@@ -85,7 +80,7 @@ const MockTest = ({ params }: { params: { id: string } }) => {
         } else {
             
         
-
+            newAnswers.writing["mocktest_id"] = testId;
             // Submit all answers and navigate to feedback
             console.log("Submitting all answers:", newAnswers);
 

@@ -1,0 +1,1174 @@
+{
+    "testId": 130,
+    "sections": {
+        "reading": {
+            "partName": "Part",
+            "parts": [
+                {
+                    "part_number": 1,
+                    "title": "The Pearl",
+                    "instruction": "You should spend about 20 minutes on Questions 1-13, which are based on Reading Passage 1 below.",
+                    "imageURL": "mock1-reading-p1.jpg",
+                    "type": "multi-heading",
+                    "paragraphs": [
+                        {
+                            "title": "A",
+                            "content": " The pearl has always had a special status in the rich and powerful all through the history. For instance, women from ancient Rome went to bed with pearls on them, so that they could remind themselves how wealthy they were after waking up. Pearls used to have more commercial value than diamonds until jewellers learnt to cut gems. In the eastern countries like Persia, ground pearl powders could be used as a medicine to cure anything including heart diseases and epilepsy."
+                        },
+                        {
+                            "title": "B",
+                            "content": "Pearls can generally be divided into three categories: natural, cultured and imitation. When an irritant (such as a grain of sand) gets. inside a certain type of oyster, mussel, or clam, the mollusc will secrete a fluid as a means of defence to coat the irritant. Gradually, layers are accumulated around the irritant until a lustrous natural pearl is formed."
+                        },
+                        {
+                            "title": "C",
+                            "content": "A cultured pearl undergoes the same process. There is only one difference between cultured pearls and natural ones: in cultured pearls, the irritant is a head called ‘mother of pearl’ and is placed in the oyster through surgical implantation. This results in much larger cores in cultivated pearls than those in natural pearls. As long as there are enough layers of nacre (the secreted fluid covering the irritant) to create a gorgeous, gem-quality pearl; the size of the nucleus wouldn’t make a difference to beauty or durability."
+                        },
+                        {
+                            "title": "D",
+                            "content": "Pearls can come from both salt and freshwater sources. Typically, pearls from salt water usually have high quality, although several freshwater pearls are considered high in quality, too. In addition, freshwater pearls often have irregular shapes, with a puffed rice appearance. Nevertheless, it is the individual merits that determine the pearl’s value more than the sources of pearls. Saltwater pearl oysters are usually cultivated in protected lagoons or volcanic atolls, while most freshwater cultured pearls sold today come from China. There are a number of options for producing cultured pearls: use fresh water or sea water shells, transplant the graft into the mantle or into the gonad, add a spherical bead or do it nonbeaded."
+                        },
+                        {
+                            "title": "E",
+                            "content": " No matter which method is used to get pearls, the process usually takes several years. Mussels must reach a mature age, which may take up almost three years, and then be transplanted an irritant. When the irritant is put in place, it takes approximately another three years for a pearl to reach its full size. Sometimes, the irritant may be rejected. As a result, the pearl may be seriously deformed, or the oyster may directly die from such numerous complications as diseases. At the end of a 5- to 10-year circle, only half of the oysters may have made it through. Among the pearls that are actually produced in the end, only about 5% of them will be high-quality enough for the jewellery makers."
+                        },
+                        {
+                            "title": "F",
+                            "content": "Imitation pearls are of another different story. The Island of Mallorca in Spain is renowned for its imitation pearl industry. In most cases, a bead is dipped into a solution made from fish scales. But this coating is quite thin and often wears off. One way to distinguish the imitation pearls is to have a bite on it. Fake pearls glide through your teeth, while the layers of nacre on the real pearls feel gritty."
+                        },
+                        {
+                            "title": "G",
+                            "content": "Several factors are taken into account to evaluate a pearl: size, shape, Colour, the quality of surface and luster. Generally, the three types of pearls come in such order (with the value decreasing): natural pearls, cultured pearls and imitation pearls (which basically are worthless). For jewellers, one way to tell whether a pearl is natural or cultured is to send it to a gem lab and perform an X-ray on it. High-quality natural pearls are extremely rare. Japan’s Akoya pearls are one of the glossiest pearls out there, while the' south sea water of Australia is a cradle to bigger pearls."
+                        },
+                        {
+                            "title": "H",
+                            "content": " Historically, the pearls with the highest quality around the globe are found in the Persian Gulf, particularly around Bahrain. These pearls have to be hand-harvested by divers with no advanced equipment. Unfortunately, when the large reserve of oil was discovered in the early 1930s, Persian Gulf’s natural pearl industry came to a sudden end because the contaminated water destroyed the once pristine pearls. In the present days, India probably has the largest stock of natural pearls. However, it is quite an irony that a large part of India’s slock of natural pearls are originally from Bahrain."
+                        }
+                    ],
+                    "questions": [
+                        {
+                            "q_id": 1,
+                            "q_numbers": "1-4",
+                            "q_instructions": [
+                                {
+                                    "text": "Reading Passage 1 has eight paragraphs, A-H."
+                                },
+                                {
+                                    "text": "Which paragraph contains the following information?"
+                                },
+                                {
+                                    "text": "Write the correct letter, A-H, in boxes 1-4 on your answer sheet."
+                                }
+                            ],
+                            "type": "matching-heading",
+                            "titleHeading": "List of Headings",
+                            "headings": [
+                                {
+                                    "h_id": "1",
+                                    "h_text": "ancient stories around pearls and its customers"
+                                },
+                                {
+                                    "h_id": "2",
+                                    "h_text": "difficulties in cultivating process"
+                                },
+                                {
+                                    "h_id": "3",
+                                    "h_text": "factors which decide the value of natural pearls"
+                                },
+                                {
+                                    "h_id": "4",
+                                    "h_text": " a growth mechanism that distinguishes cultured pearls from natural ones"
+                                }
+                            ],
+                            "q_answers": [
+                                {
+                                    "q_number": "1",
+                                    "q_text": "ancient stories around pearls and its customers"
+                                },
+                                {
+                                    "q_number": "2",
+                                    "q_text": "difficulties in cultivating process"
+                                },
+                                {
+                                    "q_number": "3",
+                                    "q_text": "factors which decide the value of natural pearls"
+                                },
+                                {
+                                    "q_number": "4",
+                                    "q_text": "a growth mechanism that distinguishes cultured pearls from natural ones"
+                                }
+                            ]
+                        },
+
+                        {
+                            "q_id": 2,
+                            "type": "sentence-completion",
+                            "q_numbers": "5-10",
+                            "q_instructions": [
+                                {
+                                    "text": "Complete the sentences below."
+                                },
+                                {
+                                    "text": "Choose NO MORE THAN TWO WORDS from the passage for each answer."
+                                },
+                                {
+                                    "text": "Write your answers in boxes 5-10 on your answer sheet."
+                                }
+                            ],
+                            "sentences": [
+                                {
+                                    "parts": [
+                                        "In history, pearls have had great importance within the men of wealth and power, which were treated as gems for women in",
+                                        {
+                                            "inputId": "5",
+                                            "correctAnswer": "some_answer"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "parts": [
+                                        ". Also, pearls were even used as a medicine for people in ",
+                                        {
+                                            "inputId": "6",
+                                            "correctAnswer": "some_answer"
+                                        },
+                                        ". "
+                                    ]
+                                },
+                                {
+                                    "parts": [
+                                        " There are essentially three types of pearls: natural, cultured and imitation. Most freshwater cultured pearls sold today come from China while  ",
+                                        {
+                                            "inputId": "7",
+                                            "correctAnswer": "some_answer"
+                                        },
+                                        " Island is famous for its imitation pearl industry. Good-quality natural pearls are exceedingly unusual."
+                                    ]
+                                },
+                                {
+                                    "parts": [
+                                        {
+                                            "inputId": "8",
+                                            "correctAnswer": "some_answer"
+                                        },
+                                        "often manufactures some of the glitteriest pearls while "
+                                    ]
+                                },
+                                {
+                                    "parts": [
+                                        {
+                                            "inputId": "9",
+                                            "correctAnswer": "some_answer"
+                                        },
+                                        " produces larger size ones due to the favourable environment along the coastline."
+                                    ]
+                                },
+                                {
+                                    "parts": [
+                                        "In the past, ",
+                                        {
+                                            "inputId": "10",
+                                            "correctAnswer": "some_answer"
+                                        },
+                                        "  in Persian Gulf produced the world’s best pearls. Nowadays, the major remaining suppliers of natural pearls belong to India."
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "q_id": 3,
+                            "type": "identify-information",
+                            "q_numbers": "11-13",
+                            "q_instructions": [
+                                {
+                                    "text": "Do the following statements agree with the information given in Reading Passage 1?"
+                                },
+                                {
+                                    "text": "In boxes 11-13 on your answer sheet, write                                    "
+                                }
+                            ],
+                            "isAnswerTypeTrueFalse": true,
+                            "question_texts": [
+                                {
+                                    "q_number": 11,
+                                    "q_text": " Generally speaking, the centre of cultured pearl is significantly larger than that of a natural pearl."
+                                },
+                                {
+                                    "q_number": 12,
+                                    "q_text": " Sometimes, fake pearls can be more expensive."
+                                },
+                                {
+                                    "q_number": 13,
+                                    "q_text": "The size of the pearls produced in Japan is usually smaller than those in Australia."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "part_number": 2,
+                    "title": "",
+                    "instruction": "You should spend about 20 minutes on Questions 14-27, which are based on Reading Passage 2 below.",
+                    "imageURL": "",
+                    "type": "single-heading",
+                    "paragraphs": [
+                        {
+                            "content": "The start of the automobile’s history went all the way back to 1769 when automobiles running on the steam engine were invented as carriers for human transport. In 1806, the first batch of cars powered by an internal combustion engine came into being, which pioneered the introduction of the widespread modem petrol-fueled internal combustion engine in 1885."
+                        },
+                        {  
+                            "content": "It is generally acknowledged that the first practical automobiles equipped with petrol/gaso-line-powered internal combustion engines were invented almost at the same time by different German inventors who were Working on their own. Karl Benz first built the automobile in 1885 in Mannheim. Benz attained a patent for his invention on 29 January 1886, and in 1888, he started to produce automobiles in a company that later became the renowned Mercedes-Benz."
+                        },
+                        {  
+                            "content": "It is generally acknowledged that the first practical automobiles equipped with petrol/gaso-line-powered internal combustion engines were invented almost at the same time by different German inventors who were Working on their own. Karl Benz first built the automobile in 1885 in Mannheim. Benz attained a patent for his invention on 29 January 1886, and in 1888, he started to produce automobiles in a company that later became the renowned Mercedes-Benz."
+                        },
+                        {  
+                            "content": "The trend of interchangeable parts and mass production in an assembly line style had been led by America, and from 1914, this concept was significantly reinforced by Henry Ford. This large-scale, production-line manufacture of affordable automobiles was debuted. A Ford car would come off all assembled from the line every 15 minutes, an interval shorter than any of the former methods. Not only did it raise productivity, but also cut down on the requirement for manpower. Ford significantly lowered the chance of injury by carrying out complicated safety procedures in production—particularly assigning workers to specific locations rather than giving them the freedom to wander around. This mixture of high wages and high efficiency was known as Fordism, which provided a valuable lesson for most major industries."
+                        },
+                        {  
+                            "content": "The first Jeep automobile that came out as the prototype Bantam BRC was the primary light 4-wheel-drive automobile of the U.S. Army and Allies, and during World War II and the postwar period, its sale skyrocketed. Since then, plenty of Jeep derivatives with similar military and civilian functions have been created and kept upgraded in terms of overall performance in other nations."
+                        },
+                        {  
+                            "content": "Through all the 1950s, engine power and automobile rates grew higher, designs evolved into a more integrated and artful form, and cars were spreading globally. In the 1960s, the landscape changed as Detroit was confronted with foreign competition. The European manufacturers, used the latest technology, and Japan came into the picture as a dedicated car-making country. General Motors, Chrysler, and Ford dabbled with radical tiny cars such as the GM A-bodies with little success. As joint ventures such as the British Motor Corporation unified the market, captive imports and badge imports swept all over the US and the UK. BMC first launched a revolutionary space-friendly Mini in 1959, which turned out to harvest large global sales. Previously remaining under the Austin and Morris names, Mini later became an individual marque in 1969. The trend of corporate consolidation landed in Italy when niche makers such as Maserati, Ferrari, and Lancia were bought by larger enterprises. By the end of the 20th century, there had been a sharp fall in the number of automobile marques"
+                        },
+                        {  
+                            "content": "In the US, car performance dominated marketing, justified by the typical cases of pony cars and muscle cars. However, in the 1970s, everything changed as the American automobile industry suffered from the 1973 oil crisis, competition with Japanese and European imports, automobile emission-control regulations* and moribund innovation. The irony in all this was that full-size sedans such as Cadillac and Lincoln scored a huge comeback between the years of economic crisis."
+                        },
+                        {  
+                            "content": "In terms of technology, the most mentionable developments that postwar era had seen were the widespread use of independent suspensions, broader application of fuel injection, and a growing emphasis on safety in automobile design. Mazda achieved many triumphs with its engine firstly installed in the fore-wheel, though it gained itself a reputation as a gas-guzzler."
+                        },
+                        {  
+                            "content": "The modem era also has witnessed a sharp elevation of fuel power in the modem engine management system with the. help of the computer. Nowadays, most automobiles in use are powered by an internal combustion engine, fueled by gasoline or diesel. Toxic gas from both fuels is known to pollute the air and is responsible for climate change as well as global warming."
+                        }
+                    ],
+                    "questions": [
+                        {
+                            "q_id": 1,
+                            "q_numbers": "14-19",
+                            "q_instructions": [
+                                {
+                                    "text": "Look at the following descriptions (Questions 14-19) and the list of automobile brands below."
+                                },
+                                {
+                                    "text": "Match each description with the correct automobile brand, A-G."
+                                },
+                                {
+                                    "text": "Write the correct letter, A-G, in boxes 14-19 on your answer sheet."
+                                }
+                            ],
+                            "type": "matching-heading",
+                            "titleHeading": "List of Automobile Brands",
+                            "headings": [
+                                {
+                                    "h_id": "A",
+                                    "h_text": "Ford"
+                                },
+                                {
+                                    "h_id": "B",
+                                    "h_text": "the BMC Mini"
+                                },
+                                {
+                                    "h_id": "C",
+                                    "h_text": "Cadillac and Lincoln"
+                                },
+                                {
+                                    "h_id": "D",
+                                    "h_text": "Mercedes Benz"
+                                },
+                                {
+                                    "h_id": "E",
+                                    "h_text": "Mazda"
+                                },
+                                {
+                                    "h_id": "F",
+                                    "h_text": "Jeep"
+                                },
+                                {
+                                    "h_id": "G",
+                                    "h_text": "Maserati, Ferrari, and Lancia"
+                                }
+                            ],
+                            "q_answers": [
+                                {
+                                    "q_number": 14,
+                                    "q_text": " began producing the first automobiles"
+                                },
+                                {
+                                    "q_number": 15,
+                                    "q_text": " produced the industrialised cars that common consumers could afford"
+                                },
+                                {
+                                    "q_number": 16,
+                                    "q_text": " improved the utilisation rate of automobile space"
+                                },
+                                {
+                                    "q_number": 17,
+                                    "q_text": "upgraded the overall performance of the car continuously"
+                                },
+                                {
+                                    "q_number": 18,
+                                    "q_text": "maintained leading growth even during an economic recession"
+                                },
+                                {
+                                    "q_number": 19,
+                                    "q_text": "installed its engine on the front wheel for the first time"
+                                }
+                            ]
+                        },
+
+                        {
+                            "q_id": 2,
+                            "type": "sentence-completion",
+                            "q_numbers": "20-26",
+                            "q_instructions": [
+                                {
+                                    "text": "Answer the questions below."
+                                },
+                                {
+                                    "text": "Choose NO MORE THAN THREE WORDS AND/OR A NUMBER from the passage for each answer."
+                                },
+                                {
+                                    "text": "Write your answers in boxes 20-26 on your answer sheet."
+                                }
+                            ],
+                            "sentences": [
+                                {
+                                    "parts": [
+                                        "What is the important feature owned by the modem engine since the 19th century?",
+                                        {
+                                            "inputId": "20",
+                                            "correctAnswer": "some_answer"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "parts": [
+                                        "What did a car symbolise to the rich at the very beginning of this century?",
+                                        {
+                                            "inputId": "21",
+                                            "correctAnswer": "some_answer"
+                                        },
+                                        ". "
+                                    ]
+                                },
+                                {
+                                    "parts": [
+                                        "How long did Ford assembly line take to produce a car?",
+                                        {
+                                            "inputId": "22",
+                                            "correctAnswer": "some_answer"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "parts": [
+                                        "What is the major historical event that led American cars to suffer when competing with Japanese imported cars?",
+                                        {
+                                            "inputId": "23",
+                                            "correctAnswer": "some_answer"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "parts": [
+                                        "What do people call the Mazda car which was designed under the front-wheel engine?",
+                                        {
+                                            "inputId": "24",
+                                            "correctAnswer": "some_answer"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "parts": [
+                                        "What has greatly increased with the computerised engine management systems in modem society?",
+                                        {
+                                            "inputId": "25",
+                                            "correctAnswer": "some_answer"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "parts": [
+                                        "What factor is blamed for contributing to pollution, climate change and global warming?",
+                                        {
+                                            "inputId": "26",
+                                            "correctAnswer": "some_answer"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "q_id": 99,
+                            "q_instructions": [
+                                {
+                                    "text": "Choose the correct letter, A, B, C or D."
+                                },
+                                {
+                                    "text": "Write the correct letter in box 27 on your answer sheet."
+                                }
+                            ],
+                            "q_numbers": "27",
+                            "type": "multiple-choice-one",
+                            "question_choices": [
+                                {
+                                    "q_title": "What is the main idea of the passage?",
+                                    "q_number": "27",
+                                    "choices": [
+                                        {
+                                            "choice_id": "A",
+                                            "choice_text": "The influence of the cars on the environment"
+                                        },
+                                        {
+                                            "choice_id": "B",
+                                            "choice_text": "The historical development and innovation in car designs"
+                                        },
+                                        {
+                                            "choice_id": "C",
+                                            "choice_text": "The beginning of the modem designed gasoline engines"
+                                        },
+                                        {
+                                            "choice_id": "D",
+                                            "choice_text": "The history of human and the Auto industry"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "part_number": 3,
+                    "title": "Elephant Communication",
+                    "instruction": "You should spend about 20 minutes on Questions 28-40, which are based, on Reading Passage 3 below.                    ",
+                    "imageURL": "mock1-reading-p3.jpg",
+                    "type": "single-heading",
+                    "paragraphs": [
+                        {
+                            "content": "O’ Connell-Rodwell, a postdoctoral fellow at Stanford University, has travelled to Namibia’s first-ever wildlife reserve to explore the mystical and complicated realm of elephant communication. She, along with her colleagues, is part of a scientific revolution that started almost 20 years ago. This revolution has made a stunning revelation: elephants are capable of communicating with each other over long distances with low-frequency sounds, also known as infrasounds, which are too deep for humans to hear."
+                        },
+                        {
+                            "content": "As might be expected, African elephants able to detect seismic sound may have something to do with their ears. The hammer bone in an elephant’s inner ear is proportionally huge for a mammal, but it is rather normal for animals that use vibrational signals. Thus, it may be a sign that suggests elephants can use seismic sounds to communicate."
+                        },
+                        {
+                            "content": "Other aspects of elephant anatomy also support that ability. First, their massive bodies, which enable them to give out low-frequency sounds almost as powerful as the sound a jet makes during takeoff, serve as ideal frames for receiving ground vibrations and transmitting them to the inner ear. Second, the elephant’s toe bones are set on a fatty pad, which might be of help when focusing vibrations from the ground into the bone. Finally, the elephant has an enormous brain that sits in the cranial cavity behind the eyes in line with the auditory canal. The front of the skull is riddled with sinus cavities, which might function as resonating chambers for ground vibrations."
+                        },
+                        {
+                            "content": "It remains unclear how the elephants detect such vibrations, but O’ Connell-Rodwell raises a point that the pachyderms are ‘listening’ with their trunks and feet instead of their ears. The elephant trunk may just be the most versatile appendage in nature. Its utilization encompasses drinking, bathing, smelling, feeding and scratching. Both trunk and feet contain two types of nerve endings that are sensitive to pressure – one detects infrasonic vibration, and another responds to vibrations higher in frequencies. As O’ Connell-Rodwell sees, this research has a boundless and unpredictable future. ‘Our work is really interfaced of geophysics, neurophysiology and ecology,’ she says. ‘We’re raising questions that have never even been considered before.’"
+                        },
+                        {
+                            "content": "It has been well-known to scientists that seismic communication is widely observed among small animals, such as spiders, scorpions, insects and quite a lot of vertebrate species like white-lipped frogs, blind mole rats, kangaroo rats and golden moles. Nevertheless, O’Connell-Rodwell first argued that a giant land animal is also sending and receiving seismic signals. ‘I used to lay a male planthopper on a stem and replay the calling sound of a female, and then the male one would exhibit the same kind of behaviour that happens in elephants—he would freeze, then press down on his legs, move forward a little, then stay still again. I find it so fascinating, and it got me thinking that perhaps auditory communication is not the only thing that is going on.’"
+                        },
+                        {
+                            "content": "Scientists have confirmed that an elephant’s capacity to communicate over long distance is essential for survival, especially in places like Etosha, where more than 2,400 savanna elephants range over a land bigger than New Jersey. It is already difficult for an elephant to find a mate in such a vast wild land, and the elephant reproductive biology only complicates it. Breeding herds also adopt low-frequency sounds to send alerts regarding predators. Even though grown-up elephants have no enemies else than human beings, baby elephants are vulnerable and are susceptible to lions and hyenas attack. At the sight of a predator, older ones in the herd will clump together to form protection before running away."
+                        },
+                        {
+                            "content": "We now know that elephants can respond to warning calls in the air, but can they detect signals transmitted solely through the ground? To look into that matter, the research team designed an experiment in 2002, which used electronic devices that enabled them to give out signals through the ground at Mushara. ‘The outcomes of our 2002 study revealed that elephants could indeed sense warning signals through the ground,’ O’Connell-Rodwell observes."
+                        },
+                        {
+                            "content": "Last year, an experiment was set up in the hope of solving that problem. It used three different recordings—the 1994 warning call from Mushara, an anti-predator call recorded by scientist Joyce Poole in Kenya and a made-up warble tone. ‘The data I’ve observed to this point implies that the elephants were responding the way I always expected. However, the fascinating finding is that the anti-predator call from Kenya, which is unfamiliar to them, caused them to gather around, tense up and rumble aggressively as well—but they didn’t always flee. I didn’t expect the results to be that clear-cut.’"
+                        }
+
+                    ],
+                    "questions": [
+                        {
+                            "q_id": 3,
+                            "type": "table-completion",
+                            "q_numbers": "28-31",
+                            "q_instructions":
+                             [
+                                {
+                                    "text": "Label the diagram below."
+                                },
+                                {
+                                    "text": "Choose NO MORE THAN TWO WORDS from the passage for each answer."
+                                },
+                                {
+                                    "text": "Write your answers in boxes 28-31 on your answer sheet."
+                                }
+                            ],
+                            "answers": 6,
+                            "q_start": 28,
+                            "q_end": 31
+                        },
+                        {
+                            "q_id": 2,
+                            "type": "sentence-completion",
+                            "q_numbers": "32-38",
+                            "q_instructions": [
+                                {
+                                    "text": "Complete the summary below."
+                                },
+                                {
+                                    "text": "Choose NO MORE THAN THREE WORDS from the passage for each answer."
+                                },
+                                {
+                                    "text": "Write your answers in boxes 32-38 on your answer sheet."
+                                }
+                            ],
+                            "sentences": [
+                                {
+                                    "parts": [
+                                        "How the elephants sense these sound vibrations is still unknown, but O’Connell-Rodwell, a postdoctoral researcher at Stanford University, proposes that elephants are ‘listening’ with their",
+                                        {
+                                            "inputId": "32",
+                                            "correctAnswer": "some_answer"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "parts": [
+                                        "by two kinds of nerve endings that respond to vibrations with both ",
+                                        {
+                                            "inputId": "33",
+                                            "correctAnswer": "some_answer"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "parts": [
+                                        "frequency and slightly higher frequencies. O’Connell-Rodwell's work is at the combination of geophysics, neurophysiology and ",
+                                        {
+                                            "inputId": "34",
+                                            "correctAnswer": "some_answer"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "parts": [
+                                        ". It was known that seismic communication existed extensively within small animals, but O’Connell-Rodwell was the first person to indicate that a large land animal would send and receive ",
+                                        {
+                                            "inputId": "35",
+                                            "correctAnswer": "some_answer"
+                                        },
+                                        " too. "
+                                    ]
+                                },
+                                {
+                                    "parts": [
+                                        " Also, he noticed the freezing behaviour by putting a male planthopper on a stem and play back a female call, which might prove the existence of other communicative approaches besides ",
+                                        {
+                                            "inputId": "36",
+                                            "correctAnswer": "some_answer"
+                                        },
+                                        ". "
+                                    ]
+                                },
+                                {
+                                    "parts": [
+                                        "Scientists have determined that an elephant’s ability to communicate over long distances is essential, especially, when elephant herds are finding a",
+                                        {
+                                            "inputId": "37",
+                                            "correctAnswer": "some_answer"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "parts": [
+                                        " , or are warning of predators. Finally, the results of our 2002 study showed us that elephants could detect warning calls through the",
+                                        {
+                                            "inputId": "38",
+                                            "correctAnswer": "some_answer"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "q_id": 99,
+                            "type":"multiple-choice-one",
+                            "q_numbers": "39-40",
+                            "q_instructions": [
+                                {
+                                    "text": "Choose the correct letter, A, B, C or D."
+                                },
+                                {
+                                    "text": "Write the correct letter in boxes 39-40 on your answer sheet."
+                                }
+                            ],
+                            "question_choices": 
+                            [
+                                {
+                                    "q_title": "According to the passage, it is determined that an elephant needs to communicate over long distances for its survival",
+                                    "q_number": "39",
+                                    "choices": [
+                                        {
+                                            "choice_id": "A",
+                                            "choice_text": "when a threatening predator appears."
+                                        },
+                                        {
+                                            "choice_id": "B",
+                                            "choice_text": "when young elephants meet humans."
+                                        },
+                                        {
+                                            "choice_id": "C",
+                                            "choice_text": "when older members of the herd want to flee from the group."
+                                        },
+                                        {
+                                            "choice_id": "D",
+                                            "choice_text": "when a male elephant is in estrus."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "q_title": "What is the author’s attitude toward the experiment by using three different&nbsp;recordings in the last paragraph?",
+                                    "q_number": "40",
+                                    "choices": [
+                                        {
+                                            "choice_id": "A",
+                                            "choice_text": "The outcome is definitely out of the original expectation."
+                                        },
+                                        {
+                                            "choice_id": "B",
+                                            "choice_text": "The data cannot be very clearly obtained."
+                                        },
+                                        {
+                                            "choice_id": "C",
+                                            "choice_text": "The result can be somewhat undecided or inaccurate."
+                                        },
+                                        {
+                                            "choice_id": "D",
+                                            "choice_text": "The result can be unfamiliar to the public."
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "listening": {
+            "introduction": "Introduction to IELTS Listening Section",
+            "partName": "Part",
+            "listeningAudioSrc": "https://mocktests.fra1.cdn.digitaloceanspaces.com/Mock-Test-A/Practice%20test%202.mp3",
+            "parts": [
+                {
+                    "part_number": 1,
+                    "questions": [
+                        {
+                            "q_id": 1,
+                            "type": "sentence-completion",
+                            "q_numbers": "1-7",
+                            "q_instructions": [
+                                {
+                                    "text": "Complete the sentences below."
+                                },
+                                {
+                                    "text": "Write NO MORE THAN TWO WORDS OR A NUMBER for each answer."
+                                }
+                            ],
+                            "sentences": [
+                                {
+                                    "parts": [
+                                        "Educational Qualification: Degree in",
+                                        {
+                                            "inputId": "1",
+                                            "correctAnswer": "some_answer"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "parts": [
+                                        "Previous Job:",
+                                        {
+                                            "inputId": "2",
+                                            "correctAnswer": "some_answer"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "parts": [
+                                        "Hobbies:",
+                                        {
+                                            "inputId": "3",
+                                            "correctAnswer": "some_answer"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "parts": [
+                                        "Main Skills: ",
+                                        {
+                                            "inputId": "4",
+                                            "correctAnswer": "some_answer"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "parts": [
+                                        "Expected Salary ($): ",
+                                        {
+                                            "inputId": "5",
+                                            "correctAnswer": "some_answer"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "parts": [
+                                        "Can start? ",
+                                        {
+                                            "inputId": "6",
+                                            "correctAnswer": "some_answer"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "parts": [
+                                        "Other languages? ",
+                                        {
+                                            "inputId": "7",
+                                            "correctAnswer": "some_answer"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "q_id": 2,
+                            "type": "multiple-choice-more",
+                            "q_numbers": "8-10",
+                            "q_instructions": [
+                                {
+                                    "text": "Choose THREE letters from the list, A-G."
+                                },
+                                {
+                                    "text": "Which THREE qualities do employers most value in their staff?"
+                                }
+                            ],
+                            "max-selection": 3,
+                            "options": [
+                                {
+                                    "q_id": "A",
+                                    "q_text": "Problem-solving skills"
+                                },
+                                {
+                                    "q_id": "B",
+                                    "q_text": "Diligence"
+                                },
+                                {
+                                    "q_id": "C",
+                                    "q_text": "Experience"
+                                },
+                                {
+                                    "q_id": "D",
+                                    "q_text": "Flexible hours"
+                                },
+                                {
+                                    "q_id": "E",
+                                    "q_text": "Independent thinking"
+                                },
+                                {
+                                    "q_id": "F",
+                                    "q_text": "Good personality"
+                                },
+                                {
+                                    "q_id": "G",
+                                    "q_text": "Qualifications"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "part_number": 2,
+                    "questions": [
+                        {
+                            "q_id": 1,
+                            "q_numbers": "11-15",
+                            "type": "sentence-completion",
+                            "q_instructions": [
+                                {
+                                    "text": "Answer the questions.."
+                                },
+                                {
+                                    "text": "Write ONE WORD ONLY for each answer."
+                                }
+                            ],
+                            "sentences": [
+                                {
+                                    "parts": [
+                                        {
+                                            "inputId": "11",
+                                            "correctAnswer": "some_answer"
+                                        },
+                                        " What does the centre provide first?"
+                                    ]
+                                },
+                                {
+                                    "parts": [
+                                        {
+                                            "inputId": "12",
+                                            "correctAnswer": "some_answer"
+                                        },
+                                        "  What is important to control?"
+                                    ]
+                                },
+                                {
+                                    "parts": [
+                                        {
+                                            "inputId": "13",
+                                            "correctAnswer": "some_answer"
+                                        },
+                                        " What will be used to assess member's fitness level?"
+                                    ]
+                                },
+                                {
+                                    "parts": [
+                                        {
+                                            "inputId": "14",
+                                            "correctAnswer": "some_answer"
+                                        },
+                                        " How often is the exercise schedule reviewed?"
+                                    ]
+                                },
+                                {
+                                    "parts": [
+                                        {
+                                            "inputId": "15",
+                                            "correctAnswer": "some_answer"
+                                        },
+                                        " How many exercise programs are available?"
+                                    ]
+                                }
+                            ]
+                        },
+
+                        {
+                            "q_numbers": "16-20",
+                            "q_instructions": [
+                                {
+                                    "text": "Write the correct letter, A-G, next to the questions."
+                                },
+                                {
+                                    "text": "Which place is best for"
+                                }
+                            ],
+                            "type": "matching-heading",
+                            "titleHeading": "List of Headings",
+                            "headings": [
+                                {
+                                    "h_id": "A",
+                                    "h_text": "jogging machines"
+                                },
+                                {
+                                    "h_id": "B",
+                                    "h_text": "Yoga studio"
+                                },
+                                {
+                                    "h_id": "C",
+                                    "h_text": "Weight units"
+                                },
+                                {
+                                    "h_id": "D",
+                                    "h_text": " Front-desk area"
+                                },
+                                {
+                                    "h_id": "E",
+                                    "h_text": "Squash courts"
+                                },
+                                {
+                                    "h_id": "F",
+                                    "h_text": "Shower blocks"
+                                },
+                                {
+                                    "h_id": "G",
+                                    "h_text": " Swimming pool"
+                                }
+                            ],
+                            "q_answers": [
+                                {
+                                    "q_number": "16",
+                                    "q_text": "developing confidence?"
+                                },
+                                {
+                                    "q_number": "17",
+                                    "q_text": "reducing stress?"
+                                },
+                                {
+                                    "q_number": "18",
+                                    "q_text": " building fitness?"
+                                },
+                                {
+                                    "q_number": "19",
+                                    "q_text": "meeting others?"
+                                },
+                                {
+                                    "q_number": "20",
+                                    "q_text": "finding information?"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "part_number": 3,
+                    "questions": [
+                        {
+                            "q_id": 99,
+                            "q_numbers": "21-25",
+                            "q_instructions": [
+                                {
+                                    "text": "Choose the correct letter, A, B, or C."
+                                }
+                            ],
+                            "type": "multiple-choice-one",
+                            "question_choices": [
+                                {
+                                    "q_title": " The position needs someone good at",
+                                    "q_number": "21",
+                                    "choices": [
+                                        {
+                                            "choice_id": "A",
+                                            "choice_text": "Computers"
+                                        },
+                                        {
+                                            "choice_id": "B",
+                                            "choice_text": "Dealing with people."
+                                        },
+                                        {
+                                            "choice_id": "C",
+                                            "choice_text": "Arts."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "q_title": "The directors will select someone from the faculty of",
+                                    "q_number": "22",
+                                    "choices": [
+                                        {
+                                            "choice_id": "A",
+                                            "choice_text": "Arts."
+                                        },
+                                        {
+                                            "choice_id": "B",
+                                            "choice_text": "Computing."
+                                        },
+                                        {
+                                            "choice_id": "C",
+                                            "choice_text": "Business."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "q_title": "The position will require the person to",
+                                    "q_number": "23",
+                                    "choices": [
+                                        {
+                                            "choice_id": "A",
+                                            "choice_text": "Work long hours."
+                                        },
+                                        {
+                                            "choice_id": "B",
+                                            "choice_text": "Train others."
+                                        },
+                                        {
+                                            "choice_id": "C",
+                                            "choice_text": "Do weekend work."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "q_title": "The position will come with a",
+                                    "q_number": "24",
+                                    "choices": [
+                                        {
+                                            "choice_id": "A",
+                                            "choice_text": "Car."
+                                        },
+                                        {
+                                            "choice_id": "B",
+                                            "choice_text": "Parking space."
+                                        },
+                                        {
+                                            "choice_id": "C",
+                                            "choice_text": "Much better salary."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "q_title": "The best aspect of the job is it",
+                                    "q_number": "25",
+                                    "choices": [
+                                        {
+                                            "choice_id": "A",
+                                            "choice_text": "Gives more responsibility."
+                                        },
+                                        {
+                                            "choice_id": "B",
+                                            "choice_text": "Comes with a private office."
+                                        },
+                                        {
+                                            "choice_id": "C",
+                                            "choice_text": "Is a step to higher positions"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "q_id": 3,
+                            "type": "table-completion",
+                            "q_numbers": "26-30",
+                            "q_instructions": [
+                                {
+                                    "text": "Complete the table."
+                                },
+                                {
+                                    "text": "Write NO MORE THAN TWO WORDS OR A NUMBER for each answer."
+                                }
+                                
+                            ],
+                            "q_imageURL": "https://mocktests.fra1.cdn.digitaloceanspaces.com/Mock-Test-A/2024-06-12%2022.21.35.jpg",
+                            "answers": 5,
+                            "q_start": 26,
+                            "q_end": 30
+                        }
+                       
+                    ]
+                },
+                {
+                    "part_number": 4,
+                    "questions": [
+                        {
+                            "q_id": 99,
+                            "q_numbers": "31-33",
+                            "q_instructions": [
+                                {
+                                    "text": "Choose the correct letter, A, B, or C."
+                                }
+                            ],
+                            "type": "multiple-choice-one",
+                            "question_choices": [
+                                {
+                                    "q_title": "Caves are",
+                                    "q_number": "31",
+                                    "choices": [
+                                        {
+                                            "choice_id": "A",
+                                            "choice_text": "Often ignored."
+                                        },
+                                        {
+                                            "choice_id": "B",
+                                            "choice_text": "Mostly in remote areas."
+                                        },
+                                        {
+                                            "choice_id": "C",
+                                            "choice_text": "Often difficult to explore."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "q_title": "People who explore caves",
+                                    "q_number": "32",
+                                    "choices": [
+                                        {
+                                            "choice_id": "A",
+                                            "choice_text": "Mostly need to know about cartography"
+                                        },
+                                        {
+                                            "choice_id": "B",
+                                            "choice_text": "Enjoy overcoming the difficulties."
+                                        },
+                                        {
+                                            "choice_id": "C",
+                                            "choice_text": "Usually know about cave sciences."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "q_title": "China has",
+                                    "q_number": "33",
+                                    "choices": [
+                                        {
+                                            "choice_id": "A",
+                                            "choice_text": "Probably the most undiscovered caves."
+                                        },
+                                        {
+                                            "choice_id": "B",
+                                            "choice_text": "A growing number of cave explorers."
+                                        },
+                                        {
+                                            "choice_id": "C",
+                                            "choice_text": "Some of the best documented caves"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "q_id": 3,
+                            "type": "table-completion",
+                            "q_numbers": "34-40",
+                            "q_instructions": [
+                                {
+                                    "text": "Complete the table and notes."
+                                },
+                                {
+                                    "text": "Write NO MORE THAN TWO WORDS OR A NUMBER for each answer."
+                                },
+                                {
+                                    "text": "Three Main Reasons for Cave Formation."
+                                }
+                                
+                            ],
+                            "q_imageURL": "mock1-reading-img1.png",
+                            "answers": 7,
+                            "q_start": 34,
+                            "q_end": 40
+                        }
+                    ]
+                }
+            ]
+        },
+        "writing": {
+            "partName": "Task",
+            "parts": [
+                {
+                    "part_number": 1,
+                    "type": "task-1",
+                    "q_id": 1,
+                    "task_1_question": "You should spend about 20 minutes on this task. The pie charts below show the percentage of time working adults spent on different activities in a particular country in 1958 and 2008. Summarise the information by selecting and reporting the main features and make comparisons where relevant. You should write at least 150 words.",
+                    "q_instructions": [
+                        {
+                            "text": "You should spend about 20 minutes on this task."
+                        },
+                        {
+                            "text": "The pie charts below show the percentage of time working adults spent on different activities in a particular country in 1958 and 2008."
+                        },
+                        {
+                            "text": "Summarise the information by selecting and reporting the main features and make comparisons where relevant."
+                        },
+                        {
+                            "text": "You should write at least 150 words."
+                        }
+                    ],
+                    "task1_imgURL": "https://mocktests.fra1.cdn.digitaloceanspaces.com/mocktests/writing-task-1.jpg",
+                    "answers": 5,
+                    "q_start": 1,
+                    "q_end": 5
+                },
+                {
+                    "part_number": 2,
+
+                    "q_id": 1,
+                    "type": "task-2",
+                    "task_2_question": "You should spend about 40 minutes on this task. Nowadays, not enough students choose science subjects in university in many countries. What are the reasons for this problem? What are the effects on society? You should write at least 250 words.",
+                    "q_instructions": [
+                        {
+                            "text": "You should spend about 40 minutes on this task."
+                        },
+                        {
+                            "text": "Nowadays, not enough students choose science subjects in university in many countries. What are the reasons for this problem? What are the effects on society?"
+                        },
+                        {
+                            "text": "You should write at least 250 words."
+                        }
+                    ],
+                    "q_imageURL": "",
+                    "answers": 5,
+                    "q_start": 1,
+                    "q_end": 5
+                }
+            ]
+        }
+    }
+}

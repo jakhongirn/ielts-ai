@@ -54,14 +54,14 @@ def check_answers(user_answers, correct_answers, user_mocktest):
         user_answer.reading_score = reading_score
         user_answer.listening_band = listening_band
         user_answer.reading_band = reading_band
-        user_answer.passed_data=current_time
+        user_answer.passed_date=current_time
         user_answer.save()
     except UserAnswer.DoesNotExist:
         UserAnswer.objects.create(
             user_mocktest=user_mocktest,
             listening_answers=listening_user_answers,
             reading_answers=reading_user_answers,
-            writing_answer=writing_user_answers,
+            writing_answers=writing_user_answers,
             listening_correct_answers=listening_correct_answers,
             reading_correct_answers=reading_correct_answers,
             listening_results=listening_results,
@@ -70,7 +70,7 @@ def check_answers(user_answers, correct_answers, user_mocktest):
             reading_score=reading_score,
             listening_band=listening_band,
             reading_band=reading_band,
-            passed_data=current_time
+            passed_date=current_time
         )
 
     return reading_results, reading_score, reading_band, listening_results, listening_score, listening_band

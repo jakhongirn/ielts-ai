@@ -128,7 +128,7 @@ const UserAnswerDetailPage: React.FC = ({ params }: { params: { id: string } }) 
 
         </div>
         <div className="my-6 flex">
-        <WritingFeedback response={userAnswer.writing_feedback} />
+        {userAnswer.writing_feedback ? (<WritingFeedback response={userAnswer.writing_feedback} />) : <p>No feedback for writing.</p>}
     </div>
     </>
     );
