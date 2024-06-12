@@ -21,7 +21,7 @@ urlpatterns = [
         name="user-mocktest-list-create",
     ),
     path(
-        "user-mocktests/<int:pk>/",
+        "user-mocktests/<uuid:mocktest_id>/",
         UserMockTestRetrieveView.as_view(),
         name="user-mocktest-detail",
     ),

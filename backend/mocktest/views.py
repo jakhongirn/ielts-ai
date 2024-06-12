@@ -63,21 +63,26 @@ class UserMockTestRetrieveView(generics.RetrieveAPIView):
     queryset = UserMockTest.objects.all()
     permission_classes = [permissions.IsAuthenticated]
 
-    def get(self, request, pk, format=None):
-        user_mock_test = get_object_or_404(UserMockTest, pk=pk)
-
-        if user_mock_test.status == "PASSED":
-            return Response({"detail": "The mock test has already been passed."}, status=status.HTTP_403_FORBIDDEN)
-
-        mock_test = user_mock_test.mocktest
+    def get(self, request, mocktest_id, format=None):
         try:
-            with mock_test.json_file.open('r') as file:
-                data = json.load(file)
-            return Response(data, status=status.HTTP_200_OK)
-        except FileNotFoundError:
-            return Response({'error': 'File not found'}, status=status.HTTP_404_NOT_FOUND)
-        except json.JSONDecodeError:
-            return Response({'error': 'Invalid JSON file'}, status=status.HTTP_400_BAD_REQUEST)
+            user_profile = request.user.profile
+            user_mock_test = UserMockTest.objects.get(mocktest_id=mocktest_id, user_profile=user_profile)
+            
+
+            if user_mock_test.status == "PASSED":
+                return Response({"detail": "The mock test has already been passed."}, status=status.HTTP_403_FORBIDDEN)
+
+            mock_test = user_mock_test.mocktest
+            try:
+                with mock_test.json_file.open('r') as file:
+                    data = json.load(file)
+                return Response(data, status=status.HTTP_200_OK)
+            except FileNotFoundError:
+                return Response({'error': 'File not found'}, status=status.HTTP_404_NOT_FOUND)
+            except json.JSONDecodeError:
+                return Response({'error': 'Invalid JSON file'}, status=status.HTTP_400_BAD_REQUEST)
+        except UserMockTest.DoesNotExist:
+            return Response({"detail": "UserMocktest not found."}, status=status.HTTP_404_NOT_FOUND)
 
 class PackagePlanListCreateView(generics.ListCreateAPIView):
     queryset = PackagePlan.objects.all()
