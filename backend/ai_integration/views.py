@@ -8,7 +8,7 @@ from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 
 from dotenv import load_dotenv
-from .testInput import base64_image, system_input
+from .testInput import  system_input
 from mocktest.models import UserAnswer, UserMockTest
 
 load_dotenv()

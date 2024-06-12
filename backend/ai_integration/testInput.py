@@ -21,7 +21,7 @@ def encode_image(image_path):
 
 
 # Path to your image
-image_path = "media/mocktests/writing-task-1.jpg"
+# image_path = "media/mocktests/writing-task-1.jpg"
 
-# Getting the base64 string
-base64_image = encode_image(image_path)
+# # Getting the base64 string
+# base64_image = encode_image(image_path)

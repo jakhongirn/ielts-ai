@@ -87,7 +87,7 @@ class UserAnswer(models.Model):
     writing_answers = models.JSONField(blank=True, null=True)
     writing_feedback = models.JSONField(blank=True, null=True)
     writing_score = models.IntegerField(default=0)
-    passed_date=models.DateTimeField(default=timezone.now())
+    passed_date=models.DateTimeField(default=timezone.now)
 
 class WritingFeedback(models.Model):
     user_answer = models.ForeignKey(UserAnswer, on_delete=models.CASCADE, related_name='writing_feedback_user')
