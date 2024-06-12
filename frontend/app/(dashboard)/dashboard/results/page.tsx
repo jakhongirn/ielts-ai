@@ -22,7 +22,7 @@ const ResultsPage = () => {
     const { getToken } = AuthActions();
     useEffect(() => {
         const fetchUserAnswers = async () => {
-            const url = `http://localhost:8000/api/user-answers/`;
+            const url = `${process.env.NEXT_PUBLIC_API}/user-answers/`;
             const token = getToken("access");
             try {
                 const response = await fetch(url, {
