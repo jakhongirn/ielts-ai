@@ -18,10 +18,11 @@ class MockTest(models.Model):
 class CorrectAnswers(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=True)
     mocktest = models.OneToOneField(MockTest, on_delete=models.CASCADE)
-    answers = models.FileField(upload_to='json_data/correct_answers/')
+    listening_answers = models.JSONField()
+    reading_answers = models.JSONField()
     
     def __str__(self):
-        return str(self.mocktest.title)
+        return f"Correct Answers for {self.mocktest.title}"
 
 class PackagePlan(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=True)
@@ -70,15 +71,14 @@ class UserMockTest(models.Model):
 
     def __str__(self):
         return f"{self.user_profile.user.username}: {self.mocktest.title}"
-
-class UserTestResult(models.Model):
-    TYPE = [
-        ("WITH_FEEDBACK", "with_feedback"),
-        ("WITHOUT_FEEDBACK", "without_feedback")
-    ]
-    id = models.AutoField(primary_key=True)
-    user_mocktest = models.ForeignKey(UserMockTest, on_delete=models.CASCADE)
-    answers = models.FileField(upload_to='json_data/user_answers/')
-    type = models.CharField(choices=TYPE, max_length=30)
-    date = models.DateTimeField(auto_now_add=True)
-    score = models.PositiveIntegerField(null=True, blank=True)
+    
+class UserAnswer(models.Model):
+    user_mocktest = models.ForeignKey(UserMockTest, on_delete=models.CASCADE, related_name='user_answers')
+    listening_answers = models.JSONField()
+    reading_answers = models.JSONField()
+    listening_correct_answers = models.JSONField()
+    reading_correct_answers = models.JSONField()
+    listening_results = models.JSONField()
+    reading_results = models.JSONField()
+    listening_score = models.IntegerField()
+    reading_score = models.IntegerField()

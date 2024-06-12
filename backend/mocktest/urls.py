@@ -3,12 +3,12 @@ from .views import (
     MockTestListCreateView,
     UserMockTestListCreateView,
     UserMockTestDetailView,
-    UserTestResultListCreateView,
     PackagePlanListCreateView,
     UserPackagePlanListCreateView,
     UserPackagePlanDetailView,
     PurchasePackagePlanView,
-    UserMockTestRetrieveView
+    UserMockTestRetrieveView,
+    CheckMockTestView,
 )
 from rest_framework.routers import DefaultRouter
 
@@ -24,11 +24,6 @@ urlpatterns = [
         "user-mocktests/<int:pk>/",
         UserMockTestRetrieveView.as_view(),
         name="user-mocktest-detail",
-    ),
-    path(
-        "user-test-results/",
-        UserTestResultListCreateView.as_view(),
-        name="user-test-result-list-create",
     ),
     path(
         "package-plans/",
@@ -50,4 +45,5 @@ urlpatterns = [
         PurchasePackagePlanView.as_view(),
         name="purchase-package-plan",
     ),
+    path("check-mocktest/", CheckMockTestView.as_view(), name="check-mocktest"),
 ]

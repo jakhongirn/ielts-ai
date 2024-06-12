@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import MockTest, UserMockTest, UserTestResult, CorrectAnswers, PackagePlan, UserPackagePlan
+from .models import MockTest, UserMockTest, CorrectAnswers, PackagePlan, UserPackagePlan, UserAnswer
 
 @admin.register(MockTest)
 class MockTestAdmin(admin.ModelAdmin):
@@ -11,15 +11,14 @@ class UserMockTestAdmin(admin.ModelAdmin):
     list_filter = ('status', 'type')
     search_fields = ('user_profile__user__username', 'mocktest__name')
 
-@admin.register(UserTestResult)
-class UserTestResultAdmin(admin.ModelAdmin):
-    list_display = ('user_mocktest', 'type', 'date')
-    list_filter = ('type', 'date')
-    search_fields = ('user_mocktest__user_profile__user__username',)
+@admin.register(UserAnswer)
+class UserAnswerAdmin(admin.ModelAdmin):
+    list_display = ('user_mocktest', 'listening_score', 'reading_score', 'listening_results', 'reading_results', 'listening_correct_answers', 'reading_correct_answers', 'listening_answers', 'reading_answers')
 
 @admin.register(CorrectAnswers)
 class CorrectAnswersAdmin(admin.ModelAdmin):
-    list_display = ('mocktest', 'answers')
+    list_display = ('mocktest', 'listening_answers', 'reading_answers')
+    readonly_fields = ["id"]
 
 @admin.register(PackagePlan)
 class PackagePlanAdmin(admin.ModelAdmin):

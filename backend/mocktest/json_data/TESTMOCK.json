@@ -1,5 +1,5 @@
 {
-    "id": "130",
+    "testId": 130,
     "sections": {
         "reading": {
             "partName": "Part",
@@ -612,6 +612,7 @@
         "listening": {
             "introduction": "Introduction to IELTS Listening Section",
             "partName": "Part",
+            "listeningAudioSrc": "https://mocktests.fra1.cdn.digitaloceanspaces.com/mocktest-A001/mock-listening-1.mp3",
             "parts": [
                 {
                     "part_number": 1,
@@ -1502,7 +1503,7 @@
                             "text": "You should write at least 150 words."
                         }
                     ],
-                    "q_imageURL": "mock1-writing-task-1.png",
+                    "task1_imgURL": "https://mocktests.fra1.cdn.digitaloceanspaces.com/mocktests/writing-task-1.jpg",
                     "answers": 5,
                     "q_start": 1,
                     "q_end": 5

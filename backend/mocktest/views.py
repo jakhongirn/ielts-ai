@@ -1,12 +1,11 @@
 from rest_framework import generics, permissions, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .models import MockTest, UserMockTest, UserTestResult, CorrectAnswers, PackagePlan, UserPackagePlan
+from .models import MockTest, UserMockTest, CorrectAnswers, PackagePlan, UserPackagePlan
 from .serializers import (
     MockTestSerializer,
     UserMockTestSerializer,
     UserMockTestDetailSerializer,
-    UserTestResultSerializer,
     PackagePlanSerializer,
     UserPackagePlanSerializer
 )
@@ -15,6 +14,7 @@ import json
 from rest_framework import serializers
 import random
 from django.utils import timezone
+from .utils import check_answers
 
 class MockTestListCreateView(generics.ListCreateAPIView):
     queryset = MockTest.objects.all()
@@ -78,11 +78,6 @@ class UserMockTestRetrieveView(generics.RetrieveAPIView):
             return Response({'error': 'File not found'}, status=status.HTTP_404_NOT_FOUND)
         except json.JSONDecodeError:
             return Response({'error': 'Invalid JSON file'}, status=status.HTTP_400_BAD_REQUEST)
-
-class UserTestResultListCreateView(generics.ListCreateAPIView):
-    queryset = UserTestResult.objects.all()
-    serializer_class = UserTestResultSerializer
-    permission_classes = [permissions.IsAuthenticated]
 
 class PackagePlanListCreateView(generics.ListCreateAPIView):
     queryset = PackagePlan.objects.all()
@@ -154,3 +149,26 @@ def assign_free_mock_test(user_profile):
     except MockTest.DoesNotExist:
         # Handle the case where the preselected mock test does not exist
         pass
+    
+    
+class CheckMockTestView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+    def post(self, request, *args, **kwargs):
+        user_profile = request.user.profile
+        mocktest_id = request.data.get('mocktest_id')
+        user_answers = request.data.get('user_answers')
+        
+        try:
+            user_mocktest = UserMockTest.objects.get(mocktest_id=mocktest_id, user_profile=user_profile)
+            correct_answer = CorrectAnswers.objects.get(mocktest_id=mocktest_id)
+        except (UserMockTest.DoesNotExist, CorrectAnswers.DoesNotExist):
+            return Response({"detail": "Mocktest or Correct answers not found."}, status=status.HTTP_404_NOT_FOUND)
+        
+        correct_answers_data = {
+            "listening_answers": correct_answer.listening_answers,
+            "reading_answers": correct_answer.reading_answers
+        }
+        
+        reading_results, reading_score, listening_results, listening_score = check_answers(user_answers, correct_answers_data, user_mocktest)
+        
+        return Response({"reading_results": reading_results, "reading_score": reading_score, "listening_results": listening_results, "listening_score": listening_score}, status=status.HTTP_200_OK)

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import MockTest, UserMockTest, UserTestResult, CorrectAnswers, PackagePlan, UserPackagePlan
+from .models import MockTest, UserMockTest,  CorrectAnswers, PackagePlan, UserPackagePlan, UserAnswer
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
@@ -35,11 +35,6 @@ class UserMockTestDetailSerializer(serializers.ModelSerializer):
         fields = ['id', 'title', 'description', 'reading_answers', 'listening_answers', 'writing_answers', 'feedback', 'status', 'date', 'type', 'mocktest', 'mocktest_details', 'user_profile']
         read_only_fields = ['id']
 
-class UserTestResultSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = UserTestResult
-        fields = '__all__'
-        read_only_fields = ['id']
 
 class PackagePlanSerializer(serializers.ModelSerializer):
     class Meta:
@@ -50,5 +45,12 @@ class PackagePlanSerializer(serializers.ModelSerializer):
 class UserPackagePlanSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserPackagePlan
+        fields = '__all__'
+        read_only_fields = ['id']
+
+
+class UserAnswerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserAnswer
         fields = '__all__'
         read_only_fields = ['id']
