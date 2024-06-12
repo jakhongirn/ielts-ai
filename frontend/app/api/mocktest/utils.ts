@@ -53,7 +53,7 @@ export async function getUserAnswersData() {
 export async function postUserWritingToAI(writing_answers) {
     const token = getToken("access")
     try {
-        const res = await axios.post('http://localhost:8000/api/ai-prompt/', writing_answers, {
+        const res = await axios.post(`${process.env.NEXT_PUBLIC_API}/ai-prompt/`, writing_answers, {
           headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}` // Include the token in the header
