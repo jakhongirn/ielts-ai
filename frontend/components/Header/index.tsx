@@ -8,6 +8,8 @@ import menuData from "./menuData";
 import { useAuth } from "@/app/context/AuthContext";
 import { AuthActions } from "@/app/api/auth/utils";
 import { useRouter } from "next/navigation";
+import useSWR from "swr";
+import { fetcher } from "@/app/api/auth/fetcher";
 
 const Header = () => {
     const [navigationOpen, setNavigationOpen] = useState(false);
@@ -15,7 +17,8 @@ const Header = () => {
     const [stickyMenu, setStickyMenu] = useState(false);
     const [searchModalOpen, setSearchModalOpen] = useState(false);
 
-    const { isAuthenticated, user, setIsAuthenticated } = useAuth();
+    const { isAuthenticated, setIsAuthenticated } = useAuth();
+    const { data: user } = useSWR("/auth/user/", fetcher);
 
     const pathUrl = usePathname();
 
@@ -236,7 +239,7 @@ const Header = () => {
                                 <div className="flex items-center space-x-4">
                                     <Link href="/dashboard">
                                         <button className="hover:underline">
-                                            Welcome, {user.username}!
+                                            Welcome, {user.user.username}!
                                         </button>
                                     </Link>
                                     <button

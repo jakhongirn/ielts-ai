@@ -17,6 +17,10 @@ from rest_framework import serializers
 import random
 from django.utils import timezone
 from .utils import check_answers
+import os
+import dotenv
+
+dotenv.load_dotenv()
 
 class MockTestListCreateView(generics.ListCreateAPIView):
     queryset = MockTest.objects.all()
@@ -140,7 +144,7 @@ class PurchasePackagePlanView(APIView):
 
 def assign_free_mock_test(user_profile):
     # Replace 'specific-mocktest-id' with the actual ID of the preselected mock test
-    preselected_mocktest_id = '4e06bd4b-ce30-499e-aad6-90f0fcf98a03'
+    preselected_mocktest_id = os.getenv("FREE_MOCK_TEST")
     try:
         free_mock_test = MockTest.objects.get(id=preselected_mocktest_id)
         UserMockTest.objects.create(
