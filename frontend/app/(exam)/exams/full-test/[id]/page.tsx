@@ -9,7 +9,7 @@ import { fetcher } from "@/app/api/auth/fetcher";
 import { UserAnswerDataType } from "@/types/mocktest";
 import { PreventNavigation } from "@/components/PreventNavigation";
 import { postUserAnswers, postUserWritingToAI } from "../../../../api/mocktest/utils";
-import { AuthActions } from "@/app/api/auth/utils";
+
 
 const MockTest = ({ params }: { params: { id: string } }) => {
     const { id: testId } = params;

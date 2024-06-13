@@ -29,7 +29,7 @@ const ResultsPage = () => {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
-                        Authorization: `Bearer ${token}`, // Replace with actual token
+                        "Authorization": `Bearer ${token}`, 
                     },
                 });
 
