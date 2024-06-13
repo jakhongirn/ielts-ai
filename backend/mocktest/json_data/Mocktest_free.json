@@ -1489,6 +1489,7 @@
                     "part_number": 1,
                     "type": "task-1",
                     "q_id": 1,
+                    "task_1_question": "You should spend about 20 minutes on this task. The bar chart below describes some changes about the percentage of people were born in Australia and who were born outside Australia living in urban, rural and town between 1995 and 2010. Summarise the information by selecting and reporting the main features and make comparisons where relevant. You should write at least 150 words.",
                     "q_instructions": [
                         {
                             "text": "You should spend about 20 minutes on this task."
@@ -1513,6 +1514,7 @@
 
                     "q_id": 1,
                     "type": "task-2",
+                    "task_2_question": "You should spend about 40 minutes on this task. Rich countries often give money to poorer countries, but it does not solve poverty. Therefore, developed countries should give other types of help to the poor countries rather than financial aid. To what extent do you agree or disagree? You should write at least 250 words.",
                     "q_instructions": [
                         {
                             "text": "You should spend about 40 minutes on this task."

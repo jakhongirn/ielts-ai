@@ -51,16 +51,21 @@ export async function getUserAnswersData() {
 }
 
 export async function postUserWritingToAI(writing_answers) {
-    const token = getToken("access")
+    const token = getToken("access");
     try {
         const res = await axios.post(`${process.env.NEXT_PUBLIC_API}/ai-prompt/`, writing_answers, {
-          headers: {
+            headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}` // Include the token in the header
-          },
+            },
         });
+
+        console.log('Success submitting writing data:', res.data);
+        return res.data;
         
-      } catch (error) {
+    } catch (error) {
         console.error('Error submitting answers data:', error);
-      }
+        console.error('Error response:', error.response);
+        throw error;
+    }
 }

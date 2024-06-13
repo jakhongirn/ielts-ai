@@ -9,12 +9,13 @@ import { fetcher } from "@/app/api/auth/fetcher";
 import { UserAnswerDataType } from "@/types/mocktest";
 import { PreventNavigation } from "@/components/PreventNavigation";
 import { postUserAnswers, postUserWritingToAI } from "../../../../api/mocktest/utils";
+import Loading from "../../../Loading";
 
 
 const MockTest = ({ params }: { params: { id: string } }) => {
     const { id: testId } = params;
     const { data, error } = useSWR(`/user-mocktests/${testId}/`, fetcher);
-
+    const [loading, setLoading] = useState(false);
     const router = useRouter();
 
     const [sectionNumber, setSectionNumber] = useState<number>(0);
@@ -59,7 +60,10 @@ const MockTest = ({ params }: { params: { id: string } }) => {
         );
     };
 
+    
+
     const handleNextStep = async (sectionAnswers: UserAnswerDataType) => {
+        setLoading(true)
         const newAnswers = { ...answers };
         console.log(sectionAnswers);
 
@@ -85,12 +89,22 @@ const MockTest = ({ params }: { params: { id: string } }) => {
             console.log("Submitting all answers:", newAnswers);
 
             postUserAnswers(testId, newAnswers);
-            postUserWritingToAI(newAnswers.writing)
+            try {
+                const data = await postUserWritingToAI(newAnswers.writing);
+                
+            } catch (error) {
+                console.error('Submission error:', error);
+                router.push("/dashboard/results/"); 
+            } finally {
+                setLoading(false);
+                router.push("/dashboard/results/"); 
+            }
             
             // Replace this with actual submission logic
-
+        
             router.push("/dashboard/results/"); // Navigate to feedback page
         }
+        setLoading(false)
     };
 
     function handleListeningSubmission() {
@@ -123,7 +137,11 @@ const MockTest = ({ params }: { params: { id: string } }) => {
         />,
     ];
 
-    return <>{sectionComponents[sectionNumber]}</>;
+    return <>
+    
+    {sectionComponents[sectionNumber]}
+    {loading && <Loading />}
+    </>;
 };
 
 export default MockTest;
