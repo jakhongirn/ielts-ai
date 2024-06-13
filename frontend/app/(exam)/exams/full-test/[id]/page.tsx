@@ -140,7 +140,7 @@ const MockTest = ({ params }: { params: { id: string } }) => {
     return <>
     
     {sectionComponents[sectionNumber]}
-    {loading && <Loading />}
+    {!loading && <Loading />}
     </>;
 };
 
