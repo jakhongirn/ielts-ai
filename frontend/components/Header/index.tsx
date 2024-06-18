@@ -234,7 +234,7 @@ const Header = () => {
                                 </svg>
                             </button>
 
-                            <ThemeToggler />
+                            
                             {isAuthenticated && user ? (
                                 <div className="flex items-center space-x-4">
                                     <Link href="/dashboard">

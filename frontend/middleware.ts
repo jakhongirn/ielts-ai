@@ -10,11 +10,16 @@ export function middleware(request: NextRequest) {
         return NextResponse.redirect(new URL("/auth/login", request.url));
     }
 
-
+    if (!accessToken && request.nextUrl.pathname.startsWith("/dashboard/mock-tests")) {
+        return NextResponse.redirect(new URL("/auth/login", request.url));
+    }
 
     return NextResponse.next();
 }
 
 export const config = {
-    matcher: ["/dashboard/:path*"]
+    matcher: [
+        '/dashboard/:path*',
+        '/dashboard/mock-tests/:path*'
+    ]
 };

@@ -26,10 +26,12 @@ export function DashboardNav({ items, setOpen }: DashboardNavProps) {
                 removeTokens();
 
                 router.push("/");
+                window.location.reload();
             })
             .catch(() => {
                 removeTokens();
                 router.push("/");
+                window.location.reload();
             });
     };
 

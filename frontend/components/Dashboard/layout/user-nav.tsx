@@ -14,6 +14,7 @@ import { fetcher } from "@/app/api/auth/fetcher";
 import { AuthActions } from "@/app/api/auth/utils";
 import { useRouter } from "next/navigation";
 import { CircleUser } from "lucide-react";
+import Link from "next/link";
 
 export function UserNav() {
     const { data: user } = useSWR("/auth/user/", fetcher);
@@ -23,12 +24,13 @@ export function UserNav() {
         logout()
             .res(() => {
                 removeTokens();
-
                 router.push("/");
+                window.location.reload();
             })
             .catch(() => {
                 removeTokens();
                 router.push("/");
+                window.location.reload();
             });
     };
 
@@ -59,10 +61,10 @@ export function UserNav() {
                     <DropdownMenuSeparator />
                     <DropdownMenuGroup>
                         <DropdownMenuItem>
-                            Profile
+                            <Link href="/dashboard/profile">Profile</Link>
                         </DropdownMenuItem>
                         <DropdownMenuItem>
-                            Transactions
+                        <Link href="/dashboard/transactions">Transactions</Link>
                         </DropdownMenuItem>
                     </DropdownMenuGroup>
                     <DropdownMenuSeparator />

@@ -64,6 +64,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({children}) => {
       Cookies.set('refreshToken', response.refresh);
       await initializeAuth();
       router.push('/dashboard');
+      window.location.reload();
     } catch (error) {
       console.error('Login failed:', error);
       throw new Error('Login failed');
