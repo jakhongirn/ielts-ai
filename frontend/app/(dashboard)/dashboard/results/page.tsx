@@ -58,7 +58,8 @@ const ResultsPage = () => {
                 <h1 className="text-lg font-semibold md:text-2xl">Results</h1>
             </div>
             <div className="rounded-lg border w-full p-4 bg-gray-100">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+                {userAnswers.length > 0 ? (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
                     {userAnswers.map((answer, index) => (
                         <div
                             key={index}
@@ -66,16 +67,17 @@ const ResultsPage = () => {
                             onClick={() => handleCardClick(answer.mocktest_id)}
                         >
                             <h2 className="text-lg ">
-                                Mock Test Title: <span className="font-semibold">{answer.mocktest_title}</span>
+                                Title: <span className="font-semibold">{answer.mocktest_title}</span>
                             </h2>
-                            <p className="text-gray-600">Passed Date: {formatDate(answer.passed_date)}</p>
-                            <p className="text-gray-600">Listening Band: {answer.listening_band}</p>
+                            <p className="text-gray-600">Passed date: {formatDate(answer.passed_date)}</p>
+                            <p className="text-gray-600">Listening band: {answer.listening_band}</p>
                             
                             
-                            <p className="text-gray-600">Reading Band: {answer.reading_band}</p>
+                            <p className="text-gray-600">Reading band: {answer.reading_band}</p>
                         </div>
                     ))}
                 </div>
+                ): (<p className='text-center text-gray-400 p-8'>You have no test results.</p>)}
             </div>
         </div>
     );

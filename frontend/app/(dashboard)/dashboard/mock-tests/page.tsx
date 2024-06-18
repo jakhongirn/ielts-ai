@@ -50,7 +50,7 @@ const MockPage: React.FC = () => {
     }, [user]);
 
     if (userError) return <p>Error loading user information.</p>;
-    if (!user) return <p>Loading user information...</p>;
+    if (!user) return <p className='text-center text-gray-400 p-8'>You have no mocktests.</p>;
 
     return (
         <div className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">

@@ -2,6 +2,7 @@ venv/
 db.sqlite3
 __pycache__/
 .env
+.env.production
 staticfiles/
 mediafiles/
 static/

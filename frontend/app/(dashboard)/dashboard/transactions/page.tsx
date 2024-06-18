@@ -6,7 +6,10 @@ const TransactionsPage = () => {
           <div className="flex items-center">
             <h1 className="text-lg font-semibold md:text-2xl">Transactions</h1>
           </div>
-          <div className=" rounded-lg border w-full p-4 bg-gray-100"></div>
+          <div className=" rounded-lg border w-full p-4 bg-gray-100">
+
+            <p className='text-center text-gray-400 p-8'>You have no transactions.</p>
+          </div>
          
         </div>  
   )
