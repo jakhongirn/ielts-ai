@@ -14,6 +14,7 @@ from pathlib import Path
 from datetime import timedelta
 import os
 import dotenv
+from dotenv import load_dotenv
 
 dotenv.load_dotenv()
 
@@ -36,12 +37,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = DEBUG_BOOL
 
 ALLOWED_HOSTS = [
     "localhost",
-    "http://127.0.0.1",
-    "http://localhost",
+    "127.0.0.1",
     SERVER_IP,
     SERVER_DOMAIN,
     DOMAIN_SSL,
@@ -55,7 +54,7 @@ CSRF_TRUSTED_ORIGINS = [
     DOMAIN_WWW,
     "http://localhost:3000",
     "http://localhost:8000",
-    "http://127.0.0.1",
+    "http://127.0.0.1:8000",
     SERVER_IP_HTTP
 ]
 
@@ -76,6 +75,7 @@ CORS_ALLOW_ALL_ORIGINS = True
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     "django.contrib.sites",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -182,11 +182,40 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-MEDIA_ROOT =os.getenv("MEDIA_ROOT")
-MEDIA_URL = "/media/"
 
-STATIC_URL = "/static/"
-STATIC_ROOT = os.getenv("STATIC_ROOT")
+
+
+# Load environment variables from .env file
+load_dotenv(os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env'))
+
+# Load production environment variables if DJANGO_PRODUCTION is set to True
+if os.getenv('DJANGO_PRODUCTION', 'False') == 'True':
+    load_dotenv(os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env.production'))
+
+# Set debug mode
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
+
+# Base directory of the project
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = os.getenv('STATIC_URL', '/static/')
+STATIC_ROOT = os.getenv('STATIC_ROOT', os.path.join(BASE_DIR, 'staticfiles'))
+
+# Additional locations of static files
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),  # This should be a different directory from STATIC_ROOT
+]
+
+# Media files (Uploaded by users)
+MEDIA_URL = os.getenv('MEDIA_URL', '/media/')
+MEDIA_ROOT = os.getenv('MEDIA_ROOT', os.path.join(BASE_DIR, 'mediafiles'))
+
+# Ensure the directories exist
+os.makedirs(STATIC_ROOT, exist_ok=True)
+os.makedirs(MEDIA_ROOT, exist_ok=True)
+
+
 
 
 # Default primary key field type
@@ -218,11 +247,63 @@ SIMPLE_JWT = {
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
-DJOSER = {
-    "PASSWORD_RESET_CONFIRM_URL": "auth/password/reset-password-confirmation/?uid={uid}&token={token}",
-    "ACTIVATION_URL": "#/activate/{uid}/{token}",
-    "SEND_ACTIVATION_EMAIL": False,
-    "SERIALIZERS": {
-        'user_create': 'authentication.serializers.UserCreateSerializer'
-        },
+
+
+JAZZMIN_SETTINGS = {
+    # title of the window (Will default to current_admin_site.site_title if absent or None)
+    "site_title": "Prepal AI admin",
+
+    # Title on the login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
+    "site_header": "Prepal AI",
+
+    # Title on the brand (19 chars max) (defaults to current_admin_site.site_header if absent or None)
+    "site_brand": "Prepal AI",
+
+    # Logo to use for your site, must be present in static files, used for brand on top left
+    "site_logo": "images/logo-medium.jpg",
+
+    # Logo to use for your site, must be present in static files, used for login form logo (defaults to site_logo)
+    "login_logo": None,
+
+    # Logo to use for login form in dark themes (defaults to login_logo)
+    "login_logo_dark": None,
+
+    # CSS classes that are applied to the logo above
+    "site_logo_classes": "img-circle",
+
+    # Relative path to a favicon for your site, will default to site_logo if absent (ideally 32x32 px)
+    "site_icon": None,
+
+    # Welcome text on the login screen
+    "welcome_sign": "Welcome to the platform",
+
+    # Copyright on the footer
+    "copyright": "Prepal AI",
+
+    # List of model admins to search from the search bar, search bar omitted if excluded
+    # If you want to use a single search field you dont need to use a list, you can use a simple string 
+    "search_model": ["auth.User", "auth.Group"],
+
+    # Field name on user model that contains avatar ImageField/URLField/Charfield or a callable that receives the user
+    "user_avatar": None,
+
+    ############
+    # Top Menu #
+    ############
+
+    # Links to put along the top menu
+    "topmenu_links": [
+
+        # Url that gets reversed (Permissions can be added)
+        {"name": "Home",  "url": "admin:index", "permissions": ["auth.view_user"]},
+
+        # external url that opens in a new window (Permissions can be added)
+        {"name": "Support", "url": "https://github.com/farridav/django-jazzmin/issues", "new_window": True},
+
+        # model admin to link to (Permissions checked against model)
+        {"model": "auth.User"},
+
+        # App with dropdown menu to all its models pages (Permissions checked against models)
+        {"app": "books"},
+    ]
 }
